@@ -59,7 +59,7 @@ When parsing the DSC file, the precedence rules must be followed.
    section will be used.
 
 3. If not specified in the `[LibraryClasses.$(ARCH).$(MODULE_TYPE)]` section,
-   then the Library Class Instance that is defined in the 
+   then the Library Class Instance that is defined in the
    `[LibraryClasses.Common.$(MODULE_TYPE)]` section will be used.
 
 4. If not specified in the `[LibraryClasses.Common.$(MODULE_TYPE)]` section,

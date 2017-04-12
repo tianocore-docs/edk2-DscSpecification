@@ -100,7 +100,7 @@ Note that for specifying the path for a file name, if the path value starts
 with a dollar sign "$" character, either a local `MACRO` or system
 environment variable is being specified. If the path value starts with one of
 "letter:\", "/", "\" or "\\" the path must be a fully qualified URI location.
-If it does not, the specified path is relative to EDK II Packages 
+If it does not, the specified path is relative to EDK II Packages
 (sub-directories in directories pointed to by WORKSPACE or PACKAGES_PATH system
  environment variables).
 

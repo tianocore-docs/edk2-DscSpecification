@@ -429,7 +429,7 @@ If for a given PCD and architecture:
 
 4. The DEC file has the PCD listed in the sections for Dynamic and
    FixedAtBuild.
-   
+
 The build tools must use the FixedAtBuild access method for this PCD in this
 scenario.
 
