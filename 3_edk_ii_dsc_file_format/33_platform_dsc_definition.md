@@ -655,17 +655,20 @@ section that the `!include` statement resides, or it may contain completely new
 sections. If the included file starts with a section header, then the section
 being processed in the Platform DSC file is considered to have been terminated.
 
+If the `<Filename>` contains "$" characters, then macros defined in the DSC
+file and the system environment variables, `$(WORKSPACE)`, `$(EDK_SOURCE)`,
+`$(EFI_SOURCE)`, and `$(ECP_SOURCE)` are substituted into `<Filename>`.
+
+The tools look for `<Filename>` relative to the directory the DSC file resides.
+If the file is not found, and a directory separator is in `<Filename>`, the
+tools attempt to find the file in a WORKSPACE (or a directory listed in the
+PACKAGES_PATH) relative path. If the file cannot be found, the build system
+must exit with an appropriate error message.
+
 The `!include` file cannot contain additional `!include` statements.
 
 Statements in the include file are permitted to override previous definitions
 as well as to define new entries.
-
-If the filename is a filename, the tools will look for the file in the same
-directory as the DSC file. If the filename starts with a "$", then the system
-environment variable will be used to locate the file. If neither of these
-methods find the file, and a directory separator is in the filename, the tools
-will attempt to find the file in an EDK II Package . If the file cannot be
-found, the build system must exit with an appropriate error message.
 
 #### Prototype
 
@@ -676,6 +679,8 @@ found, the build system must exit with an appropriate error message.
 ```
 !include MyPlatformPkg/feature_pcds.mak
 !include MyFeatures.mak
+!include $(WORKSPACE)/PackageDir/Features.dsc
+!include $(MACRO1)/AnotherDir/$(MACRO2)/Features.dsc
 ```
 
 **********

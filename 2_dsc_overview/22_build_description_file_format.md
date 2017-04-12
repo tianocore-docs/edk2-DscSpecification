@@ -230,9 +230,15 @@ definition, contain complete sections, or combination of both.
 The argument of this statement is a filename. The file is relative to the
 directory that contains this DSC file, and if not found the tool must attempt
 to find the file relative to the paths listed in the system environment
-variables, `$(WORKSPACE)`, `$(EFI_SOURCE)`, `$(EDK_SOURCE)`, `$(ECP_SOURCE)` in
-the file name is permitted. If the file is still not found, the parsing tools
-must terminate with an error.
+variables `$(WORKSPACE)`, `$(EFI_SOURCE)`, `$(EDK_SOURCE)`, and
+`$(ECP_SOURCE)`. If the file is still not found, the parsing tools must
+terminate with an error.
+
+Macros, defined in this file, are permitted in the path or file name of the
+!include statement, as these files are included prior to processing the file
+for macros. The system environment variables `$(WORKSPACE)`, `$(EDK_SOURCE)`,
+`$(EFI_SOURCE)`, and `$(ECP_SOURCE)` may also be used; only these system
+environment variables are permitted to start the path of the included file.
 
 Files specified by `!include` statements may not contain `!include` statements.
 
@@ -240,13 +246,6 @@ Statements in `!include` files must not break the integrity of the DSC file,
 the included file is read in by tools in the exact position of the file, and is
 functionally equivalent of copying the contents of the included file and
 inserting (paste) the content into the DSC file.
-
-Macros, defined in this file, are not permitted in the path or file name of the
-!include statement, as these files are included prior to processing the file
-for macros. If the path starts with a "$" character, then one of the system
-environment variables, `$(WORKSPACE)`, `$(EDK_SOURCE)`, `$(EFI_SOURCE)`, or
-`$(ECP_SOURCE)` is being used; only these system environment variables are
-permitted to start the path of the included file.
 
 The following examples show the valid usage of the `!include` statement.
 
