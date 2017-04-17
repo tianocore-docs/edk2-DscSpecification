@@ -125,6 +125,8 @@ The `!include` statement may be used in a `[Defines]` section.
                    [<TS> "VPD_TOOL_GUID" <Eq> <RegistryFormatGUID>
                    <EOL>]
                    [<TS> "PCD_VAR_CHECK_GENERATION" <Eq> <TF> <EOL>]
+                   [<TS> "PREBUILD" <Eq> {<AsciiString>} {<QuotedString>} <EOL>]
+                   [<TS> "POSTBUILD" <Eq> {<AsciiString>} {<QuotedString>} <EOL>]
                    [<TS> <AddressStmts>]
                    <IncludeStatement>*
                    <MacroDefinition>*

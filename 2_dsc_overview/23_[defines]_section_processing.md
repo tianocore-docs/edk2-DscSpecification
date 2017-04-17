@@ -53,6 +53,17 @@ The format for entries in this section is:
 
 `Name = Value`
 
+If the `PREBUILD` and/or `POSTBUILD` entries are specified, value must be a
+tool that can be executed.  If the value contains space characters, then the
+value must be a quoted string. The `build` tool suspends processing of the DSC
+file if the `PREBUILD` entry is present, calls the script, and either terminates
+or continues processing the DSC file depending on the exit code from the script.
+If the `POSTBUILD` entry is present, prior to the successful `build` exit, the
+script is called. If the script fails (non-zero exit code from the script)
+`build` terminates immediately using the exit code returned from the script,
+otherwise, `build` terminates normally. The author of the script is responsible
+for ensuring that the script terminates with a non-zero exit code when it fails.
+
 All defined elements of the DSC file's `[Defines]` section are valid when
 parsing the FDF file. The these elements must be treated as Macros when using
 them in other sections of the DSC and FDF file, as in $(PLATFORM_NAME).
