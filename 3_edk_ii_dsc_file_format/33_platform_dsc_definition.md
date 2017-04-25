@@ -665,8 +665,6 @@ tools attempt to find the file in a WORKSPACE (or a directory listed in the
 PACKAGES_PATH) relative path. If the file cannot be found, the build system
 must exit with an appropriate error message.
 
-The `!include` file cannot contain additional `!include` statements.
-
 Statements in the include file are permitted to override previous definitions
 as well as to define new entries.
 

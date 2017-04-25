@@ -240,8 +240,6 @@ for macros. The system environment variables `$(WORKSPACE)`, `$(EDK_SOURCE)`,
 `$(EFI_SOURCE)`, and `$(ECP_SOURCE)` may also be used; only these system
 environment variables are permitted to start the path of the included file.
 
-Files specified by `!include` statements may not contain `!include` statements.
-
 Statements in `!include` files must not break the integrity of the DSC file,
 the included file is read in by tools in the exact position of the file, and is
 functionally equivalent of copying the contents of the included file and
