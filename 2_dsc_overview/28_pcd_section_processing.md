@@ -320,45 +320,45 @@ string plus 1 byte for the null terminator, for L"string" entries to be the
 length of the UCS-2 character string plus 2 bytes for the null terminator and
 the exact length of a byte array.
 
-Precedence for determining PCD values (high to low, last in position) is as
-follows:
+The values that are assigned to individual PCDs required by a build may come
+from different locations and different meta-data files. The following provides
+the precedence (high to low) to assign a value to a PCD.
 
-* A PCD value defined by a MACRO, ("MacroName" in this example), and the Macro
-  is defined on the command-line using -D MacroName=Value
+* Command-line, `--pcd` flags (left most has higher priority)
 
-* A PCD value defined in the FDF file SET statements
+* DSC file, FeatureFlag, PatchableInModule or FixedAtBuild PCD value defined
+  in the `[Components]` INF scoping `<Pcd*>` section statements
 
-* A PCD value defined positionally in the FDF file
+* FDF file, grammar describing automatic assignment of PCD values
 
-* A FeatureFlag, PatchableInModule or FixedAtBuild PCD value defined in the
-  `[Components]` INF scoping section
+* FDF file, SET statements within a section
 
-* A FeatureFlag, PatchableInModule or FixedAtBuild PCD value defined in a PCD
-  access method section with an architectural modifier (the access method for a
-  PCD in a section with an architectural modifier takes precedence over any
-  other access method)
+* FDF file, SET statement in the [Defines] section
 
-In this example, modules built for IA32 architecture, the PCD will use
-PatchableInModule access, while modules built for all other architectures, the
-PCD will use the FixedAtBuild access method:
+* DSC file, a PCD value defined in a PCD access method section with an
+  architectural modifier.
 
-```ini
-[PcdsFixedAtBuild.common]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
-  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
+  In this example, modules built for IA32 architecture, the PCD will use
+  PatchableInModule access, while modules built for all other architectures, the
+  PCD will use the FixedAtBuild access method:
 
-[PcdsPatchableInModule.IA32]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
-  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
-```
+  ```ini
+  [PcdsFixedAtBuild.common]
+    gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
+    gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
 
-* A PCD value defined in a PCD access method (item type) section for common
-  architectures
+  [PcdsPatchableInModule.IA32]
+    gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
+    gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
+  ```
 
-* A PCD value defined in an INF (provided all INF files have defined the same
-  value)
+* DSC file, A PCD value defined in a PCD access method (item type) global
+  `[Pcd*]` section for common architectures.
 
-* A PCD default value defined in the DEC file that declares the PCD.
+* INF file, PCD sections, Default Values (provided all INF files have defined
+  the same value)
+
+* DEC file, PCD sections, Default Values
 
 **********
 **Note:** Dynamic or DynamicEx PCD sections with architectural modifiers is not
