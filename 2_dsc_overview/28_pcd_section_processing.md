@@ -103,9 +103,17 @@ of three categories:
 **Note:** For the dynamic types of PCDs, using an `$(Arch)` extension other
 than `common` in the section header is not valid.
 **********
-**Warning:** A PCD can only use one type for all modules. It is not permissible
-to list a PCD in a PcdsFixedAtBuild section and also list it in a
+**Warning:** A PCD can only use one type for all source modules. It is not
+permissible to list a PCD in a PcdsFixedAtBuild section and also list it in a
 PcdsPatchableInModule section.
+**********
+**Note:** Binary modules included in a platform build are permitted to use the
+PatchableInModule or DynamicEx access methods (the Binary module must specify
+which of these two methods were used to create the binary module) regardless of
+the method used for a given PCD in modules built from source. The build supports
+binary modules that use the same or different PCD access method than the source
+modules or other binary modules. The build parser must break with an error if a
+PCD is listed as FixedAtBuild or Dynamic (not DynamicEx) in the Binary INF.
 **********
 
 Datum Types for PCD values are either Boolean (`BOOLEAN` - 1 byte), numeric

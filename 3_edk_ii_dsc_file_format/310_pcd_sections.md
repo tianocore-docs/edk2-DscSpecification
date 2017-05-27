@@ -75,10 +75,17 @@ value specified in the INF file or the default value listed in the DEC file
 (for modules that do not list a preferred value). This same rule applies to
 `FeatureFlag` PCDs.
 
-If the INF values differ (or are not listed) and the access methods are
-different, then the build must break. A PCD can only use a single method of
-access for the platform and all modules in the platform that use the PCD must
-use the same access method.
+If the Source INF values differ (or are not listed) and the access methods are
+different, then the build must break. All source modules in a platform must use
+the same PCD same access method.
+
+Binary modules included in a platform build are permitted to use the
+PatchableInModule or DynamicEx access methods (the Binary module must specify
+which of these two methods were used to create the binary module) regardless of
+the method used for a given PCD in modules built from source. The build supports
+binary modules that use the same or different PCD access method than the source
+modules or other binary modules. The build parser must break with an error if a
+PCD is listed as FixedAtBuild or Dynamic (not DynamicEx) in the Binary INF.
 
 If no value is entered in the DSC file, and no INF files provide a preferred
 value, then the DEC file's default value must be used.
