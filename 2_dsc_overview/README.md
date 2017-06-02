@@ -50,7 +50,7 @@ methods). EDK II DSC files are a list of:
 There are no new features or format introduced in this specification.
 
 DSC files that use any new features must use the new
-`DSC_SPECIFICATION = 0x0001001A` in the `[Defines]` section. Older DSC files
+`DSC_SPECIFICATION = 0x0001001B` in the `[Defines]` section. Older DSC files
 that do not use any of these features do not need to update the
 `DSC_SPECIFICATION` value.
 
