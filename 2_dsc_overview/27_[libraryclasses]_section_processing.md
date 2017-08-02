@@ -66,11 +66,6 @@ LibraryClassName1|Path/To/LibInstanceName1.inf
 ```
 
 **********
-**Note:** The reserved library class keyword, `NULL` is not permitted in any
-of the `[LibraryClasses]` sections. The `NULL` Library class keyword is
-only permitted within the `[Components]` section's INF file
-`<LibraryClasses>` subsection.
-**********
 **Note:** "LibraryClassName" is a keyword in the first field of the above
 example format can not be `NULL`. The "LibraryClassName" name must be unique
 to an instance specified in the second field. All INF files that require a
