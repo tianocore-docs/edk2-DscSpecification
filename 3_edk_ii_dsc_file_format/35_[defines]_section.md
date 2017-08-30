@@ -125,8 +125,8 @@ The `!include` statement may be used in a `[Defines]` section.
                    [<TS> "VPD_TOOL_GUID" <Eq> <RegistryFormatGUID>
                    <EOL>]
                    [<TS> "PCD_VAR_CHECK_GENERATION" <Eq> <TF> <EOL>]
-                   [<TS> "PREBUILD" <Eq> {<AsciiString>} {<QuotedString>} <EOL>]
-                   [<TS> "POSTBUILD" <Eq> {<AsciiString>} {<QuotedString>} <EOL>]
+                   [<TS> "PREBUILD" <Eq> <Script> <EOL>]
+                   [<TS> "POSTBUILD" <Eq> <Script> <EOL>]
                    [<TS> <AddressStmts>]
                    <IncludeStatement>*
                    <MacroDefinition>*
@@ -148,6 +148,8 @@ The `!include` statement may be used in a `[Defines]` section.
                    <Iso639-2
 Code>          ::= ISO 639-2 Format Language code
 <TF>           ::= {"TRUE"} {"FALSE"}
+<Script>       ::= [<Interpreter>] <Filename> [<Options>]
+<Options>      ::= {<AsciiString>} {<QuotedString>}
 ```
 
 #### Parameters
@@ -205,6 +207,12 @@ SHRINK).
 
 The FDF filename must be either relative to the directory that contains this
 DSC file, or it can be absolute, as well as relative to the WORKSPACE .
+
+**_Interpreter_**
+
+An interpreter is a computer program that directly executes, i.e. Python,
+instructions written in a programming or scripting language, without previously
+compiling them into a machine language program.
 
 #### Example
 

@@ -55,14 +55,18 @@ The format for entries in this section is:
 
 If the `PREBUILD` and/or `POSTBUILD` entries are specified, value must be a
 tool that can be executed.  If the value contains space characters, then the
-value must be a quoted string. The `build` tool suspends processing of the DSC
-file if the `PREBUILD` entry is present, calls the script, and either terminates
-or continues processing the DSC file depending on the exit code from the script.
-If the `POSTBUILD` entry is present, prior to the successful `build` exit, the
-script is called. If the script fails (non-zero exit code from the script)
-`build` terminates immediately using the exit code returned from the script,
-otherwise, `build` terminates normally. The author of the script is responsible
-for ensuring that the script terminates with a non-zero exit code when it fails.
+value must be a quoted string. The `PREBUILD` and `POSTBUILD` enty support
+multiple arguments, and tool will convert the arguments that are WORKSPACE or
+PACKAGES_PATH relative paths to absolute paths. Quotes may be used for arguments
+that have spaces or special characters. The `build` tool suspends processing of
+the DSC file if the `PREBUILD` entry is present, calls the script, and either
+terminates or continues processing the DSC file depending on the exit code from
+the script. If the `POSTBUILD` entry is present, prior to the successful `build`
+exit, the script is called. If the script fails (non-zero exit code from the
+script) `build` terminates immediately using the exit code returned from the
+script, otherwise, `build` terminates normally. The author of the script is
+responsible for ensuring that the script terminates with a non-zero exit code
+when it fails.
 
 All defined elements of the DSC file's `[Defines]` section are valid when
 parsing the FDF file. The these elements must be treated as Macros when using
@@ -116,6 +120,8 @@ item is required.
 | `VPD_TOOL_GUID`               | Optional    | Registry Format GUID             | When this element is present, the build process will be interrupted during the AutoGen stage in order to call an external program, named by GUID that must also be defined in the Conf/tools_def.txt file using a tool code name of VPDTOOL. Refer to the EDK II Build specification for additional information.                                                                                                                |
 | `PCD_INFO_GENERATION`         | Optional    | TRUE or FALSE                    | If present, and set to TRUE, this flag will generate PCD information in the Pcd Database.                                                                                                                                                                                                                                                                                                                                       |
 | `PCD_VAR_CHECK_GENERATION`    | Optional    | TRUE or FALSE                    | If present and set to TRUE, this flag will generate the variable validation table binary file in the build output FV floder. If not present ro set to FALSE, then the binary file will not be generated.                                                                                                                                                                                                                        |
+| `PREBUILD`                    | Optional    | String of script with arguments  | If present, build tool will call the script of this statement to execute.                                                                                                                                                                                                                                                                                                                                                       |
+| `POSTBUILD`                   | Optional    | String of script with arguments  | If present, build tool will call the script of this statement to execute.                                                                                                                                                                                                                                                                                                                                                       |
 
 [^1]: WORKSPACE refers to the combination of the directories specified in the
 WORKSPACE system environment variable and the PACKAGES_PATH system environment
