@@ -252,6 +252,8 @@ described in the following table.
 | `RT`    | `EFI_VARIABLE_RUNTIME_ACCESS`           | `0x00000004` |
 | `RO`    | `VAR_CHECK_VARIABLE_PROPERTY_READ_ONLY` | `BIT0`       |
 
+**Note:** The VariableName field in the HII format PCD entry must not be an empty string.
+
 #### Examples
 
 ```ini
@@ -346,6 +348,8 @@ backslash character is used here to indicate the continuation of the line:
 
 The optional HII Attribute entry is a comma separated list of attributes as
 described in Table 9 HII Attributes.
+
+**Note:** The VariableName field in the HII format PCD entry must not be an empty string.
 
 #### Examples
 

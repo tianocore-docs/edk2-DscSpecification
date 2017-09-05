@@ -516,6 +516,9 @@ A non-negative numeric value that is the number of bytes from the start to the
 start of this variable. The offset value must not exceed the maximum value of
 0xFFFF (`UINT16`).
 
+**_HiiString_**
+The HiiString field in the HII format PCD entry must not be an empty string.
+
 **_SkuIds_**
 
 `SkuId`s in the DSC file can be used in two different ways. They can be used to
@@ -672,6 +675,9 @@ of the offset.
 A non-negative numeric value that is the number of bytes from the start to the
 start of this variable. The offset value must not exceed the maximum value of
 0xFFFF (`UINT16`).
+
+**_HiiString_**
+The HiiString field in the HII format PCD entry must not be an empty string.
 
 **_SkuIds_**
 
