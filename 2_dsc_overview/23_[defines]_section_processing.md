@@ -55,7 +55,7 @@ The format for entries in this section is:
 
 If the `PREBUILD` and/or `POSTBUILD` entries are specified, value must be a
 tool that can be executed.  If the value contains space characters, then the
-value must be a quoted string. The `PREBUILD` and `POSTBUILD` enty support
+value must be a quoted string. The `PREBUILD` and `POSTBUILD` entry support
 multiple arguments, and tool will convert the arguments that are WORKSPACE or
 PACKAGES_PATH relative paths to absolute paths. Quotes may be used for arguments
 that have spaces or special characters. The `build` tool suspends processing of
