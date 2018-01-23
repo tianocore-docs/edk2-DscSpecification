@@ -44,14 +44,14 @@ If this section is not specified, the parsing tools will assume a SkuId of 0,
 with a `UiName` of "DEFAULT". The default entry must not be re-defined.
 
 The `!include` file can only contain an ASCII (not Unicode) list of
-"integer|UiSkuName" statements.
+"Number|UiSkuName" statements.
 
 #### Prototype
 
 ```c
 <SkuId>     ::= "[SkuIds]" <EOL>
                 {<Statement>*} {<IncludeStatement>}
-<Statement> ::= <TS> <Integer> <FS> <UiName> <EOL>
+<Statement> ::= <TS> <Number> <FS> <UiName> <EOL>
 <UiName>    ::= <Word>
 ```
 

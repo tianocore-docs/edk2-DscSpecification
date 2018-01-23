@@ -37,7 +37,7 @@ different methods for handing platform configuration data (PCD) the user can
 define, in this section, tag names to use. Use `0` for the `DEFAULT` SKU
 identifier. Each entry below the section header is of the form:
 
-`integer | word`
+`Number | word`
 
 The following is an example of a `[SkuIds]` section:
 
