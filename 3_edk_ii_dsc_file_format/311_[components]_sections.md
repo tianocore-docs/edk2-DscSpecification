@@ -167,18 +167,21 @@ modules in a binary image (the FDF file describes that ordering).
 <PcdsPatchable>    ::= "<PcdsPatchableInModule>" <EOL>
                        <PcdEntries>*
 <PcdEntry>         ::= <PcdName> [<FS> <PcdValue>] <EOL>
-<PcdValue>         ::= if (pcddatumtype == "BOOLEAN"): {<Boolean>}
-                       {<Expression>} elif (pcddatumtype == "UINT8"):
-                       {<NumValUint8>} {<Expression>} elif (pcddatumtype ==
-                       "UINT16"): {<NumValUint16>} {<Expression>} elif
-                       (pcddatumtype == "UINT32"): {<NumValUint32>}
-                       {<Expression>} elif (pcddatumtype == "UINT64"):
-                       {<NumValUint64>} {<Expression>} else:
-                       <StringVal> [<MaxSize>]
+<PcdValue>         ::= if (pcddatumtype == "BOOLEAN"):
+                         {<BoolType>} {<Expression>}
+                       elif (pcddatumtype == "UINT8"):
+                         {<NumValUint8>} {<Expression>}
+                       elif (pcddatumtype == "UINT16"): 
+                         {<NumValUint16>} {<Expression>}
+                       elif (pcddatumtype == "UINT32"):
+                         {<NumValUint32>} {<Expression>}
+                       elif (pcddatumtype == "UINT64"):
+                         {<NumValUint64>} {<Expression>}
+                       else:
+                         <StringValue> [<MaxSize>]
 <MaxSize>          ::= <FS> "VOID*" [<FS> <SizeValue>]
 <SizeValue>        ::= {<Number>} {<Expression>}
-<StringValue>      ::= {<UnicodeString>} {<CString>} {<CArray>}
-                       {<MACROVAL>}
+<StringValue>      ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 <BuildOptions>     ::= "<BuildOptions>" <EOL>
                        [<DefineStatements>]*
                        [<TS> <ToolFlags>]+

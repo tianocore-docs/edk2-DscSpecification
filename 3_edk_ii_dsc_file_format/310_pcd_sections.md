@@ -100,9 +100,7 @@ it in an architecturally modified section. In this case, the value in the
 architectural section overrides the value specified in the common section.
 
 The PCD values must match the datum type declared for a given PCD in the DEC
-file. While a PCD of datum type `BOOLEAN` is permitted to have a `1` or a `0`
-(instead of TRUE or FALSE) in the value field, a PCD of type UINT* cannot use
-`TRUE` or `FALSE` for values.
+file.
 
 PCDs with a data type of `VOID`* can optionally provide the maximum size of the
 value. If not provided, the maximum length will be calculated as the largest of
@@ -222,17 +220,20 @@ fields that are separated by the pipe character, "|".
 <UiName>        ::= <Word>
 <FabStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
-<PcdValue>      ::= if (pcddatumtype == "BOOLEAN"): {<Boolean>} {<Expression>}
-                    elif (pcddatumtype == "UINT8"): {<NumValUint8>}
-                    {<Expression>} elif (pcddatumtype == "UINT16"):
-                    {<NumValUint16>} {<Expression>} elif (pcddatumtype ==
-                    "UINT32"): {<NumValUint32>} {<Expression>} elif
-                    (pcddatumtype == "UINT64"): {<NumValUint64>} {<Expression>}
+<PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
+                      {<BoolType>} {<Expression>}
+                    elif (pcddatumtype == "UINT8"):
+                      {<NumValUint8>} {<Expression>}
+                    elif (pcddatumtype == "UINT16"):
+                      {<NumValUint16>} {<Expression>}
+                    elif (pcddatumtype == "UINT32"):
+                      {<NumValUint32>} {<Expression>}
+                    elif (pcddatumtype == "UINT64"):
+                      {<NumValUint64>} {<Expression>}
                     else:
-                    <StringValue> [<MaxSize>]
+                      <StringValue> [<MaxSize>]
 <MaxSize>       ::= <FS> "VOID*" <FS> {<Number>} {<Expression>}
-<StringValue>   ::= {<UnicodeString>} {<CString>} {<CArray>}
-                    {<MACROVAL>} {<Expression>}
+<StringValue>   ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 ```
 
 #### Parameters
@@ -327,17 +328,20 @@ of the DSC file.
 <UiName>        ::= <Word>
 <PimStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
-<PcdValue>      ::= if (pcddatumtype == "BOOLEAN"): {<Boolean>} {<Expression>}
-                    elif (pcddatumtype == "UINT8"): {<NumValUint8>}
-                    {<Expression>} elif (pcddatumtype == "UINT16"):
-                    {<NumValUint16>} {<Expression>} elif (pcddatumtype ==
-                    "UINT32"): {<NumValUint32>} {<Expression>} elif
-                    (pcddatumtype == "UINT64"): {<NumValUint64>} {<Expression>}
+<PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
+                      {<BoolType>} {<Expression>}
+                    elif (pcddatumtype == "UINT8"):
+                      {<NumValUint8>} {<Expression>}
+                    elif (pcddatumtype == "UINT16"):
+                      {<NumValUint16>} {<Expression>}
+                    elif (pcddatumtype == "UINT32"):
+                      {<NumValUint32>} {<Expression>}
+                    elif (pcddatumtype == "UINT64"):
+                      {<NumValUint64>} {<Expression>}
                     else:
-                    <StringValue> [<MaxSize>]
+                      <StringValue> [<MaxSize>]
 <MaxSize>       ::= <FS> {<Number>} {<Expression>}
-<StringValue>   ::= {<UnicodeString>} {<CString>} {<CArray>}
-                    {<MACROVAL>} {<Expression>}
+<StringValue>   ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 ```
 
 #### Parameters
@@ -460,28 +464,35 @@ sections of the DSC file.
 <Keyword>        ::= <UiName>
 <UiName>         ::= <Word>
 <MinEntry>       ::= <PcdName> [<FS> <PcdValue>] <EOL>
-<PcdValue>       ::= if (pcddatumtype == "BOOLEAN"): {<Boolean>} {<Expression>}
-                     elif (pcddatumtype == "UINT8"): {<NumValUint8>}
-                     {<Expression>} elif (pcddatumtype == "UINT16"):
-                     {<NumValUint16>} {<Expression>} elif (pcddatumtype ==
-                     "UINT32"): {<NumValUint32>} {<Expression>} elif
-                     (pcddatumtype == "UINT64"): {<NumValUint64>}
-                     {<Expression>} else:
-                     <StringValue> [<MaxSize>]
+<PcdValue>       ::= if (pcddatumtype == "BOOLEAN"):
+                       {<BoolType>} {<Expression>}
+                     elif (pcddatumtype == "UINT8"):
+                       {<NumValUint8>} {<Expression>}
+                     elif (pcddatumtype == "UINT16"):
+                       {<NumValUint16>} {<Expression>}
+                     elif (pcddatumtype == "UINT32"):
+                       {<NumValUint32>} {<Expression>}
+                     elif (pcddatumtype == "UINT64"):
+                       {<NumValUint64>} {<Expression>}
+                     else:
+                       <StringValue> [<MaxSize>]
 <MaxSize>        ::= <FS> "VOID*" [<FS> <SizeValue>]
 <SizeValue>      ::= {<Number>} {<Expression>}
-<StringValue>    ::= {<UnicodeString>} {<CString>} {<CArray>} {<MACROVAL>}
-                     {<Expression>}
+<StringValue>    ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 <VpdEntry>       ::= <PcdName> <FS> <VpdOffset> [<FS> <VpdData>] <EOL>
 <VpdOffset>      ::= {<Number>} {"*"}
-<VpdData>        ::= if (pcddatumtype == "BOOLEAN"): {<Boolean>} {<Expression>}
-                     elif (pcddatumtype == "UINT8"): {<NumValUint8>}
-                     {<Expression>} elif (pcddatumtype == "UINT16"):
-                     {<NumValUint16>} {<Expression>} elif (pcddatumtype ==
-                     "UINT32"): {<NumValUint32>} {<Expression>} elif
-                     (pcddatumtype == "UINT64"): {<NumValUint64>}
-                     {<Expression>} else:
-                     <VpdMaxSize>
+<VpdData>        ::= if (pcddatumtype == "BOOLEAN"):
+                       {<BoolType>} {<Expression>}
+                     elif (pcddatumtype == "UINT8"):
+                       {<NumValUint8>} {<Expression>}
+                     elif (pcddatumtype == "UINT16"):
+                       {<NumValUint16>} {<Expression>}
+                     elif (pcddatumtype == "UINT32"):
+                       {<NumValUint32>} {<Expression>}
+                     elif(pcddatumtype == "UINT64"):
+                       {<NumValUint64>} {<Expression>}
+                     else:
+                       <VpdMaxSize>
 <VpdMaxSize>     ::= <NumValUint32> [<FS> <StringValue>]
 <HiiEntry>       ::= <PcdName> <FS> <HiiString> <Field2> <EOL>
 <HiiString>      ::= {<CArray>} {<UnicodeString>}
@@ -489,8 +500,18 @@ sections of the DSC file.
 <VariableGuid>   ::= <CName>
 <ValueField>     ::= <FS> <DefaultValue> [<FS> <HiiAttrs>]
 <VariableOffset> ::= <Number>
-<DefaultValue>   ::= {<Boolean>} {<Number>} {<String>} {<CArray>}
-                     {<MACROVAL>} {<Expression>}
+<DefaultValue>   ::= if (pcddatumtype == "BOOLEAN"):
+                       {<BoolType>} {<Expression>}
+                     elif (pcddatumtype == "UINT8"):
+                       {<NumValUint8>} {<Expression>}
+                     elif (pcddatumtype == "UINT16"):
+                       {<NumValUint16>} {<Expression>}
+                     elif (pcddatumtype == "UINT32"):
+                       {<NumValUint32>} {<Expression>}
+                     elif (pcddatumtype == "UINT64"):
+                       {<NumValUint64>} {<Expression>}
+                     else:
+                       <StringValue>
 <HiiAttrs>       ::= <HiiAttr> [<CS> <HiiAttr>]*
 <HiiAttr>        ::= {"NV"} {"BS"} {"RT"} {"RO"}
 ```
@@ -620,28 +641,35 @@ sections of the DSC file.
 <Keyword>        ::= <UiName>
 <UiName>         ::= <Word>
 <MinEntry>       ::= <PcdName> [<FS> <PcdValue>] <EOL>
-<PcdValue>       ::= if (pcddatumtype == "BOOLEAN"): {<Boolean>} {<Expression>}
-                     elif (pcddatumtype == "UINT8"): {<NumValUint8>}
-                     {<Expression>} elif (pcddatumtype == "UINT16"):
-                     {<NumValUint16>} {<Expression>} elif (pcddatumtype ==
-                     "UINT32"): {<NumValUint32>} {<Expression>} elif
-                     (pcddatumtype == "UINT64"): {<NumValUint64>}
-                     {<Expression>} else:
-                     <StringValue> [<MaxSize>]
+<PcdValue>       ::= if (pcddatumtype == "BOOLEAN"):
+                       {<BoolType>} {<Expression>}
+                     elif (pcddatumtype == "UINT8"):
+                       {<NumValUint8>} {<Expression>}
+                     elif (pcddatumtype == "UINT16"):
+                       {<NumValUint16>} {<Expression>}
+                     elif (pcddatumtype == "UINT32"):
+                       {<NumValUint32>} {<Expression>}
+                     elif (pcddatumtype == "UINT64"):
+                       {<NumValUint64>} {<Expression>}
+                     else:
+                       <StringValue> [<MaxSize>]
 <MaxSize>        ::= <FS> "VOID*" [<FS> <SizeValue>]
 <SizeValue>      ::= {<Number>} {<Expression>}
-<StringValue>    ::= {<UnicodeString>} {<CString>} {<CArray>} {<MACROVAL>}
-                     {<Expression>}
+<StringValue>    ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 <VpdEntry>       ::= <PcdName> <FS> <VpdOffset> [<FS> <VpdData>] <EOL>
 <VpdOffset>      ::= {<Number>} {"*"}
-<VpdData>        ::= if (pcddatumtype == "BOOLEAN"): {<Boolean>} {<Expression>}
-                     elif (pcddatumtype == "UINT8"): {<NumValUint8>}
-                     {<Expression>} elif (pcddatumtype == "UINT16"):
-                     {<NumValUint16>} {<Expression>} elif (pcddatumtype ==
-                     "UINT32"): {<NumValUint32>} {<Expression>} elif
-                     (pcddatumtype == "UINT64"): {<NumValUint64>}
-                     {<Expression>} else:
-                     <VpdMaxSize>
+<VpdData>        ::= if (pcddatumtype == "BOOLEAN"):
+                       {<BoolType>} {<Expression>}
+                     elif (pcddatumtype == "UINT8"):
+                       {<NumValUint8>} {<Expression>}
+                     elif (pcddatumtype == "UINT16"):
+                       {<NumValUint16>} {<Expression>}
+                     elif (pcddatumtype == "UINT32"):
+                       {<NumValUint32>} {<Expression>}
+                     elif (pcddatumtype == "UINT64"):
+                       {<NumValUint64>} {<Expression>}
+                     else:
+                       <VpdMaxSize>
 <VpdMaxSize>     ::= <NumValUint32> [<FS> <StringValue>]
 <HiiEntry>       ::= <PcdName> <FS> <HiiString> <Field2> <EOL>
 <HiiString>      ::= {<CArray>} {<UnicodeString>}
@@ -649,8 +677,18 @@ sections of the DSC file.
 <VariableGuid>   ::= <CName>
 <ValueField>     ::= <FS> <DefaultValue> [<FS> <HiiAttrs>]
 <VariableOffset> ::= <Number>
-<DefaultValue>   ::= {<Boolean>} {<Number>} {<String>} {<CArray>}
-                     {<MACROVAL>} {<Expression>}
+<DefaultValue>   ::= if (pcddatumtype == "BOOLEAN"):
+                       {<BoolType>} {<Expression>}
+                     elif (pcddatumtype == "UINT8"):
+                       {<NumValUint8>} {<Expression>}
+                     elif (pcddatumtype == "UINT16"):
+                       {<NumValUint16>} {<Expression>}
+                     elif (pcddatumtype == "UINT32"):
+                       {<NumValUint32>} {<Expression>}
+                     elif(pcddatumtype == "UINT64"):
+                       {<NumValUint64>} {<Expression>}
+                     else:
+                       <StringValue>
 <HiiAttrs>       ::= <HiiAttr> [<CS> <HiiAttr>]*
 <HiiAttr>        ::= {"NV"} {"BS"} {"RT"} {"RO"}
 ```
