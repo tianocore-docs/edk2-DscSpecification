@@ -37,8 +37,9 @@ The `[SkuIds]` section is optional in all EDK II DSC files.
 
 Entries may appear in any order. This section lists numeric mappings to the SKU
 ID User Interface Name, only valid values from this list can be specified in
-the defines section. Use of the `!include` statement is supported; it is
-recommended that a ".txt" extension be used.
+the defines section. If one SKU inherits from none DEFAULT SKU, it can specify 
+its parent SKU User Name after its definition. Use of the `!include` statement 
+is supported; it is recommended that a ".txt" extension be used.
 
 If this section is not specified, the parsing tools will assume a SkuId of 0,
 with a `UiName` of "DEFAULT". The default entry must not be re-defined.
@@ -51,7 +52,7 @@ The `!include` file can only contain an ASCII (not Unicode) list of
 ```c
 <SkuId>     ::= "[SkuIds]" <EOL>
                 {<Statement>*} {<IncludeStatement>}
-<Statement> ::= <TS> <Number> <FS> <UiName> <EOL>
+<Statement> ::= <TS> <Number> <FS> <UiName> [<FS> <UiName>] <EOL>
 <UiName>    ::= <Word>
 ```
 
@@ -60,5 +61,6 @@ The `!include` file can only contain an ASCII (not Unicode) list of
 ```ini
 [SkuIds]
   0|DEFAULT # The entry: 0|DEFAULT is reserved and always required.
-  1|SkuTwo
+  1|SkuOne
+  2|SkuTwo|SkuOne # SkuTwo setting inherits from SkuOne
 ```

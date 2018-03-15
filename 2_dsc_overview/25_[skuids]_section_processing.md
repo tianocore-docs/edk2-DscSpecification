@@ -34,16 +34,19 @@
 The contents of this section are used to define valid `SKUID_IDENTIFIER` names.
 Since a platform may support different SKUs, and different SKUs may implement
 different methods for handing platform configuration data (PCD) the user can
-define, in this section, tag names to use. Use `0` for the `DEFAULT` SKU
-identifier. Each entry below the section header is of the form:
+define, in this section, tag names to use. One SKU may override some settings 
+in another SKU setting, and inherit other setting from it. If not specified, 
+SKU will inherit DEFAULT SKU setting. Use `0` for the `DEFAULT` SKU identifier. 
+Each entry below the section header is of the form:
 
-`Number | word`
+`Number | word [|word]`
 
 The following is an example of a `[SkuIds]` section:
 
 ```
 [SkuIds]
+  0|DEFAULT
   1|Sku_Two
   22|Sku1
-  5|SkuSeven
+  5|SkuSeven | Sku1  #SkuSeven inherits Sku1 setting.
 ```
