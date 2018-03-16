@@ -1,7 +1,7 @@
 <!--- @file
   3.10 PCD Sections
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -457,10 +457,12 @@ sections of the DSC file.
 <PdvEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <VpdEntry>}
 <PcdsHii>        ::= "[PcdsDynamicHii" [<PdhAttribs>] "]" <EOL>
                      <PcdHiiEntries>*
-<PdhAttribs>     ::= <attrs> ["," <TS> "PcdsDynamicHii <attrs>]* <PdvEntries>*
+<PdhAttribs>     ::= <phattrs> ["," <TS> "PcdsDynamicHii <phattrs>]* <PdvEntries>*
 <PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>}
 <attrs>          ::= "." <arch> ["." <SkuIds>]
+<phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
+<DefaultStore>   ::= <Keyword>
 <Keyword>        ::= <UiName>
 <UiName>         ::= <Word>
 <MinEntry>       ::= <PcdName> [<FS> <PcdValue>] <EOL>
@@ -555,6 +557,42 @@ the `[Defines]` section. Use of the `SkuId` modifier for the `[PcdsDynamic*]`
 section tag can be used as a conditional modifier or to groups sets of PCDs
 according to the `SkuId` identifier.
 
+**_DefaultStore_**
+
+`DefaultStore` in the DSC file is used to specify DynamicHii/DynamicExHii PCD 
+value as the default EFI variable for which default store. It is only valid in 
+DynamicHii/DynamicExHii section. If it is not specified, DynamicHii/DynamicExHii 
+PCD value will be used as the standard default EFI variable. For the different 
+combination of SKU and DefaultStore, their inheritance is described as the below.
+
+SKU will inherit its parent SKU setting. DEFAULT SKU is the default parent SKU.
+DefaultStore is the subsection of SKU. It will first inherit from the same 
+DefaultStore in its parent SKU, then inherit other DefaultStore in the same SKU. 
+DefaultStore with the big default store ID will inherit the setting from one with 
+the small default store ID. If there are more than one small default store ID, 
+it will use the biggest one to be inherit. Here is the example. Four PcdsDynamicHii
+sections are defined.
+
+# Four PcdsDynamicHii section
+[PcdsDynamicHii.common.Default.Standard]
+[PcdsDynamicHii.common.Default.Manufacturing]
+[PcdsDynamicHii.common.Sku1.Standard]
+[PcdsDynamicHii.common.Sku1.Manufacturing]
+
+# DEFAULT Manufacturing setting based on two sections
+[PcdsDynamicHii.common.Default.Standard]
+[PcdsDynamicHii.common.Default.Manufacturing]
+
+# SKU1 Standard setting based on two sections
+[PcdsDynamicHii.common.Default.Standard]
+[PcdsDynamicHii.common.Sku1.Standard]
+
+# SKU1 Manufacturing setting based on four sections
+[PcdsDynamicHii.common.Default.Standard]
+[PcdsDynamicHii.common.Default.Manufacturing]
+[PcdsDynamicHii.common.Sku1.Standard]
+[PcdsDynamicHii.common.Sku1.Manufacturing]
+
 **_PcdValues_**
 
 PCD values are optional for `[PcdsDynamicDefault]` sections. The PCD values for
@@ -584,7 +622,7 @@ the _UEFI Specification_ for a description of these attributes.
   gNoSuchTokenSpaceGuid.PcdOemBootOptionPath|0x2338|100|" "             # VOID*
   gNoSuchTokenSpaceGuid.PcdEnableFastBoot   |0x239C|1  |FALSE           # BOOLEAN
 
-[PcdsDynamicHii.IA32, PcdsDynamicHii.X64.Sku1]
+[PcdsDynamicHii.IA32, PcdsDynamicHii.X64.Sku1.Standard]
   gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|0x0053 0x0065 0x0074 0x0075 0x0070|gSysConfigGuid|0x83|0x0
   gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L"Timeout"|gEfiGlobalVariableGuid|0x0|10  # Variable: L"Timeout"
 ```
@@ -633,11 +671,13 @@ sections of the DSC file.
                      {<TS> <VpdEntry>}
 <PcdsExHii>      ::= "[PcdsDynamicExHii" [<PdhAttribs>] "]" <EOL>
                      <PcdHiiEntries>*
-<PdhAttribs>     ::= <attrs> ["," <TS> "PcdsDynamicExHii <attrs>]*
+<PdhAttribs>     ::= <phattrs> ["," <TS> "PcdsDynamicExHii <phattrs>]*
                      <PdvEntries>*
 <PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>}
 <attrs>          ::= "." <arch> ["." <SkuIds>]
+<phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
+<DefaultStore>   ::= <Keyword>
 <Keyword>        ::= <UiName>
 <UiName>         ::= <Word>
 <MinEntry>       ::= <PcdName> [<FS> <PcdValue>] <EOL>
@@ -732,6 +772,42 @@ the `[Defines]` section. Use of the `SkuId` modifier for the `[PcdsDynamic*]`
 section tag can be used as a conditional modifier or to groups sets of PCDs
 according to the `SkuId` identifier.
 
+**_DefaultStore_**
+
+`DefaultStore` in the DSC file is used to specify DynamicHii/DynamicExHii PCD 
+value as the default EFI variable for which default store. It is only valid in 
+DynamicHii/DynamicExHii section. If it is not specified, DynamicHii/DynamicExHii 
+PCD value will be used as the standard default EFI variable. For the different 
+combination of SKU and DefaultStore, their inheritance is described as the below.
+
+SKU will inherit its parent SKU setting. DEFAULT SKU is the default parent SKU.
+DefaultStore is the subsection of SKU. It will first inherit from the same 
+DefaultStore in its parent SKU, then inherit other DefaultStore in the same SKU. 
+DefaultStore with the big default store ID will inherit the setting from one with 
+the small default store ID. If there are more than one small default store ID, 
+it will use the biggest one to be inherit. Here is the example. Four PcdsDynamicExHii
+sections are defined.
+
+# Four PcdsDynamicExHii section
+[PcdsDynamicExHii.common.Default.Standard]
+[PcdsDynamicExHii.common.Default.Manufacturing]
+[PcdsDynamicExHii.common.Sku1.Standard]
+[PcdsDynamicExHii.common.Sku1.Manufacturing]
+
+# DEFAULT Manufacturing setting based on two sections
+[PcdsDynamicExHii.common.Default.Standard]
+[PcdsDynamicExHii.common.Default.Manufacturing]
+
+# SKU1 Standard setting based on two sections
+[PcdsDynamicExHii.common.Default.Standard]
+[PcdsDynamicExHii.common.Sku1.Standard]
+
+# SKU1 Manufacturing setting based on four sections
+[PcdsDynamicExHii.common.Default.Standard]
+[PcdsDynamicExHii.common.Default.Manufacturing]
+[PcdsDynamicExHii.common.Sku1.Standard]
+[PcdsDynamicExHii.common.Sku1.Manufacturing]
+
 **_PcdValues_**
 
 PCD values are optional for `[PcdsDynamicExDefault]` sections. The PCD values
@@ -761,7 +837,7 @@ the _UEFI Specification_ for a description of these attributes.
   gNoSuchTokenSpaceGuid.PcdOemBootOptionPath|0x2338|100|" "              # VOID*
   gNoSuchTokenSpaceGuid.PcdEnableFastBoot   |0x239C|FALSE                # BOOLEAN
 
-[PcdsDynamicExHii.IA32, PcdsDynamicExHii.X64.Sku1]
+[PcdsDynamicExHii.IA32, PcdsDynamicExHii.X64.Sku1.Standard]
   gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|0x0053 0x0065 0x0074 0x0075 0x0070|gSysConfigGuid|0x83|0x0
   gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L"Timeout"|gEfiGlobalVariableGuid|0x0  # Variable: L"Timeout"
 ```
