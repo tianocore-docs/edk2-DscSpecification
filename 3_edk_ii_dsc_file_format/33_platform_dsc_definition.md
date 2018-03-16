@@ -1,7 +1,7 @@
 <!--- @file
   3.3 Platform DSC Definition
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -192,9 +192,13 @@ The following are common definitions used by multiple section types.
 <BoolType>             ::= {<BoolVal>} {"{"<BoolVal>"}"}
 <MACRO>                ::= (A-Z)(A-Z0-9_)*
 <MACROVAL>             ::= "$(" <MACRO> ")"
+<PcdFieldName>         ::= <TokenSpaceGuidCName> "." <PcdCName> "." <Field>
 <PcdName>              ::= <TokenSpaceGuidCName> "." <PcdCName>
 <PcdCName>             ::= <CName>
 <TokenSpaceGuidCName>  ::= <CName>
+<Field>                ::= <CName>
+<PcdFieldEntry>        ::= <PcdFieldName> <FS> <PcdFieldValue> <EOL>
+<PcdFieldValue>        ::= {<BoolType>} {<NumValUint8>} {<NumValUint16>} {<NumValUint32>} {<NumValUint64>} {<StringVal>} {<MACROVAL>} {<Expression>}
 <PCDVAL>               ::= "PCD(" <PcdName> ")"
 <UINT8>                ::= {"0x"} {"0X"} (\x0 - \xFF)
 <UINT16>               ::= {"0x"} {"0X"} (\x0 - \xFFFF)

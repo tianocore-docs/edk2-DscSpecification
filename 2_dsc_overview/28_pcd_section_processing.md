@@ -1,7 +1,7 @@
 <!--- @file
   2.8 PCD Section Processing
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -283,8 +283,9 @@ Unique PCDs are identified using the format to identify the named PCD:
 `TokenSpaceGuidCName.PcdCName`
 
 The content for a PCD in this section is the PCD's Name (PCD Token Space Guid
-C name, the PCD C name - separated by a period character,) and Default value.
-Field entries on a line are separated by the pipe "|" character.
+C name, the PCD C name and the optional field name - separated by a period 
+character) and Default value. Field entries on a line are separated by the 
+pipe "|" character.
 
 This specification prohibits setting different PCD access methods for a single
 PCD in different modules. The access methods here are `PcdsFixedAtBuild`,
@@ -373,7 +374,8 @@ prohibited in this type of platform description file.
 **Note:** PCD values within a section are positional, (last wins) if a PCD is
 listed more than one time within a section. List a PCD in one of the other
 access methods is allowed, provided a single access method must be used for all
-instances of the PCD.
+instances of the PCD. If PCD field value is listed, it will override PCD value 
+even if PCD value is after PCD field value.
 **********
 
 #### 2.8.3.9 Library Instances

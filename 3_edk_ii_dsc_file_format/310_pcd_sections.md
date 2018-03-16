@@ -107,6 +107,9 @@ value. If not provided, the maximum length will be calculated as the largest of
 the size of the data in the DSC file, the size of the data in the INF file or
 the size of the data in the DEC file that declares the PCD.
 
+PCDs with a C strucutre type is also a VOID* PCD. Its value can be specified like
+normal VOID* PCD, and also be specified by its structure field.
+
 Refer to the _EDK II Build Specification_ for the description of the PCD
 processing rules.
 
@@ -218,7 +221,7 @@ fields that are separated by the pipe character, "|".
 <SkuIdS>        ::= <Keyword> [<FS> <Keyword>]*
 <Keyword>       ::= <UiName>
 <UiName>        ::= <Word>
-<FabStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>}
+<FabStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>} {<PcdFieldEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
                       {<BoolType>} {<Expression>}
@@ -326,7 +329,7 @@ of the DSC file.
 <SkuIdS>        ::= <Keyword> [<FS> <Keyword>]*
 <Keyword>       ::= <UiName>
 <UiName>        ::= <Word>
-<PimStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>}
+<PimStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>} {<PcdFieldEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
                       {<BoolType>} {<Expression>}
@@ -449,16 +452,16 @@ sections of the DSC file.
 <PcdsDefault>    ::= "[PcdsDynamicDefault" [<PddAttribs>] "]" <EOL>
                      <PddEntries>*
 <PddEntries>     ::= {<MacroDefinition>} {<IncludeStatement>}
-                     {<TS> <MinEntry>}
+                     {<TS> <MinEntry>} {<TS> <PcdFieldEntry>}
 <PddAttribs>     ::= <attrs> ["," <TS> "PcdsDynamicDefault" <attrs>]*
 <PcdsVpd>        ::= "[PcdsDynamicVpd" [<PdvAttribs>] "]" <EOL>
                      <PdvEntries>*
 <PdvAttribs>     ::= <attrs> [ "," <TS> "PcdsDynamicVpd" <attrs>]*
-<PdvEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <VpdEntry>}
+<PdvEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <VpdEntry>} {<TS> <PcdFieldEntry>}
 <PcdsHii>        ::= "[PcdsDynamicHii" [<PdhAttribs>] "]" <EOL>
                      <PcdHiiEntries>*
 <PdhAttribs>     ::= <phattrs> ["," <TS> "PcdsDynamicHii <phattrs>]* <PdvEntries>*
-<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>}
+<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>} {<TS> <PcdFieldEntry>}
 <attrs>          ::= "." <arch> ["." <SkuIds>]
 <phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
@@ -662,18 +665,18 @@ sections of the DSC file.
 <Pcds>           ::= {<PcdsExDefault>} {<PcdsExVpd>} {<PcdsExHii>}
 <PcdsExDefault>  ::= "[PcdsDynamicExDefault" [<PddAttribs>] "]" <EOL>
                      <PddEntries>*
-<PddEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <MinEntry>}
+<PddEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <MinEntry>} {<TS> <PcdFieldEntry>}
 <PddAttribs>     ::= <attrs> ["," <TS> "PcdsDynamicExDefault" <attrs>]*
 <PcdsExVpd>      ::= "[PcdsDynamicExVpd" [<PdvAttribs>] "]" <EOL>
                      <PdvEntries>*
 <PdvAttribs>     ::= <attrs> [ "," <TS> "PcdsDynamicExVpd" <attrs>]*
 <PdvEntries>     ::= {<MacroDefinition>} {<IncludeStatement>}
-                     {<TS> <VpdEntry>}
+                     {<TS> <VpdEntry>} {<TS> <PcdFieldEntry>}
 <PcdsExHii>      ::= "[PcdsDynamicExHii" [<PdhAttribs>] "]" <EOL>
                      <PcdHiiEntries>*
 <PdhAttribs>     ::= <phattrs> ["," <TS> "PcdsDynamicExHii <phattrs>]*
                      <PdvEntries>*
-<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>}
+<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>} {<TS> <PcdFieldEntry>}
 <attrs>          ::= "." <arch> ["." <SkuIds>]
 <phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
