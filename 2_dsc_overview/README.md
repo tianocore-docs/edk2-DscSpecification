@@ -1,7 +1,7 @@
 <!--- @file
   2 DSC Overview
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -50,7 +50,7 @@ methods). EDK II DSC files are a list of:
 There are no new features or format introduced in this specification.
 
 DSC files that use any new features must use the new
-`DSC_SPECIFICATION = 0x0001001B` in the `[Defines]` section. Older DSC files
+`DSC_SPECIFICATION = 0x0001001C` in the `[Defines]` section. Older DSC files
 that do not use any of these features do not need to update the
 `DSC_SPECIFICATION` value.
 

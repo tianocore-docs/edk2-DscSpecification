@@ -1,7 +1,7 @@
 <!--- @file
   Appendix B Sample EDK II DSC File
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -72,7 +72,7 @@ DSC file is not permitted.
   PLATFORM_NAME           = NT32
   PLATFORM_GUID           = EB216561-961F-47EE-9EF9-CA426EF547C2
   PLATFORM_VERSION        = 0.5
-  DSC_SPECIFICATION       = 0x0001001B
+  DSC_SPECIFICATION       = 0x0001001C
   OUTPUT_DIRECTORY        = Build/NT32
   SUPPORTED_ARCHITECTURES = IA32
   BUILD_TARGETS           = DEBUG|RELEASE

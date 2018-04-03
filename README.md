@@ -1,7 +1,7 @@
 <!--- @file
   README.md for EDK II Platform Description (DSC) File Specification
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -186,3 +186,9 @@ Copyright (c) 2006-2017, Intel Corporation. All rights reserved.
 |            | [#645](https://bugzilla.tianocore.org/show_bug.cgi?id=645) DSC Spec: Remove Restriction on Using NULL in [LibraryClasses] Section                                                                                                                                                            |                |
 |            | [#669](https://bugzilla.tianocore.org/show_bug.cgi?id=669) DSC Spec: Add multi-arg support to PREBUILD/POSTBUILD                                                                                                                                                                             |                |
 |            | [#597](https://bugzilla.tianocore.org/show_bug.cgi?id=597) DSC Spec: Hii type Pcd VariableName is NOT allowed to be empty string                                                                                                                                                             |                |
+| 1.28       | Update Version to 1.28                                                                                                                                                                                                                                                                       | Mar 2018       |
+|            | Update Skuid value to support Hex number                                                                                                                                                                                                                                                     |                |
+|            | Add flexible PCD value format into spec                                                                                                                                                                                                                                                      |                |
+|            | Add syntax to support SKU ID inherit from another SKU ID                                                                                                                                                                                                                                     |                |
+|            | Add DefaultStores section to describe the default setting                                                                                                                                                                                                                                    |                |
+|            | Add structure PCD field value assignment syntax                                                                                                                                                                                                                                              |                |

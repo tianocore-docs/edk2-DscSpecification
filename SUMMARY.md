@@ -63,6 +63,7 @@
   * [3.10 PCD Sections](3_edk_ii_dsc_file_format/310_pcd_sections.md#310-pcd-sections)
   * [3.11 [Components] Sections](3_edk_ii_dsc_file_format/311_[components]_sections.md#311-components-sections)
   * [3.12 [UserExtensions] Sections](3_edk_ii_dsc_file_format/312_[userextensions]_sections.md#312-userextensions-sections)
+  * [3.13 [DefaultStores] Sections](3_edk_ii_dsc_file_format/313_[defaultstores]_sections.md#313-defaultstores-sections)
 * [Appendix A Variables](appendix_a_variables.md#appendix-a-variables)
 * [Appendix B Sample EDK II DSC File](appendix_b_sample_edk_ii_dsc_file.md#appendix-b-sample-edk-ii-dsc-file)
 * [Appendix C Module Types](appendix_c_module_types.md#appendix-c-module-types)

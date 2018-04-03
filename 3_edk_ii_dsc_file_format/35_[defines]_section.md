@@ -1,7 +1,7 @@
 <!--- @file
   3.5 [Defines] Section
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -72,7 +72,7 @@ global assignments.
 **********
 
 This revision of specification does not add new features. New EDK II DSC files
-must include the statement: `DSC_SPECIFICATION = 0x0001001B` in this section.
+must include the statement: `DSC_SPECIFICATION = 0x0001001C` in this section.
 Existing DSC files do not need to update the value.
 
 Individual items must appear on a single line, they may not span multiple lines.
@@ -157,10 +157,10 @@ Code>          ::= ISO 639-2 Format Language code
 **_SpecVal_**
 
 New DSC files or DSC files that get updated to use any of the new features
-defined in this specification must ensure that the 0x0001001B value is used.
+defined in this specification must ensure that the 0x0001001C value is used.
 The EDK II build system must maintain backward compatibility, therefore, there
 is no requirement to change existing DSC files if no other content changes.
-This value may also be specified as a decimal value of 1.27.
+This value may also be specified as a decimal value of 1.28.
 
 **_SkuUiName_**
 
@@ -221,7 +221,7 @@ compiling them into a machine language program.
   PLATFORM_NAME           = NT32
   PLATFORM_GUID           = EB216561-961F-47EE-9EF9-CA426EF547C2
   PLATFORM_VERSION        = 0.3
-  DSC_SPECIFICATION       = 0x0001001B
+  DSC_SPECIFICATION       = 0x0001001C
   OUTPUT_DIRECTORY        = Build/Nt32
   SUPPORTED_ARCHITECTURES = IA32
   BUILD_TARGETS           = DEBUG|RELEASE
