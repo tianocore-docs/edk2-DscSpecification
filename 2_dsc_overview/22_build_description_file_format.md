@@ -1,7 +1,7 @@
 <!--- @file
   2.2 Build Description File Format
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -643,7 +643,22 @@ The following are examples of conditional directives.
 !endif
 ```
 
-### 2.2.9 Expressions
+### 2.2.9 !error Statement
+
+The `!error` statement may appear within any section of EDK II DSC file. The
+argument of this statement is an error message, it causes build tool to stop
+at the location where the statement is encountered and error message following
+the `!error` statement is output as a message.
+
+The following example show the valid usage of the `!error` statement.
+
+```ini
+!if $(FEATURE_ENABLE) == TRUE
+  !error "unsupported feature!"
+!endif
+```
+
+### 2.2.10 Expressions
 
 Expressions can be used in conditional directive comparison statements and in
 value fields for Macros and PCDs in the DSC and FDF files.
@@ -704,7 +719,7 @@ For logical expressions, any non-zero value must be considered `TRUE`.
 
 Invalid expressions must cause a build break with an appropriate error message.
 
-### 2.2.10 Section Handling
+### 2.2.11 Section Handling
 
 The DSC file parsing routines must process the sections so that common
 architecture sections are logically merged with the architecturally specific

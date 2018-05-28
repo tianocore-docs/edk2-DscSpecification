@@ -736,3 +736,31 @@ as well as to define new entries.
 character extension, and would not processed by `make` or `nmake` commands. It
 might just as well have been "foo".
 **********
+
+### 3.3.5 !error Statements
+
+Use of this statement is optional.
+
+#### Summary
+This section defines the `!error` statement in EDK II Platform (DSC) files.
+This statement is used to cause build tool to stop at the location where the
+statement is encountered and error message following the `!error` statement
+is output as a message.
+
+#### Prototype
+
+`<ErrorStatement> ::= <TS> "!error" <MTS> <ErrorMessage> <EOL>`
+`<ErrorMessage>   ::= <AsciiString>`
+
+#### Parameters
+
+**_ErrorMessage_**
+
+It should in the same line with `!error` statement, and it can consist of several
+words not necessarily in quotes.
+
+#### Example (EDK II DSC)
+
+```
+!error "unsupported feature!"
+```
