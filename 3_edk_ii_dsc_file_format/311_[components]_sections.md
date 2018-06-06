@@ -1,7 +1,7 @@
 <!--- @file
   3.11 [Components] Sections
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -156,14 +156,16 @@ modules in a binary image (the FDF file describes that ordering).
 <ClassInstanceMap> ::= <ClassName> <FS> <InfFilename> <EOL>
 <ClassName>        ::= (A-Z)(a-zA-Z0-9)*
 <NullLibInstances> ::= "NULL" <FS> <InfFilename> <EOL>
-<PcdsFeatureFlag>  ::= "<PcdsFeatureFlag>" <EOL> <PcdsFFEntries>*
+<PcdsFeatureFlag>  ::= "<PcdsFeatureFlag>" <EOL> 
+                        <PcdsFFEntries>*
 <PcdsFFEntries>    ::= {<MacroDefinition>} {<IncludeStatement>} {<TS>
-                       <PcdsFeatureEntry>}
+                       <PcdFeatureEntry>}
 <PcdFeatureEntry>  ::= <PcdName> <FS> <PcdFeatureValue> <EOL>
 <PcdFeatureValue>  ::= {<BoolType>} {<MACROVAL>} {<Expression>}
-<PcdsFixed>        ::= "<PcdsFixedAtBuild>" <EOL> <PcdEntries>*
+<PcdsFixed>        ::= "<PcdsFixedAtBuild>" <EOL>
+                        <PcdEntries>*
 <PcdEntries>       ::= {<MacroDefinition>} {<IncludeStatement>}
-                       {<TS> <PcdsEntry>}
+                       {<TS> <PcdEntry>}
 <PcdsPatchable>    ::= "<PcdsPatchableInModule>" <EOL>
                        <PcdEntries>*
 <PcdEntry>         ::= <PcdName> [<FS> <PcdValue>] <EOL>

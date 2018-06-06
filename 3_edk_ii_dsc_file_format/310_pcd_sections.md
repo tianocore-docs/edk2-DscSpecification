@@ -498,7 +498,7 @@ sections of the DSC file.
                        {<NumValUint64>} {<Expression>}
                      else:
                        <VpdMaxSize>
-<VpdMaxSize>     ::= <NumValUint32> [<FS> <StringValue>]
+<VpdMaxSize>     ::= {<LongNum>} {<UINT32>} [<FS> <StringValue>]
 <HiiEntry>       ::= <PcdName> <FS> <HiiString> <Field2> <EOL>
 <HiiString>      ::= {<CArray>} {<UnicodeString>}
 <Field2>         ::= <FS> <VariableGuid> <FS> <VariableOffset> [<ValueField>]
@@ -713,7 +713,7 @@ sections of the DSC file.
                        {<NumValUint64>} {<Expression>}
                      else:
                        <VpdMaxSize>
-<VpdMaxSize>     ::= <NumValUint32> [<FS> <StringValue>]
+<VpdMaxSize>     ::= {<LongNum>} {<UINT32>} [<FS> <StringValue>]
 <HiiEntry>       ::= <PcdName> <FS> <HiiString> <Field2> <EOL>
 <HiiString>      ::= {<CArray>} {<UnicodeString>}
 <Field2>         ::= <FS> <VariableGuid> <FS> <VariableOffset> [<ValueField>]
