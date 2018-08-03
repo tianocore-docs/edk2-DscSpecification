@@ -235,7 +235,7 @@ fields that are separated by the pipe character, "|".
                       {<NumValUint64>} {<Expression>}
                     else:
                       <StringValue> [<MaxSize>]
-<MaxSize>       ::= <FS> "VOID*" <FS> {<Number>} {<Expression>}
+<MaxSize>       ::= <FS> "VOID*" <FS> {<IntNum>} {<UINT16>}
 <StringValue>   ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 ```
 
@@ -343,7 +343,7 @@ of the DSC file.
                       {<NumValUint64>} {<Expression>}
                     else:
                       <StringValue> [<MaxSize>]
-<MaxSize>       ::= <FS> {<Number>} {<Expression>}
+<MaxSize>       ::= <FS> "VOID*" <FS> {<IntNum>} {<UINT16>}
 <StringValue>   ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 ```
 
@@ -482,7 +482,7 @@ sections of the DSC file.
                      else:
                        <StringValue> [<MaxSize>]
 <MaxSize>        ::= <FS> "VOID*" [<FS> <SizeValue>]
-<SizeValue>      ::= {<Number>} {<Expression>}
+<SizeValue>      ::= {<IntNum>} {<UINT16>}
 <StringValue>    ::= {<StringVal>} {<MACROVAL>} {<Expression>}
 <VpdEntry>       ::= <PcdName> <FS> <VpdOffset> [<FS> <VpdData>] <EOL>
 <VpdOffset>      ::= {<Number>} {"*"}
@@ -498,7 +498,7 @@ sections of the DSC file.
                        {<NumValUint64>} {<Expression>}
                      else:
                        <VpdMaxSize>
-<VpdMaxSize>     ::= {<LongNum>} {<UINT32>} [<FS> <StringValue>]
+<VpdMaxSize>     ::= {<IntNum>} {<UINT16>} [<FS> <StringValue>]
 <HiiEntry>       ::= <PcdName> <FS> <HiiString> <Field2> <EOL>
 <HiiString>      ::= {<CArray>} {<UnicodeString>}
 <Field2>         ::= <FS> <VariableGuid> <FS> <VariableOffset> [<ValueField>]

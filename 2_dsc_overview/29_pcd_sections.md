@@ -1,7 +1,7 @@
 <!--- @file
   2.9 PCD Sections
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -114,7 +114,7 @@ The following are typical examples of the `[PcdsFixedAtBuild]` section tag (the
 
 Format of a point (VOID*) entry in this section is:
 
-`PcdTokenSpaceGuidCName.PcdCName|Value[|DatumType|MaximumDatumSize]]`
+`PcdTokenSpaceGuidCName.PcdCName|Value[|DatumType|MaximumDatumSize]`
 
 Format for Boolean and numeric entries in this section is:
 
@@ -159,7 +159,7 @@ The following are typical examples of the `[PcdsPatchableInModule]` section tag
 
 Format of an entry in this section is:
 
-`PcdTokenSpaceGuidCName.PcdCName|Value[|DatumType[|MaximumDatumSize]]`
+`PcdTokenSpaceGuidCName.PcdCName|Value[|DatumType|MaximumDatumSize]`
 
 #### Example
 
