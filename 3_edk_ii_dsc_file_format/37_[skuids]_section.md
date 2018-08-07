@@ -52,8 +52,7 @@ The `!include` file can only contain an ASCII (not Unicode) list of
 ```c
 <SkuId>     ::= "[SkuIds]" <EOL>
                 {<Statement>*} {<IncludeStatement>}
-<Statement> ::= <TS> <Number> <FS> <UiName> [<FS> <UiName>] <EOL>
-<UiName>    ::= <Word>
+<Statement> ::= <TS> <Number> <FS> <CName> [<FS> <CName>] <EOL>
 ```
 
 #### Example

@@ -47,8 +47,7 @@ be applied in PcdsDynamicHii/PcdsDynamicExHii section.
 ```c
 <DefaultStore>     ::= "[DefaultStores]" <EOL>
                 {<Statement>*}
-<Statement> ::= <TS> <Number> <FS> <UiName> <EOL>
-<UiName>    ::= <Word>
+<Statement> ::= <TS> <Number> <FS> <CName> <EOL>
 ```
 
 #### Example

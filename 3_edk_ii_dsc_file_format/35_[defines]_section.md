@@ -131,7 +131,7 @@ The `!include` statement may be used in a `[Defines]` section.
                    <IncludeStatement>*
                    <MacroDefinition>*
 <SpecValue>    ::= {<HexVersion>} {(0-9)+ "." (0-9)+}
-<SkuUiName>    ::= <Word> [<FS> <Word>]*
+<SkuUiName>    ::= <CName> [<FS> <CName>]*
 <ArchList>     ::= <arch> [<FS> <arch>]*
 <AddressStmts> ::= "FIX_LOAD_TOP_MEMORY_ADDRESS" <Eq> <Address> <EOL>
 <Address>      ::= <NumValUint64>

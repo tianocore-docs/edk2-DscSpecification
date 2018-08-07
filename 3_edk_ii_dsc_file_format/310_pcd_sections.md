@@ -138,8 +138,7 @@ file.
 <attribs>      ::= <attrs> ["," <TS> "PcdsFeatureFlag" <attrs>]*
 <attrs>        ::= "." <arch> ["." <SkuIds>]
 <SkuIdS>       ::= <Keyword> [<FS> <Keyword>]*
-<Keyword>      ::= <UiName>
-<UiName>       ::= <Word>
+<Keyword>      ::= <CName>
 <PcdEntry>     ::= <TS> <PcdName> <FS> <PcdValue> <EOL>
 <PcdValue>     ::= {<BoolType>} {<MACROVAL>} {<Expression>}
 ```
@@ -219,8 +218,7 @@ fields that are separated by the pipe character, "|".
 <attribs>       ::= <attrs> ["," <TS> "PcdsFixedAtBuild" <attrs>]*
 <attrs>         ::= "." <arch> ["." <SkuIds>]
 <SkuIdS>        ::= <Keyword> [<FS> <Keyword>]*
-<Keyword>       ::= <UiName>
-<UiName>        ::= <Word>
+<Keyword>       ::= <CName>
 <FabStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>} {<PcdFieldEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
@@ -327,8 +325,7 @@ of the DSC file.
                     <attrs>]*
 <attrs>         ::= "." <arch> ["." <SkuIds>]
 <SkuIdS>        ::= <Keyword> [<FS> <Keyword>]*
-<Keyword>       ::= <UiName>
-<UiName>        ::= <Word>
+<Keyword>       ::= <CName>
 <PimStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>} {<PcdFieldEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
@@ -466,8 +463,7 @@ sections of the DSC file.
 <phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
 <DefaultStore>   ::= <Keyword>
-<Keyword>        ::= <UiName>
-<UiName>         ::= <Word>
+<Keyword>        ::= <CName>
 <MinEntry>       ::= <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>       ::= if (pcddatumtype == "BOOLEAN"):
                        {<BoolType>} {<Expression>}
@@ -681,8 +677,7 @@ sections of the DSC file.
 <phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
 <DefaultStore>   ::= <Keyword>
-<Keyword>        ::= <UiName>
-<UiName>         ::= <Word>
+<Keyword>        ::= <CName>
 <MinEntry>       ::= <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>       ::= if (pcddatumtype == "BOOLEAN"):
                        {<BoolType>} {<Expression>}
