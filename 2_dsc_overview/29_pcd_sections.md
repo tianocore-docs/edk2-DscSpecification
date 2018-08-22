@@ -35,7 +35,7 @@
 
 The required content for the FeatureFlag PCD is the PCD Token Space Guid C
 name, the PCD's C name (these two entries are separated by the period
-character), and a Boolean value of either TRUE, FALSE, 1 or 0 The PCD name
+character), and a Boolean value of either TRUE, FALSE, 1 or 0. The PCD name
 and value entries are separated by the pipe "|" character.
 
 FeatureFlag PCDs can be used in conditional directive statements within the DSC
@@ -57,7 +57,6 @@ omitted in these examples:
 [PcdsFeatureFlag.common]
 [PcdsFeatureFlag.IA32]
 [PcdsFeatureFlag.X64]
-[PcdsFeatureFlag.IPF]
 [PcdsFeatureFlag.EBC]
 ```
 
@@ -107,7 +106,6 @@ The following are typical examples of the `[PcdsFixedAtBuild]` section tag (the
 [PcdsFixedAtBuild.common]
 [PcdsFixedAtBuild.IA32]
 [PcdsFixedAtBuild.X64]
-[PcdsFixedAtBuild.IPF]
 [PcdsFixedAtBuild.EBC]
 [PcdsFixedAtBuild.$(arch).$(SkuIdentifier)]
 ```
@@ -152,7 +150,6 @@ The following are typical examples of the `[PcdsPatchableInModule]` section tag
 [PcdsPatchableInModule]
 [PcdsPatchableInModule.IA32]
 [PcdsPatchableInModule.X64]
-[PcdsPatchableInModule.IPF]
 [PcdsPatchableInModule.EBC]
 [PcdsPatchableInModule.$(arch).$(SkuIdentifier)]
 ```
@@ -258,7 +255,8 @@ described in the following table.
 
 ```ini
 [PcdsDynamicHii.common.Sku_Two]
-  NoSuchTokenSpaceGuid.PcdPreAllocatedMem| 0x0053 0x0065 0x0074 0x0075 0x0070|gSysconfigGuid|0x000000A9|0x3
+  NoSuchTokenSpaceGuid.PcdPreAllocatedMem|L"TestVariable"|gSysconfigGuid|0x000000A9|0x3
+
 [PcdsDynamicHii.common.DEFAULT]
   gEfiMdeModulePkgTokenSpaceGuid.PcdValidRange|L"PcdValidRange"|gEfiGlobalVariableGuid|0x07|0|BS,RT,NV
 ```
@@ -355,7 +353,7 @@ described in Table 9 HII Attributes.
 
 ```ini
 [PcdsDynamicExHii.IA32.Sku_Two]
-  gNoSuchTokenSpaceGuid.PcdPreAllocatedMem|0x0053 0x0065 0x0074 0x0075 0x0070|gSysconfigGuid|0x000000A9|0x11
+  gNoSuchTokenSpaceGuid.PcdPreAllocatedMem|L"TestVariable"|gSysconfigGuid|0x000000A9|0x11
 
 [PcdsDynamicExHii.common.DEFAULT]
   gEfiMdeModulePkgTokenSpaceGuid.PcdValidRange|L"PcdValidRange"|gEfiGlobalVariableGuid|0x07|0|BS,RT,NV

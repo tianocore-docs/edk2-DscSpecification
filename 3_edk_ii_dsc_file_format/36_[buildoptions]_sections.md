@@ -70,7 +70,7 @@ replacement) is:
 
 * Highest, DSC file's component scoped `<BuildOptions>` for individual INF
   files.
-* `[BuildOptions.$(arch).CodeBase.Edk2ModuleType]`
+* `[BuildOptions.$(arch).CodeBase.ModuleType]`
 * `[BuildOptions.$(arch).CodeBase]`
 * `[BuildOptions.common.CodeBase]`
 * `[BuildOptions.$(arch)]`
@@ -221,7 +221,7 @@ The logical result is:
 
 ```c
 <BuildOptions> ::= "[BuildOptions" [<attribs>] "]" <EOL> <Statements>*
-<attribs>      ::= "." <arch> [<CodeBase> ["." <Edk2ModuleType>]]
+<attribs>      ::= "." <arch> [<CodeBase> ["." <ModuleType>]]
 <CodeBase>     ::= "." {"Common"} {"EDK"} {"EDKII"}
 <Statements>   ::= {<MacroDefinition>} {<IncludeStatement>}
                    {<TS> <BStatement>}

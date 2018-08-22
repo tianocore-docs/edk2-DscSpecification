@@ -58,7 +58,7 @@ different sections and their usage are described below. The text of a given
 section can be used for multiple section names by separating the section names
 with a comma. For example:
 
-`[LibraryClasses.X64, LibraryClasses.ipf]`
+`[LibraryClasses.X64, LibraryClasses.EBC]`
 
 The content below each section heading is processed by the parsing utilities in
 the order that they occur in the file. The precedence for processing these
@@ -183,10 +183,10 @@ case sensitive because of multiple environment support.
   appear before and after the period character (as in: _MdePkg.1_).
 
 * Additionally, all EDK II directories that are architecturally dependent must
-  use a name with only the first character capitalized. _Ia32_, _Ipf_, _X64_
-  and _Ebc_ are valid architectural directory names. IA32, IPF and EBC are not
-  acceptable directory names, and may cause build breaks. From a build tools
-  perspective, IA32 is not equivalent to Ia32 or ia32.
+  use a name with only the first character capitalized. _Ia32_, _X64_ and _Ebc_
+  are valid architectural directory names. IA32, X64 and EBC are not acceptable
+  directory names, and may cause build breaks. From a build tools perspective,
+  IA32 is not equivalent to Ia32 or ia32.
 
 The build tools must be able to process the tool definitions file:
 `tools_def.txt` (describing the location and flags for compiler and user
@@ -202,10 +202,10 @@ C Code files, and as well as specifying the rules for directory and file names.
 This section is meant to highlight those rules as they apply to the content of
 the INF files.
 
-Architecture keywords (`IA32`, `IPF`, `X64` and `EBC`) are used by build tools
+Architecture keywords (`IA32`, `X64` and `EBC`) are used by build tools
 and in metadata files for describing alternate threads for processing of files.
 These keywords must not be used for describing directory paths. Additionally,
-directory names with architectural names (_Ia32_, _Ipf_, _X64_ and _Ebc_) do
+directory names with architectural names (_Ia32_, _X64_ and _Ebc_) do
 not automatically cause the build tools or meta-data files to follow these
 alternate paths. Directories and Architectural Keywords are similar in name
 only.
@@ -473,7 +473,7 @@ follow the same rules as architectural modifiers.
   DEFINE MDEMEM = $(MDE)/PeiMemoryAllocationLib
   MemoryAllocationLib|$(MDEMEM)/PeiMemoryAllocationLib.inf
 
-[LibraryClasses.IPF]
+[LibraryClasses.EBC]
   # Cannot use $(PERF) or $(MDEMEM)
   # Can use $(MDE) from the common section
   PalLib|$(MDE)/UefiPalLib/UefiPalLib.inf
@@ -676,16 +676,20 @@ be tested as a string.
 
 | Operator                                     | Use with Data Types   | Notes                                                                                                                                                                                                                         | Priority |
 | -------------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `or`, `OR`, <code>&#124;&#124;</code>        | Number, Boolean       |                                                                                                                                                                                                                               | Lowest   |
+| `? :`                                        | All                   | conditional operator                                                                                                                                                                                                          | Lowest   |
+| `or`, `OR`, <code>&#124;&#124;</code>        | Number, Boolean       |                                                                                                                                                                                                                               |          |
+| `XOR`, `xor`                                 | Number, Boolean       |                                                                                                                                                                                                                               |          |
 | `and`, `AND`, `&&`                           | Number, Boolean       |                                                                                                                                                                                                                               |          |
 | <code>&#124;</code>                          | Number, Boolean       | Bitwise OR                                                                                                                                                                                                                    |          |
-| `^`, `xor`, `XOR`                            | Number, Boolean       | Exclusive OR                                                                                                                                                                                                                  |          |
+| `^`                                          | Number, Boolean       | Bitwise XOR                                                                                                                                                                                                                   |          |
 | `&`                                          | Number, Boolean       | Bitwise AND                                                                                                                                                                                                                   |          |
 | `==`, `!=`, `EQ`, `NE`, `IN`                 | All types             | The IN operator can only be used to test a quoted unary literal string for membership in a list.                                                                                                                              |          |
-|                                              |                       | Space characters must be used before and after the letter operators Strings compared to boolean or numeric values using "==" or "EQ" will always return FALSE, while using the "!=" or "NE" operators will always return TRUE |          |
-| `<=`, `>=`, `<`, `>`, `LE`, `GE`, `LT`, `GT` | All                   | Space characters must be used before and after the letter operators.                                                                                                                                                          |          |
-| `+`, `-`                                     | Number, Boolean       | Cannot be used with strings - the system does not automatically do concatenation. Tools should report a warning message if these operators are used with both a boolean and number value                                      |          |
-| `!`, `not`, `NOT`                            | Number, Boolean       |                                                                                                                                                                                                                               | Highest  |
+|                                              |                       | Strings compared to boolean or numeric values using "==" or "EQ" will always return FALSE, while using the "!=" or "NE" operators will always return TRUE                                                                     |          |
+| `<=`, `>=`, `<`, `>`, `LE`, `GE`, `LT`, `GT` | All                   |                                                                                                                                                                                                                               |          |
+| `<<`, `>>`                                   | Number, Boolean       |                                                                                                                                                                                                                               |          |
+| `+`, `-`                                     | Number, Boolean       | Cannot be used with strings - the system does not automatically do concatenation.                                                                                                                                             |          |
+| `*`, `/`, `%`,                               | Number, Boolean       | Cannot be used with strings.                                                                                                                                                                                                  |          |
+| `!`, `not`, `NOT`, `~`                       | Number, Boolean       |                                                                                                                                                                                                                               | Highest  |
 
 The "IN" operator can only be used to test a literal string against elements
 in the following global variables:

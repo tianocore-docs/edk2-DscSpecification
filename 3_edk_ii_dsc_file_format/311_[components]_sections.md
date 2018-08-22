@@ -204,7 +204,7 @@ modules in a binary image (the FDF file describes that ordering).
 <Equal>            ::= {<AppendEq>} {<ReplaceEq>}
 <AppendEq>         ::= <Eq>
 <ReplaceEq>        ::= <TS> "==" <TS>
-<Tarch>            ::= {"IA32"} {"X64"} {"IPF"} {"EBC"} {*} {<OA>}
+<Tarch>            ::= {"IA32"} {"X64"} {"EBC"} {*} {<OA>}
 <OA>               ::= (A-Z) (A-Z0-9)*
 <Family>           ::= _Family_
 <Attribute>        ::= _Attribute_

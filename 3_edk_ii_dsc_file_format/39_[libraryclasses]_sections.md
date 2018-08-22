@@ -77,7 +77,7 @@ When parsing the DSC file, the precedence rules must be followed.
 ```c
 <LibraryClasses>   ::= "[LibraryClasses" [<attribs>] "]" <EOL> <LcStatements>*
 <attribs>          ::= <attrs> ["," "LibraryClasses" <attrs>]*
-<attrs>            ::= "." <arch> ["." <Edk2ModuleType>]
+<attrs>            ::= "." <arch> ["." <ModuleType>]
 <LcStatements>     ::= {<MacroDefinition>} {<IncludeStatment>}
                        {<TS> <LcEntry>}
 <LcEntry>          ::= <LibraryClassName> <FS> <LibraryInstance> <EOL>

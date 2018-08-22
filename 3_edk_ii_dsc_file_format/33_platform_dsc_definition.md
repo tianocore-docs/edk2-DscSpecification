@@ -111,7 +111,7 @@ The following are common definitions used by multiple section types.
 <Chars>                ::= (a-zA-Z0-9_)
 <Digit>                ::= (0-9)
 <NonDigit>             ::= (a-zA-Z_)
-<Identifier>           ::= [<NonDigit> <Chars>]*
+<Identifier>           ::= <NonDigit> <Chars>*
 <CName>                ::= <Identifier> # A valid C variable name.
 <AsciiChars>           ::= (0x21 - 0x7E)
 <CChars>               ::= [{0x21} {(0x23 - 0x26)} {(0x28 - 0x5B)}
@@ -198,7 +198,9 @@ The following are common definitions used by multiple section types.
 <TokenSpaceGuidCName>  ::= <CName>
 <Field>                ::= <CName>
 <PcdFieldEntry>        ::= <PcdFieldName> <FS> <PcdFieldValue> <EOL>
-<PcdFieldValue>        ::= {<BoolType>} {<NumValUint8>} {<NumValUint16>} {<NumValUint32>} {<NumValUint64>} {<StringVal>} {<MACROVAL>} {<Expression>}
+<PcdFieldValue>        ::= {<BoolType>} {<NumValUint8>} {<NumValUint16>}
+                           {<NumValUint32>} {<NumValUint64>} {<StringVal>}
+                           {<MACROVAL>} {<Expression>}
 <PCDVAL>               ::= "PCD(" <PcdName> ")"
 <UINT8>                ::= {"0x"} {"0X"} (\x0 - \xFF)
 <UINT16>               ::= {"0x"} {"0X"} (\x0 - \xFFFF)
@@ -264,27 +266,10 @@ The following are common definitions used by multiple section types.
                            {"DXE_SMM_DRIVER"} {"UEFI_DRIVER"}
                            {"UEFI_APPLICATION"} {"USER_DEFINED"}
 <ModuleTypeList>       ::= <ModuleType> [" " <ModuleType>]*
-<IdentifierName>       ::= <TS> {<MACROVAL>} {<PcdName>} <TS>
-<MembershipExpression> ::= {<TargetExpress>} {<ArchExpress>}
-                           {<ToolExpress>}
-<NotOp>                ::= {"NOT"} {"not"} <MTS>
-<InOp>                 ::= <MTS> [<NotOp>] {"IN"} {"in"} <MTS>
-<TargetExress>         ::= (A-Z) (A-Z0-9)* <InOp> "$(TARGET)"
-<ArchExpress>          ::= <DblQuote> <Arch> <DblQuote> <InOp>
-                           "$(ARCH)"
-<Arch>                 ::= {"IA32"} {"X64"} {"IPF"} {"EBC"} {<OA>}
-<ToolExpress>          ::= (A-Z) (a-zA-Z0-9)* <InOp> "$(TOOL_CHAIN_TAG)"
 <Boolean>              ::= {<BoolType>} {<Expression>}
 <EOL>                  ::= <TS> 0x0A 0x0D
 <OA>                   ::= (a-zA-Z)(a-zA-Z0-9)*
-<arch>                 ::= {"IA32"} {"X64"} {"IPF"} {"EBC"} {<OA>}
-                           {"common"}
-<Edk2ModuleType>       ::= {"BASE"} {"SEC"} {"PEI_CORE"} {"PEIM"}
-                           {"DXE_CORE"} {"DXE_DRIVER"}
-                           {"DXE_SAL_DRIVER"}
-                           {"DXE_RUNTIME_DRIVER"}
-                           {"SMM_CORE"} {"DXE_SMM_DRIVER"}
-                           {"UEFI_DRIVER"} {"UEFI_APPLICATION"}
+<arch>                 ::= {"IA32"} {"X64"} {"EBC"} {<OA>} {"COMMON"}
 ```
 
 **********
@@ -342,7 +327,7 @@ must not be expanded by parsing tools.
 
 Other Architecture - One or more user defined target architectures, such as ARM
 or PPC. The architectures listed here must have a corresponding entry in the
-EDK II meta-data file, `Conf/tools_def.txt`. Only `IA32`, `X64`, `IPF` and
+EDK II meta-data file, `Conf/tools_def.txt`. Only `IA32`, `X64`, `COMMON` and
 `EBC` are routinely validated.
 
 **_FileSep_**
@@ -634,10 +619,10 @@ Refer to the EDK II Expression Syntax Specification for additional information.
 #### Example
 
 ```ini
-!if $(IPF_VERSION) == 1
-  [VTF.IPF.MyBsf]
+!if $(EBC_VERSION) == 1
+  [VTF.EBC.MyBsf]
     !ifdef IA32RESET
-      # IPF_VERSION is 1 and IA32RESET defined
+      # EBC_VERSION is 1 and IA32RESET defined
       IA32_RST_BIN           = IA32_RST.BIN
     !endif
     COMP_NAME              = PAL_A
@@ -656,10 +641,10 @@ Refer to the EDK II Expression Syntax Specification for additional information.
       COMP_SYM               = GenPal/PAL_A_GEN.sym
     !endif
     COMP_SIZE              = -
-!elseif $(IPF_VERSION) == 2
-  [VTF.IPF.MyBsf]
+!elseif $(EBC_VERSION) == 2
+  [VTF.EBC.MyBsf]
     !ifdef IA32RESET
-      # IPF_VERSION is 2 and IA32RESET defined
+      # EBC_VERSION is 2 and IA32RESET defined
       IA32_RST_BIN = IA32_RST.BIN
     !endif
     COMP_NAME    = PAL_A

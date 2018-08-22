@@ -58,7 +58,6 @@ This section will typically use one of the following section definitions:
 [Libraries.common]
 [Libraries.IA32]
 [Libraries.X64]
-[Libraries.IPF]
 [Libraries.EBC]
 ```
 

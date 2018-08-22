@@ -133,7 +133,8 @@ file.
 #### Prototype
 
 ```c
-<Pcds>         ::= "[PcdsFeatureFlag" [<attribs>] "]" <EOL> <FFStatments>*
+<Pcds>         ::= "[PcdsFeatureFlag" [<attribs>] "]" <EOL> 
+                   <FFStatments>*
 <FFStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>}
 <attribs>      ::= <attrs> ["," <TS> "PcdsFeatureFlag" <attrs>]*
 <attrs>        ::= "." <arch> ["." <SkuIds>]
@@ -219,7 +220,8 @@ fields that are separated by the pipe character, "|".
 <attrs>         ::= "." <arch> ["." <SkuIds>]
 <SkuIdS>        ::= <Keyword> [<FS> <Keyword>]*
 <Keyword>       ::= <CName>
-<FabStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>} {<PcdFieldEntry>}
+<FabStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>}
+                    {<PcdFieldEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
                       {<BoolType>} {<Expression>}
@@ -267,7 +269,8 @@ must be used.
 #### Example
 
 ```ini
-[PcdsFixedAtBuild.IA32] gEfiMdePkgTokenSpaceGuid.PcdMaximumUnicodeStringLength
+[PcdsFixedAtBuild.IA32]
+  gEfiMdePkgTokenSpaceGuid.PcdMaximumUnicodeStringLength
   gEfiEdkNt32PkgTokenSpaceGuid.PcdWinNtMemorySizeForSecMain|L"64!64"|VOID*|0x10
 
 [PcdsFixedAtBuild.ARM]
@@ -326,7 +329,8 @@ of the DSC file.
 <attrs>         ::= "." <arch> ["." <SkuIds>]
 <SkuIdS>        ::= <Keyword> [<FS> <Keyword>]*
 <Keyword>       ::= <CName>
-<PimStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>} {<PcdFieldEntry>}
+<PimStatements> ::= {<MacroDefinition>} {<IncludeStatement>} {<PcdEntry>}
+                    {<PcdFieldEntry>}
 <PcdEntry>      ::= <TS> <PcdName> [<FS> <PcdValue>] <EOL>
 <PcdValue>      ::= if (pcddatumtype == "BOOLEAN"):
                       {<BoolType>} {<Expression>}
@@ -415,12 +419,12 @@ different `<DataStore>` values(`Default`, `HII`, or `VPD`) in one section
 header is not permitted. It is permissible to specify different Architectures
 using an identical `<DataStore>` value. The following line is permissible:
 
-`[PcdsDynamicDefault.X64.Default, PcdsDynamicDefault.IPF.Default]`
+`[PcdsDynamicDefault.X64.Default, PcdsDynamicDefault.EBC.Default]`
 
 The following line is incorrect, and must cause a build break during parsing of
 the file:
 
-`[PcdsDynamicDefault.X64.Default, PcdsDynamicVpd.IPF.Default]`
+`[PcdsDynamicDefault.X64.Default, PcdsDynamicVpd.EBC.Default]`
 
 The `!include` statement is permitted in `[PcdsDynamic]` sections, although not
 recommended.
@@ -454,11 +458,13 @@ sections of the DSC file.
 <PcdsVpd>        ::= "[PcdsDynamicVpd" [<PdvAttribs>] "]" <EOL>
                      <PdvEntries>*
 <PdvAttribs>     ::= <attrs> [ "," <TS> "PcdsDynamicVpd" <attrs>]*
-<PdvEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <VpdEntry>} {<TS> <PcdFieldEntry>}
+<PdvEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <VpdEntry>}
+                     {<TS> <PcdFieldEntry>}
 <PcdsHii>        ::= "[PcdsDynamicHii" [<PdhAttribs>] "]" <EOL>
                      <PcdHiiEntries>*
 <PdhAttribs>     ::= <phattrs> ["," <TS> "PcdsDynamicHii <phattrs>]* <PdvEntries>*
-<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>} {<TS> <PcdFieldEntry>}
+<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>}
+                     {<TS> <PcdFieldEntry>}
 <attrs>          ::= "." <arch> ["." <SkuIds>]
 <phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
@@ -572,6 +578,7 @@ the small default store ID. If there are more than one small default store ID,
 it will use the biggest one to be inherit. Here is the example. Four PcdsDynamicHii
 sections are defined.
 
+```ini
 # Four PcdsDynamicHii section
 [PcdsDynamicHii.common.Default.Standard]
 [PcdsDynamicHii.common.Default.Manufacturing]
@@ -591,6 +598,7 @@ sections are defined.
 [PcdsDynamicHii.common.Default.Manufacturing]
 [PcdsDynamicHii.common.Sku1.Standard]
 [PcdsDynamicHii.common.Sku1.Manufacturing]
+```
 
 **_PcdValues_**
 
@@ -609,7 +617,7 @@ the _UEFI Specification_ for a description of these attributes.
 
 ```ini
 [PcdsDynamicDefault.IA32.Default]
-  gEfiEdkNt32PkgTokenSpaceGuid.PcdWinNtMemorySizeForSecMain|"L64!64"|10
+  gEfiEdkNt32PkgTokenSpaceGuid.PcdWinNtMemorySizeForSecMain|"L64!64"|VOID*|10
   gPcAtChipsetPkgTokenSpaceGuid.Pcd8259LegacyModeEdgeLevel |0x0         # UINT16
   gPcAtChipsetPkgTokenSpaceGuid.PcdIsaAcpiPs2MouseEnable   |0           # BOOLEAN
 
@@ -622,7 +630,7 @@ the _UEFI Specification_ for a description of these attributes.
   gNoSuchTokenSpaceGuid.PcdEnableFastBoot   |0x239C|1  |FALSE           # BOOLEAN
 
 [PcdsDynamicHii.IA32, PcdsDynamicHii.X64.Sku1.Standard]
-  gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|0x0053 0x0065 0x0074 0x0075 0x0070|gSysConfigGuid|0x83|0x0
+  gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|L"TestVariable"|gSysConfigGuid|0x83|0x0
   gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L"Timeout"|gEfiGlobalVariableGuid|0x0|10  # Variable: L"Timeout"
 ```
 
@@ -640,12 +648,12 @@ different `<DataStore>` values(`Default`, `HII`, or `VPD`) in one section header
 is not permitted. It is permissible to specify different Architectures using an
 identical `<DataStore>` value. The following line is permissible:
 
-`[PcdsDynamicExDefault.X64.Default, PcdsDynamicExDefault.IPF.Default]`
+`[PcdsDynamicExDefault.X64.Default, PcdsDynamicExDefault.EBC.Default]`
 
 The following line is incorrect, and must cause a build break during parsing of
 the file:
 
-`[PcdsDynamicExDefault.X64.DEFAULT, PcdsDynamicExVpd.IPF.DEFAULT]`
+`[PcdsDynamicExDefault.X64.DEFAULT, PcdsDynamicExVpd.EBC.DEFAULT]`
 
 The `!include` statement is permitted in `[PcdsDynamicEx]` sections, although
 not recommended.
@@ -661,7 +669,8 @@ sections of the DSC file.
 <Pcds>           ::= {<PcdsExDefault>} {<PcdsExVpd>} {<PcdsExHii>}
 <PcdsExDefault>  ::= "[PcdsDynamicExDefault" [<PddAttribs>] "]" <EOL>
                      <PddEntries>*
-<PddEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <MinEntry>} {<TS> <PcdFieldEntry>}
+<PddEntries>     ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <MinEntry>}
+                     {<TS> <PcdFieldEntry>}
 <PddAttribs>     ::= <attrs> ["," <TS> "PcdsDynamicExDefault" <attrs>]*
 <PcdsExVpd>      ::= "[PcdsDynamicExVpd" [<PdvAttribs>] "]" <EOL>
                      <PdvEntries>*
@@ -672,7 +681,8 @@ sections of the DSC file.
                      <PcdHiiEntries>*
 <PdhAttribs>     ::= <phattrs> ["," <TS> "PcdsDynamicExHii <phattrs>]*
                      <PdvEntries>*
-<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>} {<TS> <PcdFieldEntry>}
+<PcdHiiEntries>  ::= {<MacroDefinition>} {<IncludeStatement>} {<TS> <HiiEntry>}
+                     {<TS> <PcdFieldEntry>}
 <attrs>          ::= "." <arch> ["." <SkuIds>]
 <phattrs>        ::= "." <arch> ["." <SkuIds>]["." <DefaultStore>]
 <SkuIdS>         ::= <Keyword> [<FS> <Keyword>]*
@@ -786,6 +796,7 @@ the small default store ID. If there are more than one small default store ID,
 it will use the biggest one to be inherit. Here is the example. Four PcdsDynamicExHii
 sections are defined.
 
+```ini
 # Four PcdsDynamicExHii section
 [PcdsDynamicExHii.common.Default.Standard]
 [PcdsDynamicExHii.common.Default.Manufacturing]
@@ -805,6 +816,7 @@ sections are defined.
 [PcdsDynamicExHii.common.Default.Manufacturing]
 [PcdsDynamicExHii.common.Sku1.Standard]
 [PcdsDynamicExHii.common.Sku1.Manufacturing]
+```
 
 **_PcdValues_**
 
@@ -836,6 +848,6 @@ the _UEFI Specification_ for a description of these attributes.
   gNoSuchTokenSpaceGuid.PcdEnableFastBoot   |0x239C|FALSE                # BOOLEAN
 
 [PcdsDynamicExHii.IA32, PcdsDynamicExHii.X64.Sku1.Standard]
-  gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|0x0053 0x0065 0x0074 0x0075 0x0070|gSysConfigGuid|0x83|0x0
+  gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|L"TestVariable"|gSysConfigGuid|0x83|0x0
   gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L"Timeout"|gEfiGlobalVariableGuid|0x0  # Variable: L"Timeout"
 ```

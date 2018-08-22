@@ -1,7 +1,7 @@
 <!--- @file
   2.11 [Components] Section Processing
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -40,7 +40,6 @@ This section uses one or more of the following section definitions:
 * `[Components]`
 * `[Components.IA32]`
 * `[Components.X64]`
-* `[Components.IPF]`
 * `[Components.EBC]`
 * `[Components.common]`
 

@@ -43,7 +43,7 @@ PCDs.
 #### 2.8.1.1 FeatureFlag and Dynamic PCD Types
 
 The two recommended access methods that are commonly used in modules are
-`FeatureFlag` and the generic, `Dynamic method`. The `Dynamic` form is used for
+`FeatureFlag` and the generic `Dynamic method`. The `Dynamic` form is used for
 configuration when the PCD value is produced and consumed by drivers during
 execution, the value may be user configurable from setup or the value is
 produced by the platform in a specified area. It is associated with modules
@@ -81,7 +81,6 @@ The content in these sections is used for generating the `AutoGen.c` and
 [Pcds(PcdType).common]
 [Pcds(PcdType).IA32]
 [Pcds(PcdType).X64]
-[Pcds(PcdType).IPF]
 [Pcds(PcdType).EBC]
 ```
 
@@ -128,7 +127,7 @@ for all other PCD data types.
 **Warning:** A `FixedAtBuild` or `PatchableInModule` PCD may have a
 different datum type based on the architecture. For example, a PCD that is used
 for address manipulation may have a datum type of `UINT32` for IA32 and
-`UINT64` for X64 and IPF architectures. This will be declared in the EDK II
+`UINT64` for X64 and EBC architectures. This will be declared in the EDK II
 Package Declaration (DEC) File.
 **********
 
@@ -180,7 +179,7 @@ be specified within a single [] section tag.
 ```ini
 [PcdsFixedAtBuild.IA32]
   gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
-  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FAL  SE
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
 
 [PcdsPatchableInModule.IA32]
   gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80000000
@@ -388,7 +387,7 @@ also use the PCD as `PcdsFixedAtBuild` with the same value.
 Build Tools must detect missing PCD entries (PCD specified in an INF file, but
 not in the DSC file) and search the DEC files in the EDK II Packages
 (sub‐directories in directories pointed to by WORKSPACE or PACKAGES_PATH system
-environment variables), in order to use the default value from the DEC file.PCD
+environment variables), in order to use the default value from the DEC file. PCD
 Values may be absolute (a number, string, etc.) a MACRO name or an expression.
 The expression is a C-style expression using C relational, equality and logical
 numeric and bitwise operators or numeric and bitwise operators that evaluate to
@@ -400,6 +399,10 @@ in expressions is also permitted.
 
 If the maximum size of a VOID* PCD is not specified in the DSC file, then the
 maximum size will be calculated based on the largest size of the following:
+
+* the string or array in the --pcd option
+
+* the string or array in the FDF file
 
 * the string or array in the DSC file
 

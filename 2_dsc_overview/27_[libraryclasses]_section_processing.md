@@ -53,7 +53,6 @@ The following is the generic format for the specifying a section
 [LibraryClasses]
 [LibraryClasses.IA32]
 [LibraryClasses.X64]
-[LibraryClasses.IPF]
 [LibraryClasses.EBC]
 [LibraryClasses.common]
 ```
