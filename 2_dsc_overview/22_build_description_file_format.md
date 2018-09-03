@@ -225,7 +225,8 @@ names.
 
 The `!include` statement may appear within any section of EDK II DSC file. The
 included file content must match the content type of the current section
-definition, contain complete sections, or combination of both.
+definition, contain complete sections, or combination of both. And the keyword
+`!include` is case-insensitive.
 
 The argument of this statement is a filename. The file is relative to the
 directory that contains this DSC file, and if not found the tool must attempt
@@ -504,7 +505,7 @@ statements may appear anywhere within the DSC file.
 not support every conditional statement that C programmers are familiar with.
 **********
 
-Supported statements are:
+Supported following statements and the keyword are case-insensitive:
 
 `!ifdef, !ifndef, !if, !elseif, !else and !endif`
 
@@ -648,7 +649,8 @@ The following are examples of conditional directives.
 The `!error` statement may appear within any section of EDK II DSC file. The
 argument of this statement is an error message, it causes build tool to stop
 at the location where the statement is encountered and error message following
-the `!error` statement is output as a message.
+the `!error` statement is output as a message. The keyword `!error` is not
+case-sensitive.
 
 The following example show the valid usage of the `!error` statement.
 
