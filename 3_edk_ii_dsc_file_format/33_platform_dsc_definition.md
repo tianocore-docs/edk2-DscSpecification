@@ -192,7 +192,7 @@ The following are common definitions used by multiple section types.
 <BoolType>             ::= {<BoolVal>} {"{"<BoolVal>"}"}
 <MACRO>                ::= (A-Z)(A-Z0-9_)*
 <MACROVAL>             ::= "$(" <MACRO> ")"
-<PcdFieldName>         ::= <TokenSpaceGuidCName> "." <PcdCName> "." <Field>
+<PcdFieldName>         ::= <TokenSpaceGuidCName> "." <PcdCName> ["["<Number>"]"]* "." <Field>
 <PcdName>              ::= <TokenSpaceGuidCName> "." <PcdCName>
 <PcdCName>             ::= <CName>
 <TokenSpaceGuidCName>  ::= <CName>
@@ -239,10 +239,11 @@ The following are common definitions used by multiple section types.
 <StringVal>            ::= {<UnicodeString>} {<CString>} {<Array>}
 <Array>                ::= "{" {<Array>} {[<Lable>] <ArrayVal>
                            [<CommaSpace> [<Lable>] <ArrayVal>]* } "}"
-<ArrayVal>             ::= {<Num8Array>} {<GuidStr>} {<DevicePath>}
+<ArrayVal>             ::= {<Num8Array>} {<GuidStr>} {<DevicePath>} {<CodeStr>}
 <NonNumType>           ::= {<BoolVal>} {<UnicodeString>} {<CString>}
                            {<Offset>} {<UintMac>}
 <GuidStr>              ::= "GUID(" <GuidVal> ")"
+<CodeStr>              ::= "CODE(" <CData> ")"
 <GuidVal>              ::= {<DblQuote> <RegistryFormatGUID> <DblQuote>}
                            {<CFormatGUID>} {<CName>}
 <DevicePath>           ::= "DEVICE_PATH(" <DevicePathStr> ")"
@@ -344,6 +345,11 @@ correctly.
 All C data arrays used in PCD value fields must be byte arrays. The C format
 GUID style is a special case that is permitted in some fields that use the
 `<CArray>` nomenclature.
+
+**_CData_**
+
+All C data used in PCD value CODE syntax can be C style value to initialize 
+C structure or Array in C source code.
 
 **_EOL_**
 
