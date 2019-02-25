@@ -232,7 +232,7 @@ example:
 While the format for content of this section is as follows, note that the
 backslash character is used here to indicate the continuation of the line:
 
-`PcdTokenSpaceGuidCName.PcdCName|VariableName|VariableGuid|VariableOffset[|HiiDefaultValue[|HiiAttrubte]]`
+`PcdTokenSpaceGuidCName.PcdCName|VariableName|VariableGuid|VariableOffset[|[HiiDefaultValue][|HiiAttrubte]]`
 
 For VOID* PCDs, the HiiDefaultValue will be a pointer; specifying the optional
 HiiDefaultValue has no meaning.
@@ -342,7 +342,7 @@ Specifying a `SKUID` for an HII PCD selection is optional, for example:
 While the format for content of this section is as follows, note that the
 backslash character is used here to indicate the continuation of the line:
 
-`PcdTokenSpaceGuidCName.PcdCName|VariableName|VariableGuid|VariableOffset[|HiiDefaultValue]`
+`PcdTokenSpaceGuidCName.PcdCName|VariableName|VariableGuid|VariableOffset[|[HiiDefaultValue]]`
 
 The optional HII Attribute entry is a comma separated list of attributes as
 described in Table 9 HII Attributes.

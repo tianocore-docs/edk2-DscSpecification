@@ -505,7 +505,7 @@ sections of the DSC file.
 <HiiString>      ::= {<CArray>} {<UnicodeString>}
 <Field2>         ::= <FS> <VariableGuid> <FS> <VariableOffset> [<ValueField>]
 <VariableGuid>   ::= <CName>
-<ValueField>     ::= <FS> <DefaultValue> [<FS> <HiiAttrs>]
+<ValueField>     ::= <FS> [<DefaultValue>] [<FS> <HiiAttrs>]
 <VariableOffset> ::= <Number>
 <DefaultValue>   ::= if (pcddatumtype == "BOOLEAN"):
                        {<BoolType>} {<Expression>}
@@ -723,7 +723,7 @@ sections of the DSC file.
 <HiiString>      ::= {<CArray>} {<UnicodeString>}
 <Field2>         ::= <FS> <VariableGuid> <FS> <VariableOffset> [<ValueField>]
 <VariableGuid>   ::= <CName>
-<ValueField>     ::= <FS> <DefaultValue> [<FS> <HiiAttrs>]
+<ValueField>     ::= <FS> [<DefaultValue>] [<FS> <HiiAttrs>]
 <VariableOffset> ::= <Number>
 <DefaultValue>   ::= if (pcddatumtype == "BOOLEAN"):
                        {<BoolType>} {<Expression>}
