@@ -1,7 +1,7 @@
 <!--- @file
   2.8 PCD Section Processing
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,18 +29,18 @@
 
 -->
 
-## 2.8 PCD Section Processing
+## 2.7 PCD Section Processing
 
 This section is for specifying global (or default) PCD values as well as the
 access method each PCD will use for modules in the platform.
 
-### 2.8.1 PCD Access Methods
+### 2.7.1 PCD Access Methods
 
 There are five defined PCD access methods. The five access methods are:
 `FeatureFlag`, `FixedAtBuild`, `PatchableInModule`, `Dynamic` and `DynamicEx`
 PCDs.
 
-#### 2.8.1.1 FeatureFlag and Dynamic PCD Types
+#### 2.7.1.1 FeatureFlag and Dynamic PCD Types
 
 The two recommended access methods that are commonly used in modules are
 `FeatureFlag` and the generic `Dynamic method`. The `Dynamic` form is used for
@@ -52,7 +52,7 @@ as platform integrators may chose a to use a different access method for a
 given platform without modifying the module's INF file or the code for the
 module.
 
-#### 2.8.1.2 DynamicEx, FixedAtBuild and PatchableInModule PCD Access Methods
+#### 2.7.1.2 DynamicEx, FixedAtBuild and PatchableInModule PCD Access Methods
 
 Similar in function, the `DynamicEx` access method can be used with modules
 that are released as binary. The `FixedAtBuild` and `PatchableInModule` PCDs
@@ -84,7 +84,7 @@ The content in these sections is used for generating the `AutoGen.c` and
 [Pcds(PcdType).EBC]
 ```
 
-### 2.8.2 PCD Access Method Categories
+### 2.7.2 PCD Access Method Categories
 
 Of the five access methods of PCDs that have been defined, they fall into one
 of three categories:
@@ -131,7 +131,7 @@ for address manipulation may have a datum type of `UINT32` for IA32 and
 Package Declaration (DEC) File.
 **********
 
-### 2.8.3 PCD Section Usage
+### 2.7.3 PCD Section Usage
 
 PCD sections are optional unless the EDK II modules specified in the
 `[Components]` section use PCDs.
@@ -141,7 +141,7 @@ module is built once for a given architecture, the PCD can be listed under
 different PCD access methods provided they are listed under different
 architectures.
 
-#### 2.8.3.1 Access Methods
+#### 2.7.3.1 Access Methods
 
 However, once a PCD access method is selected for a given architecture, the PCD
 can only use that access method.
@@ -152,7 +152,7 @@ A PCD that will use the `FixedAtBuild` access method for IA32 cannot use the
 `PatchableInModule` access method for individual modules built for the IA32
 architecture.
 
-#### 2.8.3.2 Different Access Methods
+#### 2.7.3.2 Different Access Methods
 
 It is permissible to have a PCD use different access methods for different
 architectures.
@@ -162,7 +162,7 @@ architectures.
 A PCD that will use the FixedAtBuild access method for IA32 can use the
 Patchable in Module access method for X64.
 
-#### 2.8.3.3 Item Access Methods
+#### 2.7.3.3 Item Access Methods
 
 Multiple item access methods, `PcdsFeatureFlag`, `PcdsFixedAtBuild`,
 `PcdsPatchableInModule`, `PcdsDynamic` and `PcdsDynamicEx` are not allowed to
@@ -189,7 +189,7 @@ be specified within a single [] section tag.
   gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|0
 ```
 
-#### 2.8.3.4 Mixing PCD Dynamic item storage methods
+#### 2.7.3.4 Mixing PCD Dynamic item storage methods
 
 It is not permissible to mix different PCD Dynamic item storage methods within
 a single section, as the format for the PCD entries in PcdsDynamicDefault,
@@ -214,7 +214,7 @@ PcdsDynamicExHii sections are different.
   gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|*|0
 ```
 
-#### 2.8.3.5 Multiple Architectural Section Tags
+#### 2.7.3.5 Multiple Architectural Section Tags
 
 It is permissible to specify multiple architectural section tags for the same
 PCD item type in a single section.
@@ -234,7 +234,7 @@ PCD item type in a single section.
   gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|0
 ```
 
-#### 2.8.3.6 Dynamic and DynamicEx PCD Storage Methods
+#### 2.7.3.6 Dynamic and DynamicEx PCD Storage Methods
 
 The PCDs that use Dynamic and DynamicEx access methods can have their values
 stored in one of three different methods, Default, VPD or HII. A PCD using one
@@ -275,7 +275,7 @@ TokenSpaceGuid.PcdCname|<HiiString>|<VariableGuid>|<VariableOffset>|<Value>|<Att
 next chapter for the exact syntax.
 **********
 
-#### 2.8.3.7 Unique PCDs
+#### 2.7.3.7 Unique PCDs
 
 Unique PCDs are identified using the format to identify the named PCD:
 
@@ -306,7 +306,7 @@ being for testing a module, the second giving the ability for doing individual
 driver performance tuning "on-the-fly".
 **********
 
-#### 2.8.3.8 Precedence
+#### 2.7.3.8 Precedence
 
 Tools must assume that the first method found for a PCD in the PCDs sections
 will used for all instances of a PCD. Tools must not allow for different
@@ -377,7 +377,7 @@ instances of the PCD. If PCD field value is listed, it will override PCD value
 even if PCD value is after PCD field value.
 **********
 
-#### 2.8.3.9 Library Instances
+#### 2.7.3.9 Library Instances
 
 Library Instances that use PCDs that the module is linked with must use the
 same PCD setting as the module using the Library Instance. So if a module uses
@@ -395,7 +395,7 @@ a value that matches the PCD's Datum Type (specified in the DEC package
 declaration file.) Precedence and associativity follow C standards. Using PCDs
 in expressions is also permitted.
 
-#### 2.8.3.10 Maximum Size of a VOID* PCD
+#### 2.7.3.10 Maximum Size of a VOID* PCD
 
 If the maximum size of a VOID* PCD is not specified in the DSC file, then the
 maximum size will be calculated based on the largest size of the following:

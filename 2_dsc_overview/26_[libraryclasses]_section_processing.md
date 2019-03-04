@@ -1,7 +1,7 @@
 <!--- @file
   2.7 [LibraryClasses] Section Processing
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,7 +29,7 @@
 
 -->
 
-## 2.7 [LibraryClasses] Section Processing
+## 2.6 [LibraryClasses] Section Processing
 
 The `[LibraryClasses]` section is used to provide a mapping between the library
 class names used by an EDK II module and the Library Instances that are

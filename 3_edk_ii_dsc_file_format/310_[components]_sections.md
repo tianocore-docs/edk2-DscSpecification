@@ -1,7 +1,7 @@
 <!--- @file
   3.11 [Components] Sections
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,7 +29,7 @@
 
 -->
 
-## 3.11 [Components] Sections
+## 3.10 [Components] Sections
 
 The `[Components]` sections are required.
 
@@ -44,8 +44,7 @@ method is NOT recommended.
 
 All EDK II file paths must be specified relative to a directory containing EDK
 II Packages (as specified by the WORKSPACE or a directory listed in
-PACKAGES_PATH system environment variable). EDK INF component and library files
-may use `$(EDK_SOURCE)` or `$(EFI_SOURCE)` global environment variables. If the
+PACKAGES_PATH system environment variable). If the
 environment variable is not specified, the INF file path is assumed to be
 relative to the `WORKSPACE`.
 
@@ -57,7 +56,7 @@ directory pointed to by the WORKSPACE environment variable) relative Path:
 The following is an example of specifying an Indirect Path:
 
 ```ini
-DEFINE FOUNDATION_LIB = $(EDK_SOURCE)/Foundation/Library
+DEFINE FOUNDATION_LIB = $(WORKSPACE)/Foundation/Library
 $(FOUNDATION_LIB)/EdkIIGlueLib/EntryPoints
 ```
 
@@ -93,9 +92,6 @@ with the dynamic form PCD values stored in a "runtime database", read-only
 memory location or an HII data store. Therefore, having different values is
 prohibited for these access methods.
 
-EDK components may have the scoped sub-element, `<SOURCE_OVERRIDE_PATH>` that
-is used to virtually replace files in the component's directory.
-
 The format for items listed in the sub-elements is the identical format for
 content under the section.
 
@@ -130,16 +126,12 @@ modules in a binary image (the FDF file describes that ordering).
 <ModuleStatements> ::= {<MacroDefinition>}
                        {<IncludeStatement>} {<TS> <InfFiles>}
 <InfFiles>         ::= <InfFilename> [<MTS> <Options>] <EOL>
-<Options>          ::= {<Exec>} {<Edk2Struct>} {<EdkStruct>}
+<Options>          ::= {<Exec>} {<Edk2Struct>}
 <InfFilename>      ::= <PATH> <Word> ".inf"
 <Exec>             ::= "EXEC" <Eq> <ExecFilename>
 <ExecFilename>     ::= <PATH> <Word> ["." <ExecExtension>]
 <ExecExtension>    ::= <Word> # An OS recognisable extension that will #
                        automatically be run.
-<EdkStruct>        ::= "{" <EOL>
-                       <TS> "<SOURCE_OVERRIDE_PATH>" <EOL>
-                       <TS> <PATH>
-                       <TS> "}" <EOL>
 <Edk2Struct>       ::= "{" <EOL>
                        [<TS> <DefSec>]
                        [<TS> <LibraryClasses>]
@@ -269,47 +261,3 @@ individual modules.
 
 A Library Class Keyword defined in DEC files. The Keyword must also be present
 in the defines section `LIBRARY_CLASS` entry of the INF file
-
-#### Example Using EDK components in an EDK II DSC build
-
-```
-[Components]
-DEFINE EDK=$(EDK_SOURCE)/Edk
-DEFINE MDE=MdePkg/Library
-DEFINE STATUS_CODE=$(MDE)/PeiDxeDebugLibReportStatusCode
-
-$(EDK)/Foundation/Core/Pei/PeiMain.inf
-DEFINE NT32 = $(EDK)/Sample/Platform
-$(NT32)/Generic/MonoStatusCode/Pei/Nt32/MonoStatusCode.inf
-$(NT32)/Nt32/Pei/BootMode/BootMode.inf
-$(NT32)/Nt32/Pei/FlashMap/FlashMap.inf
-MdeModulePkg/Core/Dxe/DxeMain.inf
-...
-MdeModulePkg/Universal/Debugger/Debugport/Dxe/DebugPort.inf
-MdeModulePkg/Cpu/DebugSupport/Dxe/DebugSupport.inf
-...
-
-DEFINE MDEMODUNI = MdeModulePkg/Universal
-$(MDEMODUNI)/DataHub/DataHubStdErr/Dxe/DataHubStdErr.inf
-MdeModulePkg/Universal/Disk/DiskIo/Dxe/DiskIo.inf {
-  <LibraryClasses>
-    DebugLib|$(STATUS_CODE)/PeiDxeDebugLibReportStatusCode.inf
-    BaseMemoryLib|$(MDE)/DxeMemoryLib/DxeMemoryLib.inf
-    MemoryAllocationLib|$(MDE)/DxeMemoryAllocationLib/DxeMemoryAllocationLib.inf
-  <PcdsFeatureFlag>
-    PcdDriverDiagnosticsDisable|gEfiMdePkgTokenSpaceGuid|FALSE
-}
-MdeModulePkg/Universal/Ebc/Dxe/Ebc.inf
-$(MDEMODUNI)/GenericMemoryTest/Dxe/NullMemoryTest.inf
-$(MDEMODUNI)/StatusCode/Pei/PeiStatusCode.inf {
-  <BuildOptions>
-    MSFT:RELEASE_MYTOOLS_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
-    DEBUG_MYTOOLS_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
-    DEBUG_WINDDK3790x1830_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
-    RELEASE_WINDDK3790x1830_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
-    DEBUG_VS2003_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
-    RELEASE_VS2003_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
-}
-MdeModulePkg/Logo/Logo.inf
-...
-```

@@ -1,7 +1,7 @@
 <!--- @file
   2.9 PCD Sections
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,9 +29,9 @@
 
 -->
 
-## 2.9 PCD Sections
+## 2.8 PCD Sections
 
-### 2.9.1 [PcdsFeatureFlag] section
+### 2.8.1 [PcdsFeatureFlag] section
 
 The required content for the FeatureFlag PCD is the PCD Token Space Guid C
 name, the PCD's C name (these two entries are separated by the period
@@ -71,7 +71,7 @@ Format of an entry in this section is:
   gEfiMdeModulePkgTokenSpaceGuid.PcdDxePcdDatabaseTraverseEnabled|1
 ```
 
-### 2.9.2 [PcdsFixedAtBuild] and [PcdsPatchableInModule] sections
+### 2.8.2 [PcdsFixedAtBuild] and [PcdsPatchableInModule] sections
 
 The section modifier, `SkuIdentifier`, can be used by the build tools to create
 images for one specific SKU. Unlike the `PcdsDynamic` and `PcdsDynamicEx`
@@ -79,7 +79,7 @@ entries, no access methods are allowed for having different values during
 runtime for different SKUs. Do not use the `SkuIdentifier` when building all
 SKUs.
 
-#### 2.9.2.1 PcdsFixedAtBuild
+#### 2.8.2.1 PcdsFixedAtBuild
 
 The `FixedAtBuild` PCD access method cannot be used in a Binary Module.
 
@@ -127,7 +127,7 @@ Format for Boolean and numeric entries in this section is:
   gEfiEdkNt32PkgTokenSpaceGuid.PcdWinNtPhysicalDisk|L"E:RW;245760;512"|VOID*|32
 ```
 
-#### 2.9.2.2 PcdsPatchableInModule
+#### 2.8.2.2 PcdsPatchableInModule
 
 The `PatchableInModule` PCD access method can be used with modules that are
 distributed in binary form. The PCD's value can be patched by tools that know
@@ -165,7 +165,7 @@ Format of an entry in this section is:
   gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80000000|UINT32|4
 ```
 
-### 2.9.3 [PcdsDynamic*] and [PcdsDynamicEx*] sections
+### 2.8.3 [PcdsDynamic*] and [PcdsDynamicEx*] sections
 
 PCDs listed in these sections cannot be used in conditional directive
 statements.
@@ -187,7 +187,7 @@ document.
 
 For using the standard PCD Get/Set PPI or Protocol.
 
-#### 2.9.3.1 PcdsDynamicDefault
+#### 2.8.3.1 PcdsDynamicDefault
 
 The Dynamic Default PCD access method will generate a volatile variable that
 can be accessed at runtime using PCD a Get PPI or Protocol.
@@ -215,7 +215,7 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase|0x0
 gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableSize|0x0
 ```
 
-#### 2.9.3.2 PcdsDynamicHII
+#### 2.8.3.2 PcdsDynamicHII
 
 The Dynamic Hii PCD access method will generate HII data content that can be
 accessed at runtime.
@@ -261,7 +261,7 @@ described in the following table.
   gEfiMdeModulePkgTokenSpaceGuid.PcdValidRange|L"PcdValidRange"|gEfiGlobalVariableGuid|0x07|0|BS,RT,NV
 ```
 
-#### 2.9.3.3 PcdsDynamicVpd
+#### 2.8.3.3 PcdsDynamicVpd
 
 The Dynamic Vpd PCD access method will generate macros that allow the data
 content (stored in read-only memory) to be accessed at runtime. Note that the
@@ -298,7 +298,7 @@ The format for VOID* datum type content in this section is:
   gNoSuchTokenSpaceGuid.PcdEnableFastBoot    | 0x239C | 1   | FALSE  # BOOLEAN
 ```
 
-#### 2.9.3.4 PcdsDynamicExDefault
+#### 2.8.3.4 PcdsDynamicExDefault
 
 The DynamicEx access method of PCD is recommended for modules that are
 distributed in binary form.
@@ -329,7 +329,7 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase|0x0
 gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableSize|0x0
 ```
 
-#### 2.9.3.5 PcdsDynamicEx Hii
+#### 2.8.3.5 PcdsDynamicEx Hii
 
 For using the HII for PCD data, the section name is as follows:
 
@@ -359,7 +359,7 @@ described in Table 9 HII Attributes.
   gEfiMdeModulePkgTokenSpaceGuid.PcdValidRange|L"PcdValidRange"|gEfiGlobalVariableGuid|0x07|0|BS,RT,NV
 ```
 
-#### 2.9.3.6 PcdsDynamicExVpd
+#### 2.8.3.6 PcdsDynamicExVpd
 
 For using the VPD for PCD data, the section name is:
 

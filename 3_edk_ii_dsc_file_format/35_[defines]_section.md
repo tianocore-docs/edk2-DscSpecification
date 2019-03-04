@@ -1,7 +1,7 @@
 <!--- @file
   3.5 [Defines] Section
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -181,15 +181,6 @@ use a "Get Best Language" function when filtering the content. The
 `RFC_LANGUAGES` statement must be used when processing EDK II Modules. Space
 characters are not permitted within the list.
 
-**_ISO 639-2 Language Code_**
-
-One or more three character language codes, formatted per ISO 639-2, with no
-separator character (for example: "engfraspa".) This list can be used to filter
-the output of tools that generate unicode strings. Tools must use a "Get Best
-Language" function when filtering the content. The `ISO_LANGUAGES` statement
-must be used when processing EDK Components. Space characters are not permitted
-within the list.
-
 **_BuildNumber_**
 
 This value, if present, will be used during the creation of
@@ -227,6 +218,5 @@ compiling them into a machine language program.
   BUILD_TARGETS           = DEBUG|RELEASE
   RFC_LANGUAGES           = "en-us;
   zh-hans;fr-fr"
-  ISO_LANGUAGES           = "engchnfra"
   SKUID_IDENTIFIER        = SkuTwo|DEFAULT
 ```

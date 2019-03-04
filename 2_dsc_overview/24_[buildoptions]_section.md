@@ -1,7 +1,7 @@
 <!--- @file
   2.4 [BuildOptions] Section
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -35,7 +35,7 @@ Content in the `[BuildOptions]` section is used to define module specific tool
 chain flags rather than use the default flags for a module. These flags are
 appended to any standard flags that are defined by the build process. They can
 be applied for any modules or those modules on the specific ARCH or those
-modules with the specific module style (EDK or EDKII). In order to replace the
+modules with the specific EDKII module style. In order to replace the
 standard flags that are defined by the build process, an alternate assignment
 operator is used; "==" is used for replacement, while "=" is used to append
 the flag lines. In addition to flags, other tool attributes may have the item
@@ -96,8 +96,7 @@ that the lines show use of the "\" line continuation character.
 The following examples show how `[BuildOptions]` sections can be merged, as
 well as how the content in those sections can be merged.
 
-For specific flag values, common to both EDK and EDKII options, it is
-appropriate to use a `DEFINE` statement in the `[Defines]` section; for
+It is appropriate to use a `DEFINE` statement in the `[Defines]` section; for
 example 1:
 
 `DEFINE MSFT_COMMON_DEBUG_FLAGS = /Od`
@@ -106,27 +105,20 @@ Then the macro, $(MSFT_COMMON_DEBUG_FLAGS) can be used in statements in any of
 the `[BuildOptions.*]` sections, as in:
 
 ```ini
-[BuildOptions.Common.EDK]
+[BuildOptions.X64]
   MSFT:DEBUG_*_*_CC_FLAGS = /nologo /c $(MSFT_COMMON_DEBUG_FLAGS)
 
-[BuildOptions.Common.EDKII]
+[BuildOptions.IA32]
   MSFT:DEBUG_*_*_CC_FLAGS = /nologo /c $(MSFT_COMMON_DEBUG_FLAGS)
 ```
 
 It is also permissible to have a `[BuildOptions.<arch>]` section that can be
 shared be used for different statements that are not duplicate content from
-either the `[BuildOptions.<arch>.EDK]` or `[BuildOptions.<arch>.EDKII]`
-sections. For example 2:
+the `[BuildOptions.<arch>.EDKII]` sections. For example:
 
 ```ini
 [BuildOptions.Common]
   MSFT:*_*_*_ASL_OUTFLAGS = /Fo=
-
-[BuildOptions.Common.EDK]
-  MSFT:DEBUG_*_*_CC_FLAGS = /nologo /c /D UNICODE
-
-[BuildOptions.IA32.EDK]
-  MSFT:DEBUG_*_IA32_CC_FLAGS = /W4 /WX /Gy
 
 [BuildOptions.Common.EDKII]
   MSFT:DEBUG_*_*_CC_FLAGS = /nologo /c /D UNICODE
@@ -134,53 +126,3 @@ sections. For example 2:
 [BuildOptions.IA32.EDKII]
   MSFT:DEBUG_*_IA32_CC_FLAGS = /W4 /WX /Gy
 ```
-
-It is also permissible to have a `[BuildOptions.<arch>]` section that can be
-shared be used prior to appending statement content from either the
-`[BuildOptions.<arch>.EDK]` or `[BuildOptions.<arch>.EDKII]` sections as in the
-following example:
-
-```ini
-[BuildOptions.IA32]
-  MSFT:DEBUG_*_IA32_CC_FLAGS = /nologo /W4 /WX /Gy /c /D UNICODE
-
-[BuildOptions.IA32.EDKII]
-  MSFT:DEBUG_*_IA32_CC_FLAGS = /FI$(DEST_DIR_DEBUG)/AutoGen.h
-
-[BuildOptions.IA32.EDK]
-  MSFT:DEBUG_*_IA32_CC_FLAGS = /D EFI32
-```
-
-When processing EDK II C files, the `CC_FLAGS` would be:
-
-`/nologo /W4 /WX /Gy /c /D UNICODE /FI$(DEST_DIR_DEBUG)/AutoGen.h`
-
-While processing of EDK C files, the CC_FLAGS would be:
-
-`/nologo /W4 /WX /Gy /c /D UNICODE /D EFI32`
-
-It is also permissible to combine [BuildOptions.common] with
-`[BuildOptions.<arch>]` sections that are not "common", as in the following
-example:
-
-```ini
-[BuildOptions.Common]
-  MSFT:DEBUG_*_*_CC_FLAGS = /nologo /c
-
-[BuildOptions.IA32]
-  MSFT:DEBUG_*_IA32_CC_FLAGS = /W4 /WX /Gy /D UNICODE
-
-[BuildOptions.IA32.EDKII]
-  MSFT:DEBUG_*_IA32_CC_FLAGS = /FI$(DEST_DIR_DEBUG)/AutoGen.h
-
-[BuildOptions.IA32.EDK]
-  MSFT:DEBUG_*_IA32_CC_FLAGS = /D EFI32
-```
-
-In the previous example, the `CC_FLAGS` for IA32 EDK II modules would equal:
-
-`/nologo /x /W4 /WX /Gy /D UNICODE /FI$(DEST_DIR_DEBUG)/AutoGen.h`
-
-The CC_FLAGS for IA EDK modules would equal:
-
-`/nologo /c /W4 /WX /Gy /D UNICODE /D EFI32`

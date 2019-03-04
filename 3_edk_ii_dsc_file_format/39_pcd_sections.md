@@ -1,7 +1,7 @@
 <!--- @file
   3.10 PCD Sections
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,7 +29,7 @@
 
 -->
 
-## 3.10 PCD Sections
+## 3.9 PCD Sections
 
 The PCD sections are optional.
 
@@ -113,7 +113,7 @@ normal VOID* PCD, and also be specified by its structure field.
 Refer to the _EDK II Build Specification_ for the description of the PCD
 processing rules.
 
-### 3.10.1 [PcdsFeatureFlag] Sections
+### 3.9.1 [PcdsFeatureFlag] Sections
 
 These are optional sections for EDK II DSC Files.
 
@@ -194,7 +194,7 @@ must break, stating that this platform requires separate builds for individual
 `SkuId`s.
 **********
 
-### 3.10.2 [PcdsFixedAtBuild] Section
+### 3.9.2 [PcdsFixedAtBuild] Section
 
 These are optional sections for EDK II DSC Files.
 
@@ -300,7 +300,7 @@ must break, stating that this platform requires separate builds for individual
 `SkuId`s.
 **********
 
-### 3.10.3 [PcdsPatchableInModule] Sections
+### 3.9.3 [PcdsPatchableInModule] Sections
 
 These are optional sections.
 
@@ -405,7 +405,7 @@ must break, stating that this platform requires separate builds for individual
 `SkuId`s.
 **********
 
-### 3.10.4 [PcdsDynamic] Sections
+### 3.9.4 [PcdsDynamic] Sections
 
 These are optional sections.
 
@@ -634,7 +634,7 @@ the _UEFI Specification_ for a description of these attributes.
   gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L"Timeout"|gEfiGlobalVariableGuid|0x0|10  # Variable: L"Timeout"
 ```
 
-### 3.10.5 [PcdsDynamicEx] Sections
+### 3.9.5 [PcdsDynamicEx] Sections
 
 These are optional sections.
 

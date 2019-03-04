@@ -1,7 +1,7 @@
 <!--- @file
   2.11 [Components] Section Processing
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,11 +29,10 @@
 
 -->
 
-## 2.11 [Components] Section Processing
+## 2.10 [Components] Section Processing
 
-One or more `[Components]` sections contain lists of EDK components and EDK II
-Modules. The format for specifying the INF file for EDK II modules incorporates
-new scoping capabilities.
+One or more `[Components]` sections contain lists of EDK II Modules. The format 
+for specifying the INF file for EDK II modules incorporates new scoping capabilities.
 
 This section uses one or more of the following section definitions:
 
@@ -43,13 +42,7 @@ This section uses one or more of the following section definitions:
 * `[Components.EBC]`
 * `[Components.common]`
 
-EDK components are specified using a fully qualified path to the EDK INF file.
-
-`$(EDK_SOURCE)/Path/and/Filename.inf`
-
-Because EDK II modules have different requirements than EDK I components,
-specifying the INF filename in the extended DSC file may require more than just
-the INF filename and options. A scoping structure, that binds library class
+A scoping structure, that binds library class
 (with an optional override instance,) PCD settings (also overriding the values
 specified in the `[PcdsPatchableInModule]` or `[PcdsFixedAtBuild]` sections)
 and build options for an EDK II module may be required. This scoping structure,
@@ -80,16 +73,6 @@ Path/and/Filename.inf {
 There are four valid, optional sub-elements for EDK II modules. These
 sub-element are enclosed within angle brackets: `<Defines>, <LibraryClasses>`,
 `<Pcds*>` and `<BuildOptions>`.
-
-For EDK component INF files, an optional sub-element of
-`<SOURCE_OVERRIDE_PATH>` has been defined. If this element is specified, files
-listed in the directory are used instead of the "same-named" files in the
-component's directory. If an EDK component directory lists files, A.c, B.c and
-C.h, and the directory specified in this sub-element contains the file B.c,
-then the component will be built using files from the component directory: A.c
-and C.h, and the file B.c from the override directory. Any other files listed
-in the override directory will NOT be included in the build (no new or
-additional files are permitted).
 
 An INF file line may also have one argument, EXEC = Filename, that specifies
 an executable file that takes the INF filename as a parameter. The Filename

@@ -1,7 +1,7 @@
 <!--- @file
   3.6 [BuildOptions] Sections
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -51,12 +51,11 @@ code flags defined in the `tools_def.txt` file. The `Family` tag can be used
 for elements that are shared between different architectures, and different
 tool chain tag names.
 
-The `[BuildOptions]` section modifier, CodeBase, (value of EDK or EDKII,
-default is EDKII) allows for platform integrators to override default build
+The `[BuildOptions]` section modifier, CodeBase, (value is EDKII) allows for 
+platform integrators to override default build
 options set in the `tools_def.txt` file scoped according to the type of INF
 file being processed. EDK II INF files all contain an `INF_VERSION` element in
-their `[Defines]` section, while EDK libraries and components do not have the
-element. The `[BuildOptions]` section of an INF file override both the
+their `[Defines]` section. The `[BuildOptions]` section of an INF file override both the
 `tools_def.txt` options and the options set in the `[BuildOptions]` section. In
 order to override options set in the INF file, the options must be overridden
 using the INF scoped `<BuildOptions>` tag after an INF file specified in the
@@ -169,12 +168,12 @@ The result would logically be: `*_*_*_TEST_FLAGS = /a /b`
 The result for EDK II modules would be: `*_*_*_TEST_FLAGS = /a /b /c`
 
 ```ini
-[BuildOptions.common.EDK]
-  # Entries are for EDK components and libraries
+[BuildOptions.common.EDKII]
+  # Entries are for EDK II components and libraries
   *_*_*_TEST_FLAGS = /d
 ```
 
-The result for EDK components and libraries would be: `*_*_*_TEST_FLAGS = /a /b /d`
+The result for EDKII components and libraries would be: `*_*_*_TEST_FLAGS = /a /b /d`
 
 ```ini
 [BuildOptions.IA32]
@@ -185,7 +184,7 @@ The result for EDK components and libraries would be: `*_*_*_TEST_FLAGS = /a /b 
 The logical result is: `*_*_IA32_TEST_FLAGS = /a /b /c /e`
 
 ```ini
-[BuildOptions.X64.EDK]
+[BuildOptions.X64.EDKII]
   # Architectural options for X64
   *_*_*_TEST_FLAGS       = /f
   DEBUG_*_*_TEST_FLAGS   = /g
@@ -222,7 +221,7 @@ The logical result is:
 ```c
 <BuildOptions> ::= "[BuildOptions" [<attribs>] "]" <EOL> <Statements>*
 <attribs>      ::= "." <arch> [<CodeBase> ["." <ModuleType>]]
-<CodeBase>     ::= "." {"Common"} {"EDK"} {"EDKII"}
+<CodeBase>     ::= "." {"Common"} {"EDKII"}
 <Statements>   ::= {<MacroDefinition>} {<IncludeStatement>}
                    {<TS> <BStatement>}
 <BStatement>   ::= {<ToolFlag>} {<ToolPath>} {<ToolCmd>} {<Other>}

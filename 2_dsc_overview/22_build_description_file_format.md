@@ -1,7 +1,7 @@
 <!--- @file
   2.2 Build Description File Format
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -231,15 +231,14 @@ definition, contain complete sections, or combination of both. And the keyword
 The argument of this statement is a filename. The file is relative to the
 directory that contains this DSC file, and if not found the tool must attempt
 to find the file relative to the paths listed in the system environment
-variables `$(WORKSPACE)`, `$(EFI_SOURCE)`, `$(EDK_SOURCE)`, and
-`$(ECP_SOURCE)`. If the file is still not found, the parsing tools must
-terminate with an error.
+variable `$(WORKSPACE)`. If the file is still not found, the parsing tools 
+must terminate with an error.
 
 Macros, defined in this file, are permitted in the path or file name of the
 !include statement, as these files are included prior to processing the file
-for macros. The system environment variables `$(WORKSPACE)`, `$(EDK_SOURCE)`,
-`$(EFI_SOURCE)`, and `$(ECP_SOURCE)` may also be used; only these system
-environment variables are permitted to start the path of the included file.
+for macros. The system environment variable `$(WORKSPACE)`, may also be used; 
+only these system environment variables are permitted to start the path of the 
+included file.
 
 Statements in `!include` files must not break the integrity of the DSC file,
 the included file is read in by tools in the exact position of the file, and is
@@ -397,10 +396,6 @@ any macro value defined in the DSC (or FDF) file.
 MACROs may also be used as values in PCD statements. See _Section 3.10_ for
 more information on PCD statements.
 
-In order to support EDK components and libraries, the word `DEFINE` is replaced
-with `EDK_GLOBAL`. The `EDK_GLOBAL` macros are considered global during the
-processing of the DSC, FDF and EDK INF files.
-
 Macros that appear within double quotation marks in build options sections are
 not expanded. It is assumed that they will be expanded by the OS or external
 scripting tools.
@@ -429,9 +424,6 @@ be altered.
 | Macro Style Used in Meta-Data Files | Matches Windows Environment Variable | Matches Linux & OS/X Environment Variable |
 | ----------------------------------- | ------------------------------------ | ----------------------------------------- |
 | $(WORKSPACE)                        | %WORKSPACE%                          | $WORKSPACE                                |
-| $(EFI_SOURCE)                       | %EFI_SOURCE%                         | $EFI_SOURCE                               |
-| $(EDK_SOURCE)                       | %EDK_SOURCE%                         | $EDK_SOURCE                               |
-| $(ECP_SOURCE)                       | %ECP_SOURCE%                         | $ECP_SOURCE                               |
 | $(EDK_TOOLS_PATH)                   | %EDK_TOOLS_PATH%                     | $EDK_TOOLS_PATH                           |
 
 The system environment variables, PACKAGES_PATH and EDK_TOOLS_BIN, are not
@@ -481,18 +473,7 @@ follow the same rules as architectural modifiers.
   TimerLib|$(MDE)/BaseTimerLibNullTemplate/BaseTimerLibNullTemplate.inf
 ```
 
-### 2.2.7 EDK_GLOBAL
-
-The `EDK_GLOBAL` statements defined in the DSC file can be used during the
-processing of the DSC, FDF and EDK INF files. The definition of the
-`EDK_GLOBAL` name must only be done in the DSC `[Defines]` section. These
-special macros can be used in path statements, DSC file `[BuildOptions]` and
-FDF file `[Rule]` sections. These statements are used to replace the
-environment variables that were defined for the EDK build tools. They must
-never be used in a conditional directive statement in the DSC and FDF files,
-nor can they be used by EDK II INF files.
-
-### 2.2.8 Conditional Directive Statements (!if...)
+### 2.2.7 Conditional Directive Statements (!if...)
 
 Conditional directive statements are used by the build tools preprocessor
 function to include or exclude statements in the DSC file. A limited number of
@@ -644,7 +625,7 @@ The following are examples of conditional directives.
 !endif
 ```
 
-### 2.2.9 !error Statement
+### 2.2.8 !error Statement
 
 The `!error` statement may appear within any section of EDK II DSC file. The
 argument of this statement is an error message, it causes build tool to stop
@@ -660,7 +641,7 @@ The following example show the valid usage of the `!error` statement.
 !endif
 ```
 
-### 2.2.10 Expressions
+### 2.2.9 Expressions
 
 Expressions can be used in conditional directive comparison statements and in
 value fields for Macros and PCDs in the DSC and FDF files.
@@ -725,7 +706,7 @@ For logical expressions, any non-zero value must be considered `TRUE`.
 
 Invalid expressions must cause a build break with an appropriate error message.
 
-### 2.2.11 Section Handling
+### 2.2.10 Section Handling
 
 The DSC file parsing routines must process the sections so that common
 architecture sections are logically merged with the architecturally specific
@@ -752,9 +733,6 @@ on the "==" replace or "=" append assignment character sequence.
 [BuildOptions.Common]
   MSFT:*_*_*_CC_FLAGS = /nologo
 
-[BuildOptions.Common.EDK]
-  MSFT:*_*_*_CC_FLAGS = /Od
-
 [BuildOptions.IA32]
   MSFT:*_*_IA32_CC_FLAGS = /D EFI32
 ```
@@ -763,11 +741,3 @@ For IA32 architecture builds of an EDK II INF file would logically be:
 
 `MSFT:*_*_IA32_CC_FLAGS = /nologo /D EFI32`
 
-For non-IA32 architecture EDK INF files, tool parsing would logically be:
-
-`MSFT:*_*_*_CC_FLAGS = /nologo /Od`
-
-For IA32 architecture builds of an EDK INF file, tool parsing would logically
-be:
-
-`MSFT:*_*_IA32_CC_FLAGS = /nologo /D EFI32 /Od`

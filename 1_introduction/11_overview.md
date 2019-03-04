@@ -1,7 +1,7 @@
 <!--- @file
   1.1 Overview
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -50,10 +50,7 @@ This design has the following goals.
 **Compatible**
 
 The EDK II DSC format does not support EDK DSC format, nor can EDK tools be
-used to parse the EDK II DSC format files. The EDK II DSC Format must maintain
-backward compatibility for supporting existing EDK INF file formats. This means
-that the changes made to this specification do not require changes for standard
-INF files.
+used to parse the EDK II DSC format files. 
 
 **Simplified platform build and configuration**
 
@@ -69,7 +66,7 @@ builds.
 |                    | EDK DSC   | EDK II DSC   | EDK FDF   | EDK II FDF   | EDK INF   | EDK II INF   |
 | ------------------ |:---------:|:------------:|:---------:|:------------:|:---------:|:------------:|
 | EDK Build Tools    | YES       | NO           | YES       | NO           | YES       | NO           |
-| EDK II Build Tools | NO        | YES          | NO        | YES          | YES       | YES          |
+| EDK II Build Tools | NO        | YES          | NO        | YES          | NO        | YES          |
 
 **********
 **Note:** This document is intended for persons doing EFI development and
@@ -92,7 +89,4 @@ tool chains - and at least one EDK II tool, GenFw. The GenFw tool is used to
 manipulate the files emitted from the compilation tools.
 
 The EDK II build provides UEFI and PI (Unified EFI, Inc.)
-specification-compliant images. Use of the tools in the EDK Compatibility
-package can be used for creating earlier versions of EFI 1.10 and/or UEFI 2.0
-compliant components. To be clear, EDK II tools do not have the limitation of
-ECP tools, which can only do EFI 1.10 and UEFI 2.0 images.
+specification-compliant images. 

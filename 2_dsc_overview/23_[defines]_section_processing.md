@@ -1,7 +1,7 @@
 <!--- @file
   2.3 [Defines] Section Processing
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -82,10 +82,6 @@ the section, and override the global definition for entries in the section that
 follow the macro definition: `DEFINE MACRO = Value.`
 **********
 
-The `EDK_GLOBAL MACRO = Value` definitions in this section globally define the
-MACRO name when parsing the DSC, files included by the !include statement, FDF
-and EDK INF files.
-
 The EDK II tools will locate the FDF file specified in the `FLASH_DEFINITION`
 entry in the same directory as the DSC file. When the PCD_VAR_CHECK_GENERATION
 entry is present and set to TRUE, tools will generate a binary file for
@@ -114,7 +110,6 @@ item is required.
 | `TIME_STAMP_FILE`             | Optional    | Filename                         | The timestamp file contains a timestamp that will be used to set the creation timestamp on all created files. If this file is specified, it will be used to adjust the timestamp of created files, if it does not exist at the start of a build, the file will be created, using the current date and time.                                                                                                                     |
 |                               |             |                                  | If this variable is not specified, the time and date of the start of the build are used by the EDK II tools that modify the time/date portion of a PE32/PE32+/Coff header. This file's path is either relative to the directory containing the DSC file or a `WORKSPACE`[^1] relative path followed by the file name.                                                                                                           |
 | `DEFINE`                      | Optional    | MACRO = PATH or Value            | A name that is assigned to either a path or a value. This statement can be used to make the DSC file more readable, as in: `DEFINE MDE = MdePkg/Library` Then, later, `$(MDE)/BaseLib/ BaseLib.inf`                                                                                                                                                                                                                             |
-| `EDK_GLOBAL`                  | Optional    | MACRO = PATH or Value            | Similar to the DEFINE statement, macros defined using this keyword are only valid when processing EDK ibraries and components. These values are ignored during processing of EDK II modules.                                                                                                                                                                                                                                    |
 | `RFC_LANGUAGES`               | Optional    | RFC4646 Language code list       | A semi-colon ";" separated list of RFC4646 Language codes (EDK II Modules) used during the generation of only a set, rather than all, UNICODE languages during the StrGather AutoGen phase. The list must be encapsulated in double quotes.                                                                                                                                                                                     |
 | `ISO_LANGUAGES`               | Optional    | ISO-639-2 Language code list     | A non-separated list of three character ISO 639-2 Language codes (EDK Components) used during the generation of only a set, rather than all, UNICODE languages during the StrGather AutoGen phase. The list must be encapsulated in double quotes.                                                                                                                                                                              |
 | `VPD_TOOL_GUID`               | Optional    | Registry Format GUID             | When this element is present, the build process will be interrupted during the AutoGen stage in order to call an external program, named by GUID that must also be defined in the Conf/tools_def.txt file using a tool code name of VPDTOOL. Refer to the EDK II Build specification for additional information.                                                                                                                |
@@ -130,7 +125,6 @@ variable.
 **********
 **Note:** EDK II Modules can have unicode string files that contain RFC4646
 language codes. EDK II modules cannot have unicode string files that contain
-ISO-629-2 language codes. USI-629-2 language codes are only valid for EDK
-components. The format of the statement is specific to processing RFC4646
-language code lists.
+ISO-629-2 language codes. The format of the statement is specific to processing 
+RFC4646 language code lists.
 **********

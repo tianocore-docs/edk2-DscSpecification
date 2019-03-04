@@ -1,7 +1,7 @@
 <!--- @file
   3.2 General Rules
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -120,14 +120,3 @@ Unless otherwise noted, all file names and paths are relative EDK II Packages
 (subdirectories in directories pointed to by WORKSPACE or PACKAGES_PATH system
 environment variables). A directory name that starts with a word is assumed by
 the build tools to be an EDK II Package directory name.
-
-Each module may have one or more INF files that can be used by tools to
-generate images. Specifically, the EDK Compatibility Package may contain two
-INF files for any module that contains assembly code. Since the ECP can be used
-with existing EDK tools (which is only supported by Microsoft and Intel Windows
-based tools,) a separate INF file to support the multiple tool chain capability
-of the EDK II build system must be provided for the modules that contain
-assembly code. The EDK II ECP will use the _basename_edk2.inf_ for the filename
-of the EDK II build system compatible INF files for non-Windows based tool
-chains, and use just the _basename.inf_ for the filename of EDK only INF files
-used by the EDK build system.

@@ -1,7 +1,7 @@
 <!--- @file
-  2.12 [UserExtensions] Section
+  3.13 [DefaultStores] Section
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,21 +29,31 @@
 
 -->
 
-## 2.12 [UserExtensions] Section
+## 3.12 [DefaultStores] Section
 
-Users may develop custom tools that use the `[UserExtensions]` sections.The EDK
-II `[UserExtensions]` sections allow for extending the DSC file with custom
-processing of component images. The format for a user extension section
-specifier is:
+The `[DefaultStores]` section is optional in all EDK II DSC files.
 
-`[UserExtensions.$(UserID).$(Identifier)]`
+#### Summary
 
-The EDK II build tools do not use this section. The reference tools ignore all
-content within a `[UserExtensions]` section.
+Entries may appear in any order. This section lists numeric mappings to the 
+Default Store User Interface Name, only valid values from this list can be 
+specified in the PcdsDynamicHii/PcdsDynamicExHii section.
 
-The following is an example of a `[UserExtensions]` section:
+If this section is not specified, the parsing tools will assume standard default
+be applied in PcdsDynamicHii/PcdsDynamicExHii section.
+
+#### Prototype
+
+```c
+<DefaultStore>     ::= "[DefaultStores]" <EOL>
+                {<Statement>*}
+<Statement> ::= <TS> <Number> <FS> <CName> <EOL>
+```
+
+#### Example
 
 ```ini
-[UserExtensions.Edk2AcpiTable."POST_PROCESSING"]
-  PostBuild.cmd -f $(OUTPUT_DIRECTORY)/$(TARGET)_$(TOOL_CHAIN_TAG)/$(ARCH)/FV/*.fd
+[DefaultStores]
+  0 | Standard        # UEFI Standard default
+  1 | Manufacturing   # UEFI Manufacturing default
 ```

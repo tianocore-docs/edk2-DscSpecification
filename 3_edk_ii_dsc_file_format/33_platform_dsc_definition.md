@@ -1,7 +1,7 @@
 <!--- @file
   3.3 Platform DSC Definition
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -47,9 +47,7 @@ specified in the `[Defines]` section or SET statements.
 
 The `[Defines]` section must appear before any other sections (except the
 header comment blocks). The remaining sections may appear in any order, however
-the EBNF, below, shows the recommended order. (The `[Libraries]` section is
-required if building EDK libraries and components in the context of an EDK II
-platform.)
+the EBNF, below, shows the recommended order. 
 
 #### Summary
 
@@ -60,7 +58,6 @@ EBNF).
 <EDK_II_DSC> ::= [<Header>]
                  <Defines>
                  [<SkuIds>]
-                 <Libraries>*
                  <LibraryClasses>*
                  <Pcds>*
                  <Components>+
@@ -379,8 +376,7 @@ Highest Priority
 Lowest Priority
 
 Macros defined in the `[Defines]` section are considered global during the
-processing of the FDF file and the DSC file. `EDK_GLOBAL` macros are considered
-global during the processing of DSC, FDF and EDK INF files.
+processing of the FDF file and the DSC file. 
 
 Macros are not allowed to redefine the reserved words specified in this file.
 For example, it is not permitted to `DEFINE DEFINE = FOOBAR`, then use `FOOBAR`
@@ -408,9 +404,8 @@ where the macro was defined.
 #### Prototype
 
 ```c
-<MacroDefinition> ::= {<NormalMacro>} {<EdkMacro>}
+<MacroDefinition> ::= {<NormalMacro>}
 <NormalMacro>     ::= <TS> "DEFINE" <MTS> <MACRO> <Eq> [<Value>] <EOL>
-<EdkMacro>        ::= <TS> "EDK_GLOBAL" <MTS> <MACRO> <Eq> [<Value>] <EOL>
 <Value>           ::= {<Number>} {<BoolType>} {<GUID>}
                       {<CString>} {<UnicodeString>} {<CArray>}
                       {<PATH>} {<Expression>} {<CFlags>}
@@ -451,7 +446,6 @@ defined in this file may be used in the Flash FDF file.
 DEFINE GEN_SKU = MyPlatformPkg/GenPei
 DEFINE SKU1 = MyPlatformPkg/Sku1/Pei
 DEFINE HACK = DEBUG
-EDK_GLOBAL EFI_ACPI_TABLE_STORAGE_GUID = 7E374E25-8E01-4FEE-87F2390C23C606CD
 ```
 
 ### 3.3.3 Conditional Directive Blocks
@@ -699,8 +693,7 @@ sections. If the included file starts with a section header, then the section
 being processed in the Platform DSC file is considered to have been terminated.
 
 If the `<Filename>` contains "$" characters, then macros defined in the DSC
-file and the system environment variables, `$(WORKSPACE)`, `$(EDK_SOURCE)`,
-`$(EFI_SOURCE)`, and `$(ECP_SOURCE)` are substituted into `<Filename>`.
+file and the system environment variable `$(WORKSPACE)` are substituted into `<Filename>`.
 
 The tools look for `<Filename>` relative to the directory the DSC file resides.
 If the file is not found, and a directory separator is in `<Filename>`, the

@@ -1,7 +1,7 @@
 <!--- @file
   3.12 [UserExtensions] Sections
 
-  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,7 +29,7 @@
 
 -->
 
-## 3.12 [UserExtensions] Sections
+## 3.11 [UserExtensions] Sections
 
 The `[UserExtensions]` sections are optional.
 

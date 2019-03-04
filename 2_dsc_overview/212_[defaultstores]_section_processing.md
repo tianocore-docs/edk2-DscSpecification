@@ -1,7 +1,7 @@
 <!--- @file
   2.13 [DefaultStores] Section Processing
 
-  Copyright (c) 2006-2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006-2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -29,7 +29,7 @@
 
 -->
 
-## 2.13 [DefaultStores] Section Processing
+## 2.12 [DefaultStores] Section Processing
 
 The contents of this section are used to define DefaultStores names. Default 
 store is UEFI HII concept. It is used to define HII default setting for the 
