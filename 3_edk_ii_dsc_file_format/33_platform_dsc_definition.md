@@ -263,6 +263,7 @@ The following are common definitions used by multiple section types.
                            {"DXE_RUNTIME_DRIVER"} {"DXE_SAL_DRIVER"}
                            {"DXE_SMM_DRIVER"} {"UEFI_DRIVER"}
                            {"UEFI_APPLICATION"} {"USER_DEFINED"}
+                           {"HOST_APPLICATION"}
 <ModuleTypeList>       ::= <ModuleType> [" " <ModuleType>]*
 <Boolean>              ::= {<BoolType>} {<Expression>}
 <EOL>                  ::= <TS> 0x0A 0x0D
