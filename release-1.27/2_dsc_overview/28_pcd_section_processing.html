@@ -1,0 +1,1333 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.8 PCD Section Processing · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="29_pcd_sections.html" />
+    
+    
+    <link rel="prev" href="27_[libraryclasses]_section_processing.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../#edk-ii-platform-description-dsc-file-specification">
+            
+                    
+                    EDK II Platform Description (DSC) File Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_introduction/">
+            
+                <a href="../1_introduction/#1-introduction">
+            
+                    
+                    1 Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#11-overview">
+            
+                    
+                    1.1 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_introduction/12_terms.html">
+            
+                <a href="../1_introduction/12_terms.html#12-terms">
+            
+                    
+                    1.2 Terms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_introduction/13_related_information.html">
+            
+                <a href="../1_introduction/13_related_information.html#13-related-information">
+            
+                    
+                    1.3 Related Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_introduction/14_conventions_used_in_this_document.html">
+            
+                <a href="../1_introduction/14_conventions_used_in_this_document.html#14-conventions-used-in-this-document">
+            
+                    
+                    1.4 Conventions Used in this Document
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./#2-dsc-overview">
+            
+                    
+                    2 DSC Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="21_processing_overview.html">
+            
+                <a href="21_processing_overview.html#21-processing-overview">
+            
+                    
+                    2.1 Processing Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#22-build-description-file-format">
+            
+                    
+                    2.2 Build Description File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="23_[defines]_section_processing.html">
+            
+                <a href="23_[defines]_section_processing.html#23-defines-section-processing">
+            
+                    
+                    2.3 [Defines] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="24_[buildoptions]_section.html">
+            
+                <a href="24_[buildoptions]_section.html#24-buildoptions-section">
+            
+                    
+                    2.4 [BuildOptions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="25_[skuids]_section_processing.html">
+            
+                <a href="25_[skuids]_section_processing.html#25-skuids-section-processing">
+            
+                    
+                    2.5 [SkuIds] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="26_[libraries]_section_processing.html">
+            
+                <a href="26_[libraries]_section_processing.html#26-libraries-section-processing">
+            
+                    
+                    2.6 [Libraries] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="27_[libraryclasses]_section_processing.html">
+            
+                <a href="27_[libraryclasses]_section_processing.html#27-libraryclasses-section-processing">
+            
+                    
+                    2.7 [LibraryClasses] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="28_pcd_section_processing.html">
+            
+                <a href="28_pcd_section_processing.html#28-pcd-section-processing">
+            
+                    
+                    2.8 PCD Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="29_pcd_sections.html">
+            
+                <a href="29_pcd_sections.html#29-pcd-sections">
+            
+                    
+                    2.9 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="210_pcd_database.html">
+            
+                <a href="210_pcd_database.html#210-pcd-database">
+            
+                    
+                    2.10 PCD Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="211_[components]_section_processing.html">
+            
+                <a href="211_[components]_section_processing.html#211-components-section-processing">
+            
+                    
+                    2.11 [Components] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="212_[userextensions]_section.html">
+            
+                <a href="212_[userextensions]_section.html#212-userextensions-section">
+            
+                    
+                    2.12 [UserExtensions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_edk_ii_dsc_file_format/">
+            
+                <a href="../3_edk_ii_dsc_file_format/#3-edk-ii-dsc-file-format">
+            
+                    
+                    3 EDK II DSC File Format
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_edk_ii_dsc_file_format/31_building_multiple_architectures.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/31_building_multiple_architectures.html#31-building-multiple-architectures">
+            
+                    
+                    3.1 Building multiple architectures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_edk_ii_dsc_file_format/32_general_rules.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/32_general_rules.html#32-general-rules">
+            
+                    
+                    3.2 General Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3_edk_ii_dsc_file_format/33_platform_dsc_definition.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/33_platform_dsc_definition.html#33-platform-dsc-definition">
+            
+                    
+                    3.3 Platform DSC Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3_edk_ii_dsc_file_format/34_header_section.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/34_header_section.html#34-header-section">
+            
+                    
+                    3.4 Header Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3_edk_ii_dsc_file_format/35_[defines]_section.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/35_[defines]_section.html#35-defines-section">
+            
+                    
+                    3.5 [Defines] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3_edk_ii_dsc_file_format/36_[buildoptions]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/36_[buildoptions]_sections.html#36-buildoptions-sections">
+            
+                    
+                    3.6 [BuildOptions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3_edk_ii_dsc_file_format/37_[skuids]_section.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/37_[skuids]_section.html#37-skuids-section">
+            
+                    
+                    3.7 [SkuIds] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3_edk_ii_dsc_file_format/38_[libraries]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/38_[libraries]_sections.html#38-libraries-sections">
+            
+                    
+                    3.8 [Libraries] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../3_edk_ii_dsc_file_format/39_[libraryclasses]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/39_[libraryclasses]_sections.html#39-libraryclasses-sections">
+            
+                    
+                    3.9 [LibraryClasses] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../3_edk_ii_dsc_file_format/310_pcd_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/310_pcd_sections.html#310-pcd-sections">
+            
+                    
+                    3.10 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../3_edk_ii_dsc_file_format/311_[components]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/311_[components]_sections.html#311-components-sections">
+            
+                    
+                    3.11 [Components] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../3_edk_ii_dsc_file_format/312_[userextensions]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/312_[userextensions]_sections.html#312-userextensions-sections">
+            
+                    
+                    3.12 [UserExtensions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#appendix-a-variables">
+            
+                    
+                    Appendix A Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../appendix_b_sample_edk_ii_dsc_file.html">
+            
+                <a href="../appendix_b_sample_edk_ii_dsc_file.html#appendix-b-sample-edk-ii-dsc-file">
+            
+                    
+                    Appendix B Sample EDK II DSC File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#appendix-c-module-types">
+            
+                    
+                    Appendix C Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../appendix_d_vpd_data_files/">
+            
+                <a href="../appendix_d_vpd_data_files/#appendix-d-vpd-data-files">
+            
+                    
+                    Appendix D Vpd Data Files
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html#d1-edk-ii-build-system-output-file-format">
+            
+                    
+                    D.1 EDK II Build System Output File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html#d2-vpd-info-file-format">
+            
+                    
+                    D.2 Vpd Info File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Tables
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#table-1-edk-build-infrastructure-support-matrix">
+            
+                    
+                    Table 1 EDK Build Infrastructure Support Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-2-well-known-macro-statements">
+            
+                    
+                    Table 2 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-3-using-system-environment-variable">
+            
+                    
+                    Table 3 Using System Environment Variable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-4-well-known-macro-statements">
+            
+                    
+                    Table 4 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-5-operator-precedence-and-supported-operands">
+            
+                    
+                    Table 5 Operator Precedence and Supported Operands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="23_[defines]_section_processing.html">
+            
+                <a href="23_[defines]_section_processing.html#table-6-edk-ii-defines-section-elements">
+            
+                    
+                    Table 6 EDK II [Defines] Section Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="24_[buildoptions]_section.html">
+            
+                <a href="24_[buildoptions]_section.html#table-7-edk-ii-buildoptions-section-elements-optional-tags">
+            
+                    
+                    Table 7 EDK II [BuildOptions] Section Elements: Optional Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="24_[buildoptions]_section.html">
+            
+                <a href="24_[buildoptions]_section.html#table-8-edk-ii-buildoptions-variable-descriptions">
+            
+                    
+                    Table 8 EDK II [BuildOptions] Variable Descriptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="29_pcd_sections.html">
+            
+                <a href="29_pcd_sections.html#table-9-hii-attributes">
+            
+                    
+                    Table 9 HII Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#table-10-standard-variables">
+            
+                    
+                    Table 10 Standard Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#table-11-edk-ii-module-types">
+            
+                    
+                    Table 11 EDK II Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Figures
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="21_processing_overview.html">
+            
+                <a href="21_processing_overview.html#figure-1-edk-ii-parsing-data-flow">
+            
+                    
+                    Figure 1 EDK II Parsing Data Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.8 PCD Section Processing</a>
+    </h1>
+</div>
+<div>
+    <!-- 
+    <img style="float:left; align:middle; height:2em" src="media/TianocoreTitlePageLogo.jpg"/>
+     -->
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.27</div>
+      </h2>  
+    
+    <hr>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!--- @file
+  2.8 PCD Section Processing
+
+  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+
+  Redistribution and use in source (original document form) and 'compiled'
+  forms (converted to PDF, epub, HTML and other formats) with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code (original document form) must retain the
+     above copyright notice, this list of conditions and the following
+     disclaimer as the first lines of this file unmodified.
+
+  2) Redistributions in compiled form (transformed to other DTDs, converted to
+     PDF, epub, HTML and other formats) must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS DOCUMENTATION IS PROVIDED BY TIANOCORE PROJECT "AS IS" AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL TIANOCORE PROJECT  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<h2 id="28-pcd-section-processing">2.8 PCD Section Processing</h2>
+<p>This section is for specifying global (or default) PCD values as well as the
+access method each PCD will use for modules in the platform.</p>
+<h3 id="281-pcd-access-methods">2.8.1 PCD Access Methods</h3>
+<p>There are five defined PCD access methods. The five access methods are:
+<code>FeatureFlag</code>, <code>FixedAtBuild</code>, <code>PatchableInModule</code>, <code>Dynamic</code> and <code>DynamicEx</code>
+PCDs.</p>
+<h4 id="2811-featureflag-and-dynamic-pcd-types">2.8.1.1 FeatureFlag and Dynamic PCD Types</h4>
+<p>The two recommended access methods that are commonly used in modules are
+<code>FeatureFlag</code> and the generic, <code>Dynamic method</code>. The <code>Dynamic</code> form is used for
+configuration when the PCD value is produced and consumed by drivers during
+execution, the value may be user configurable from setup or the value is
+produced by the platform in a specified area. It is associated with modules
+that are released in source code. The dynamic form is the most flexible method,
+as platform integrators may chose a to use a different access method for a
+given platform without modifying the module&apos;s INF file or the code for the
+module.</p>
+<h4 id="2812-dynamicex-fixedatbuild-and-patchableinmodule-pcd-access-methods">2.8.1.2 DynamicEx, FixedAtBuild and PatchableInModule PCD Access Methods</h4>
+<p>Similar in function, the <code>DynamicEx</code> access method can be used with modules
+that are released as binary. The <code>FixedAtBuild</code> and <code>PatchableInModule</code> PCDs
+are static and only the <code>PatchableInModule</code> PCD can have the value changed in a
+binary prior to including the module in a firmware image.</p>
+<p>The platform integrator must check DEC file that declares the PCD to determine
+the PCD&apos;s valid access methods. If a module defines a PCD as dynamic (not
+<code>DynamicEx</code>), and the DEC file lists the PCD under all access methods, the
+platform integrator can specify any access method (basically making a dynamic
+PCD into a static, fixed PCD) overriding the INF module definition. However, if
+a module declares a PCD is coded to use a specific access method , then the
+platform integrator must select that PCD access method. For example, if a PCD
+is listed as FixedAtBuild in a module file, then the platform integrator must
+either list the PCD in a <code>[PcdsFixedAtBuild]</code> section of the DSC or let the
+tools use the default value and automatically set the PCD access method to
+FixedAtBuild. It is not necessary to modify an INF file in order to use this
+feature - the tools will automatically &quot;correct&quot; the PCD access method for
+platforms that use an alternate access method for Dynamic PCDs.</p>
+<p>The content in these sections is used for generating the <code>AutoGen.c</code> and
+<code>AutoGen.h</code> files for each of the EDK II modules that are coded for the PCD.</p>
+<pre><code class="lang-ini"><span class="hljs-section">[Pcds(PcdType)]</span>
+<span class="hljs-section">[Pcds(PcdType).common]</span>
+<span class="hljs-section">[Pcds(PcdType).IA32]</span>
+<span class="hljs-section">[Pcds(PcdType).X64]</span>
+<span class="hljs-section">[Pcds(PcdType).IPF]</span>
+<span class="hljs-section">[Pcds(PcdType).EBC]</span>
+</code></pre>
+<h3 id="282-pcd-access-method-categories">2.8.2 PCD Access Method Categories</h3>
+<p>Of the five access methods of PCDs that have been defined, they fall into one
+of three categories:</p>
+<ul>
+<li><p><code>FeatureFlag</code> - always has a Boolean value.</p>
+</li>
+<li><p><code>FixedAtBuild</code> and <code>PatchableInModule</code>, will have a value of one of three
+datum types, Boolean, numeric or pointer. The <code>FixedAtBuild</code> PCD will be a
+defined as a const, while the <code>PatchableInModule</code> will be defined as volatile.</p>
+</li>
+<li><p><code>Dynamic</code> and <code>DynamicEx</code>, will have a value of one of the three data types,
+Boolean, numeric or pointer.</p>
+</li>
+</ul>
+<hr>
+<p><strong>Note:</strong> For the dynamic types of PCDs, using an <code>$(Arch)</code> extension other
+than <code>common</code> in the section header is not valid.</p>
+<hr>
+<p><strong>Warning:</strong> A PCD can only use one type for all source modules. It is not
+permissible to list a PCD in a PcdsFixedAtBuild section and also list it in a
+PcdsPatchableInModule section.</p>
+<hr>
+<p><strong>Note:</strong> Binary modules included in a platform build are permitted to use the
+PatchableInModule or DynamicEx access methods (the Binary module must specify
+which of these two methods were used to create the binary module) regardless of
+the method used for a given PCD in modules built from source. The build supports
+binary modules that use the same or different PCD access method than the source
+modules or other binary modules. The build parser must break with an error if a
+PCD is listed as FixedAtBuild or Dynamic (not DynamicEx) in the Binary INF.</p>
+<hr>
+<p>Datum Types for PCD values are either Boolean (<code>BOOLEAN</code> - 1 byte), numeric
+(<code>UINT8</code> - 1 byte, <code>UINT16</code> - 2 bytes, <code>UINT32</code> - 4 bytes or <code>UINT64</code> - 8
+bytes) or variable length (<code>VOID</code><em>, which indicates that the value is usually
+accessed via a pointer). To put a limit on the number of bytes for a variable
+length value (when the PCD Datum Type is <code>VOID</code></em>) the PCD entry must include
+the <code>MaximumDatumSize</code> parameter. The <code>MaximumDatumSize</code> parameter is optional
+for all other PCD data types.</p>
+<hr>
+<p><strong>Warning:</strong> A <code>FixedAtBuild</code> or <code>PatchableInModule</code> PCD may have a
+different datum type based on the architecture. For example, a PCD that is used
+for address manipulation may have a datum type of <code>UINT32</code> for IA32 and
+<code>UINT64</code> for X64 and IPF architectures. This will be declared in the EDK II
+Package Declaration (DEC) File.</p>
+<hr>
+<h3 id="283-pcd-section-usage">2.8.3 PCD Section Usage</h3>
+<p>PCD sections are optional unless the EDK II modules specified in the
+<code>[Components]</code> section use PCDs.</p>
+<p>The PCD sections are used to define the access method for a PCD. Since each
+module is built once for a given architecture, the PCD can be listed under
+different PCD access methods provided they are listed under different
+architectures.</p>
+<h4 id="2831-access-methods">2.8.3.1 Access Methods</h4>
+<p>However, once a PCD access method is selected for a given architecture, the PCD
+can only use that access method.</p>
+<h4 id="example">Example</h4>
+<p>A PCD that will use the <code>FixedAtBuild</code> access method for IA32 cannot use the
+<code>PatchableInModule</code> access method for individual modules built for the IA32
+architecture.</p>
+<h4 id="2832-different-access-methods">2.8.3.2 Different Access Methods</h4>
+<p>It is permissible to have a PCD use different access methods for different
+architectures.</p>
+<h4 id="example">Example</h4>
+<p>A PCD that will use the FixedAtBuild access method for IA32 can use the
+Patchable in Module access method for X64.</p>
+<h4 id="2833-item-access-methods">2.8.3.3 Item Access Methods</h4>
+<p>Multiple item access methods, <code>PcdsFeatureFlag</code>, <code>PcdsFixedAtBuild</code>,
+<code>PcdsPatchableInModule</code>, <code>PcdsDynamic</code> and <code>PcdsDynamicEx</code> are not allowed to
+be specified within a single [] section tag.</p>
+<h4 id="incorrect-example">Incorrect example</h4>
+<pre><code class="lang-ini"><span class="hljs-section">[PcdsFixedAtBuild.IA32, PcdsPatchableInModule.IA32, PcdsDynamicDefault.IA32]</span>
+</code></pre>
+<h4 id="correct-example">Correct example</h4>
+<pre><code class="lang-ini">[PcdsFixedAtBuild.IA32]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FAL  SE
+
+[PcdsPatchableInModule.IA32]
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80000000
+
+[PcdsDynamicDefault.IA32]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvStoreReserved|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|0
+</code></pre>
+<h4 id="2834-mixing-pcd-dynamic-item-storage-methods">2.8.3.4 Mixing PCD Dynamic item storage methods</h4>
+<p>It is not permissible to mix different PCD Dynamic item storage methods within
+a single section, as the format for the PCD entries in PcdsDynamicDefault,
+PcdsDynamicVpd, PcdsDynamicHii, and PcdsDynamicExDefault, PcdsDynamicExVpd and
+PcdsDynamicExHii sections are different.</p>
+<h4 id="incorrect-example">Incorrect Example</h4>
+<pre><code class="lang-ini">[PcdsDynamicExDefault.IA32, PcdsDynamicExVpd.IA32]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvStoreReserved|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|*|0
+</code></pre>
+<h4 id="correct-example">Correct Example</h4>
+<pre><code class="lang-ini">[PcdsDynamicExDefault.IA32]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvStoreReserved|0
+
+[PcdsDynamicExVpd.IA32]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|*|0
+</code></pre>
+<h4 id="2835-multiple-architectural-section-tags">2.8.3.5 Multiple Architectural Section Tags</h4>
+<p>It is permissible to specify multiple architectural section tags for the same
+PCD item type in a single section.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-ini">[PcdsFixedAtBuild.IA32, PcdsFixedAtBuild.X64]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
+
+[PcdsPatchableInModule.IA32, PatchableInModule.X64]
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80000000
+
+[PcdsDynamicDefault.IA32, PcdsDynamicDefault.X64]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvStoreReserved|0
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|0
+</code></pre>
+<h4 id="2836-dynamic-and-dynamicex-pcd-storage-methods">2.8.3.6 Dynamic and DynamicEx PCD Storage Methods</h4>
+<p>The PCDs that use Dynamic and DynamicEx access methods can have their values
+stored in one of three different methods, Default, VPD or HII. A PCD using one
+of these access methods can use one storage method. It is not permissible to
+have a PCD try to store the data in the Default database and a VPD region at
+the same time.</p>
+<p>The Default methods (<code>[PcdsDynamicDefault]</code> and <code>[PcdsDynamicExDefault]</code>) rely
+on internal databases generated by the build tools and stored as a data segment
+in the PEI and DXE PCD drivers. The format for listing a boolean or numeric
+datum type PCD in these sections is:</p>
+<p><code>TokenSpaceGuid.PcdCname|&lt;Value&gt;</code></p>
+<p>The format for listing a VOID* datum type PCD in these sections is:</p>
+<p><code>TokenSpaceGuid.PcdCname|&lt;Value&gt;|VOID*|&lt;MaxSize&gt;</code></p>
+<p>The VPD methods ([PcdsDynamicVpd] and [PcdsDynamicExVpd]) rely on data stored
+in read-only memory. The format for listing a boolean or numeric datum type PCD
+in these sections is:</p>
+<p><code>TokenSpaceGuid.PcdCname|&lt;Offset&gt;|&lt;Value&gt;</code></p>
+<p>The format for listing a VOID* datum type PCD in these sections is:</p>
+<p><code>TokenSpaceGuid.PcdCname|&lt;Offset&gt;|&lt;MaxSize&gt;|&lt;Value&gt;</code></p>
+<p>The HII methods ([PcdsDynamicHii] and [PcdsDynamicExHii]) rely on an HII Data
+Store. The format for listing a PCD in these sections is:</p>
+<pre><code>TokenSpaceGuid.PcdCname|&lt;HiiString&gt;|&lt;VariableGuid&gt;|&lt;VariableOffset&gt;|&lt;Value&gt;|&lt;Attribute&gt;
+</code></pre><hr>
+<p><strong>Note:</strong> Some of the above fields are optional; refer to &quot;PCD Sections&quot; in the
+next chapter for the exact syntax.</p>
+<hr>
+<h4 id="2837-unique-pcds">2.8.3.7 Unique PCDs</h4>
+<p>Unique PCDs are identified using the format to identify the named PCD:</p>
+<p><code>TokenSpaceGuidCName.PcdCName</code></p>
+<p>The content for a PCD in this section is the PCD&apos;s Name (PCD Token Space Guid
+C name, the PCD C name - separated by a period character,) and Default value.
+Field entries on a line are separated by the pipe &quot;|&quot; character.</p>
+<p>This specification prohibits setting different PCD access methods for a single
+PCD in different modules. The access methods here are <code>PcdsFixedAtBuild</code>,
+<code>PcdsPatchableInModule</code>, <code>PcdsDynamic</code> and <code>PcdsDynamicEx</code>.</p>
+<hr>
+<p><strong>Note:</strong> A future version of this specification and the tool may allow listing
+a PCD in both <code>PcdsFixedAtBuild</code> and <code>PcdsPatchableInModule</code> sections. For
+example, the platform integrator may want to use one module with a given PCD
+as <code>FixedAtBuild</code>, and have a different module with the same PCD use it as
+<code>PatchableInModule</code>.</p>
+<hr>
+<p><strong>Note:</strong> A PCD that is used as FixedAtBuild for one module, while a different
+module may want to use the PCD as PatchableInModule and a third module might
+use the PCD as DynamicEx. Under normal circumstances, only two of these might
+be used - <code>PcdsFixedAtBuild</code> for modules with wellknown values for a PCD,
+then either <code>PcdsPatchableInModule</code> or <code>PcdsDynamicEx</code> - the first
+being for testing a module, the second giving the ability for doing individual
+driver performance tuning &quot;on-the-fly&quot;.</p>
+<hr>
+<h4 id="2838-precedence">2.8.3.8 Precedence</h4>
+<p>Tools must assume that the first method found for a PCD in the PCDs sections
+will used for all instances of a PCD. Tools must not allow for different
+modules using a PCD differently, using the <code>&lt;Pcds*&gt;</code> statements under the INF
+file definitions in the <code>[Components]</code> section.</p>
+<p>Tools must process VOID* PCD entries that do not include the maximum length
+field by determining the maximum length of the PCD values in the DSC, DSC and
+INF files. Size is allocated for &quot;string&quot; entries to be the length of the
+string plus 1 byte for the null terminator, for L&quot;string&quot; entries to be the
+length of the UCS-2 character string plus 2 bytes for the null terminator and
+the exact length of a byte array.</p>
+<p>The values that are assigned to individual PCDs required by a build may come
+from different locations and different meta-data files. The following provides
+the precedence (high to low) to assign a value to a PCD.</p>
+<ul>
+<li><p>Command-line, <code>--pcd</code> flags (left most has higher priority)</p>
+</li>
+<li><p>DSC file, FeatureFlag, PatchableInModule or FixedAtBuild PCD value defined
+in the <code>[Components]</code> INF scoping <code>&lt;Pcd*&gt;</code> section statements</p>
+</li>
+<li><p>FDF file, grammar describing automatic assignment of PCD values</p>
+</li>
+<li><p>FDF file, SET statements within a section</p>
+</li>
+<li><p>FDF file, SET statement in the [Defines] section</p>
+</li>
+<li><p>DSC file, a PCD value defined in a PCD access method section with an
+architectural modifier.</p>
+<p>In this example, modules built for IA32 architecture, the PCD will use
+PatchableInModule access, while modules built for all other architectures, the
+PCD will use the FixedAtBuild access method:</p>
+<pre><code class="lang-ini">[PcdsFixedAtBuild.common]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
+
+[PcdsPatchableInModule.IA32]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize|1
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResetOnMemoryTypeInformationChange|FALSE
+</code></pre>
+</li>
+<li><p>DSC file, A PCD value defined in a PCD access method (item type) global
+<code>[Pcd*]</code> section for common architectures.</p>
+</li>
+<li><p>INF file, PCD sections, Default Values (provided all INF files have defined
+the same value)</p>
+</li>
+<li><p>DEC file, PCD sections, Default Values</p>
+</li>
+</ul>
+<hr>
+<p><strong>Note:</strong> Dynamic or DynamicEx PCD sections with architectural modifiers is not
+allowed unless the platform can only be built using a single architecture, even
+if there is more than one architecture listed in the SUPPORTED_ARCHITECTURES
+element in the <code>[Defines]</code> section. When building more than one architecture
+for a given platform (the platform supports multiple architectures in firmware)
+only a single value can be used for either a Dynamic or DynamicEx PCD. Therefore,
+listing PcdsDynamic or PcdsDynamicEx sections with architectural modifiers is
+prohibited in this type of platform description file.</p>
+<hr>
+<p><strong>Note:</strong> PCD values within a section are positional, (last wins) if a PCD is
+listed more than one time within a section. List a PCD in one of the other
+access methods is allowed, provided a single access method must be used for all
+instances of the PCD.</p>
+<hr>
+<h4 id="2839-library-instances">2.8.3.9 Library Instances</h4>
+<p>Library Instances that use PCDs that the module is linked with must use the
+same PCD setting as the module using the Library Instance. So if a module uses
+a PCD as <code>PcdsFixedAtBuild</code>, then all library instances that use that PCD must
+also use the PCD as <code>PcdsFixedAtBuild</code> with the same value.</p>
+<p>Build Tools must detect missing PCD entries (PCD specified in an INF file, but
+not in the DSC file) and search the DEC files in the EDK II Packages
+(sub&#x2010;directories in directories pointed to by WORKSPACE or PACKAGES_PATH system
+environment variables), in order to use the default value from the DEC file.PCD
+Values may be absolute (a number, string, etc.) a MACRO name or an expression.
+The expression is a C-style expression using C relational, equality and logical
+numeric and bitwise operators or numeric and bitwise operators that evaluate to
+a value that matches the PCD&apos;s Datum Type (specified in the DEC package
+declaration file.) Precedence and associativity follow C standards. Using PCDs
+in expressions is also permitted.</p>
+<h4 id="28310-maximum-size-of-a-void-pcd">2.8.3.10 Maximum Size of a VOID* PCD</h4>
+<p>If the maximum size of a VOID* PCD is not specified in the DSC file, then the
+maximum size will be calculated based on the largest size of the following:</p>
+<ul>
+<li><p>the string or array in the DSC file</p>
+</li>
+<li><p>the string or array in the INF file</p>
+</li>
+<li><p>the string or array in the DEC file</p>
+</li>
+</ul>
+<h4 id="scenario-a">Scenario A</h4>
+<p>If for a given PCD and architecture:</p>
+<ol>
+<li><p>The PCD is not listed anywhere in the DSC file,</p>
+</li>
+<li><p>If the PCD is listed in the INF file of at least one of the modules listed
+in the <code>[Components]</code> section,</p>
+</li>
+<li><p>All of the modules in the <code>[Components]</code> section that use the PCD, list the
+PCD using the Dynamic access method in their INF files,</p>
+</li>
+<li><p>The DEC file has the PCD listed in the sections for Dynamic, Patchable in
+Module and FixedAtBuild,</p>
+</li>
+</ol>
+<p>The build tools must use the FixedAtBuild access method for this PCD in this
+scenario.</p>
+<h4 id="scenario-b">Scenario B</h4>
+<p>If for a given PCD and architecture:</p>
+<ol>
+<li><p>The PCD is not listed anywhere in the DSC file,</p>
+</li>
+<li><p>If the PCD is listed in the INF file of at least one of the modules listed
+in the [Components] section,</p>
+</li>
+<li><p>All of the modules listed in the <code>[Components]</code> section that use the PCD,
+list the PCD using the Dynamic access method in their INF files,</p>
+</li>
+<li><p>The DEC file has the PCD listed in the sections for Dynamic and
+FixedAtBuild.</p>
+</li>
+</ol>
+<p>The build tools must use the FixedAtBuild access method for this PCD in this
+scenario.</p>
+<h4 id="scenario-c">Scenario C</h4>
+<p>If for a given PCD and architecture:</p>
+<ol>
+<li><p>The PCD is not listed anywhere in the DSC file,</p>
+</li>
+<li><p>If the PCD is listed in the INF file of at least one of the modules listed
+in the <code>[Components]</code> section,</p>
+</li>
+<li><p>One or more module uses the Patchable in Module access method for the PCD in
+the INF files,</p>
+</li>
+<li><p>All of the other modules listed in the <code>[Components]</code> section that use the
+PCD, list the PCD using the Dynamic access method in their INF files,</p>
+</li>
+</ol>
+<p>The build tools must use the Patchable in Module access method for the PCD in
+all of the modules that use this PCD in this scenario. Since number 3 shows
+that there are modules that are coded for only patchable in module access, and
+the EDK II build system requires that for a single architecture a single access
+method must be selected for each PCD, no other methods of access, such as
+FixedAtBuild, can be used for modules that may not be coded specifically for
+patchable in module access.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                    
+                    
+
+<div>
+    <hr>
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.27</div>
+      </h2>  
+    
+</div>
+
+
+
+                
+            </div>
+
+            
+                
+                <a href="27_[libraryclasses]_section_processing.html#27-libraryclasses-section-processing" class="navigation navigation-prev " aria-label="Previous page: 2.7 [LibraryClasses] Section Processing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="29_pcd_sections.html#29-pcd-sections" class="navigation navigation-next " aria-label="Next page: 2.9 PCD Sections">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.8 PCD Section Processing","level":"1.3.8","depth":2,"next":{"title":"2.9 PCD Sections","level":"1.3.9","depth":2,"anchor":"#29-pcd-sections","path":"2_dsc_overview/29_pcd_sections.md","ref":"2_dsc_overview/29_pcd_sections.md#29-pcd-sections","articles":[]},"previous":{"title":"2.7 [LibraryClasses] Section Processing","level":"1.3.7","depth":2,"anchor":"#27-libraryclasses-section-processing","path":"2_dsc_overview/27_[libraryclasses]_section_processing.md","ref":"2_dsc_overview/27_[libraryclasses]_section_processing.md#27-libraryclasses-section-processing","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"title":"EDK II Platform Description (DSC) File Specification","version":"Revision 1.27"},"plugins":["puml-aleung"],"pluginsConfig":{"puml-aleung":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_dsc_overview/28_pcd_section_processing.md","mtime":"2020-12-01T04:59:18.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-01T04:59:51.992Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1665 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.2 Build Description File Format · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="23_[defines]_section_processing.html" />
+    
+    
+    <link rel="prev" href="21_processing_overview.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../#edk-ii-platform-description-dsc-file-specification">
+            
+                    
+                    EDK II Platform Description (DSC) File Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_introduction/">
+            
+                <a href="../1_introduction/#1-introduction">
+            
+                    
+                    1 Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#11-overview">
+            
+                    
+                    1.1 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_introduction/12_terms.html">
+            
+                <a href="../1_introduction/12_terms.html#12-terms">
+            
+                    
+                    1.2 Terms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_introduction/13_related_information.html">
+            
+                <a href="../1_introduction/13_related_information.html#13-related-information">
+            
+                    
+                    1.3 Related Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_introduction/14_conventions_used_in_this_document.html">
+            
+                <a href="../1_introduction/14_conventions_used_in_this_document.html#14-conventions-used-in-this-document">
+            
+                    
+                    1.4 Conventions Used in this Document
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./#2-dsc-overview">
+            
+                    
+                    2 DSC Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="21_processing_overview.html">
+            
+                <a href="21_processing_overview.html#21-processing-overview">
+            
+                    
+                    2.1 Processing Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#22-build-description-file-format">
+            
+                    
+                    2.2 Build Description File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="23_[defines]_section_processing.html">
+            
+                <a href="23_[defines]_section_processing.html#23-defines-section-processing">
+            
+                    
+                    2.3 [Defines] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="24_[buildoptions]_section.html">
+            
+                <a href="24_[buildoptions]_section.html#24-buildoptions-section">
+            
+                    
+                    2.4 [BuildOptions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="25_[skuids]_section_processing.html">
+            
+                <a href="25_[skuids]_section_processing.html#25-skuids-section-processing">
+            
+                    
+                    2.5 [SkuIds] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="26_[libraries]_section_processing.html">
+            
+                <a href="26_[libraries]_section_processing.html#26-libraries-section-processing">
+            
+                    
+                    2.6 [Libraries] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="27_[libraryclasses]_section_processing.html">
+            
+                <a href="27_[libraryclasses]_section_processing.html#27-libraryclasses-section-processing">
+            
+                    
+                    2.7 [LibraryClasses] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="28_pcd_section_processing.html">
+            
+                <a href="28_pcd_section_processing.html#28-pcd-section-processing">
+            
+                    
+                    2.8 PCD Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="29_pcd_sections.html">
+            
+                <a href="29_pcd_sections.html#29-pcd-sections">
+            
+                    
+                    2.9 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="210_pcd_database.html">
+            
+                <a href="210_pcd_database.html#210-pcd-database">
+            
+                    
+                    2.10 PCD Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="211_[components]_section_processing.html">
+            
+                <a href="211_[components]_section_processing.html#211-components-section-processing">
+            
+                    
+                    2.11 [Components] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="212_[userextensions]_section.html">
+            
+                <a href="212_[userextensions]_section.html#212-userextensions-section">
+            
+                    
+                    2.12 [UserExtensions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3_edk_ii_dsc_file_format/">
+            
+                <a href="../3_edk_ii_dsc_file_format/#3-edk-ii-dsc-file-format">
+            
+                    
+                    3 EDK II DSC File Format
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3_edk_ii_dsc_file_format/31_building_multiple_architectures.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/31_building_multiple_architectures.html#31-building-multiple-architectures">
+            
+                    
+                    3.1 Building multiple architectures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3_edk_ii_dsc_file_format/32_general_rules.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/32_general_rules.html#32-general-rules">
+            
+                    
+                    3.2 General Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3_edk_ii_dsc_file_format/33_platform_dsc_definition.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/33_platform_dsc_definition.html#33-platform-dsc-definition">
+            
+                    
+                    3.3 Platform DSC Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3_edk_ii_dsc_file_format/34_header_section.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/34_header_section.html#34-header-section">
+            
+                    
+                    3.4 Header Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3_edk_ii_dsc_file_format/35_[defines]_section.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/35_[defines]_section.html#35-defines-section">
+            
+                    
+                    3.5 [Defines] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3_edk_ii_dsc_file_format/36_[buildoptions]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/36_[buildoptions]_sections.html#36-buildoptions-sections">
+            
+                    
+                    3.6 [BuildOptions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3_edk_ii_dsc_file_format/37_[skuids]_section.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/37_[skuids]_section.html#37-skuids-section">
+            
+                    
+                    3.7 [SkuIds] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3_edk_ii_dsc_file_format/38_[libraries]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/38_[libraries]_sections.html#38-libraries-sections">
+            
+                    
+                    3.8 [Libraries] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../3_edk_ii_dsc_file_format/39_[libraryclasses]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/39_[libraryclasses]_sections.html#39-libraryclasses-sections">
+            
+                    
+                    3.9 [LibraryClasses] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../3_edk_ii_dsc_file_format/310_pcd_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/310_pcd_sections.html#310-pcd-sections">
+            
+                    
+                    3.10 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../3_edk_ii_dsc_file_format/311_[components]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/311_[components]_sections.html#311-components-sections">
+            
+                    
+                    3.11 [Components] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../3_edk_ii_dsc_file_format/312_[userextensions]_sections.html">
+            
+                <a href="../3_edk_ii_dsc_file_format/312_[userextensions]_sections.html#312-userextensions-sections">
+            
+                    
+                    3.12 [UserExtensions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#appendix-a-variables">
+            
+                    
+                    Appendix A Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../appendix_b_sample_edk_ii_dsc_file.html">
+            
+                <a href="../appendix_b_sample_edk_ii_dsc_file.html#appendix-b-sample-edk-ii-dsc-file">
+            
+                    
+                    Appendix B Sample EDK II DSC File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#appendix-c-module-types">
+            
+                    
+                    Appendix C Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../appendix_d_vpd_data_files/">
+            
+                <a href="../appendix_d_vpd_data_files/#appendix-d-vpd-data-files">
+            
+                    
+                    Appendix D Vpd Data Files
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html#d1-edk-ii-build-system-output-file-format">
+            
+                    
+                    D.1 EDK II Build System Output File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html#d2-vpd-info-file-format">
+            
+                    
+                    D.2 Vpd Info File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Tables
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#table-1-edk-build-infrastructure-support-matrix">
+            
+                    
+                    Table 1 EDK Build Infrastructure Support Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-2-well-known-macro-statements">
+            
+                    
+                    Table 2 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-3-using-system-environment-variable">
+            
+                    
+                    Table 3 Using System Environment Variable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-4-well-known-macro-statements">
+            
+                    
+                    Table 4 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="22_build_description_file_format.html">
+            
+                <a href="22_build_description_file_format.html#table-5-operator-precedence-and-supported-operands">
+            
+                    
+                    Table 5 Operator Precedence and Supported Operands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="23_[defines]_section_processing.html">
+            
+                <a href="23_[defines]_section_processing.html#table-6-edk-ii-defines-section-elements">
+            
+                    
+                    Table 6 EDK II [Defines] Section Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="24_[buildoptions]_section.html">
+            
+                <a href="24_[buildoptions]_section.html#table-7-edk-ii-buildoptions-section-elements-optional-tags">
+            
+                    
+                    Table 7 EDK II [BuildOptions] Section Elements: Optional Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="24_[buildoptions]_section.html">
+            
+                <a href="24_[buildoptions]_section.html#table-8-edk-ii-buildoptions-variable-descriptions">
+            
+                    
+                    Table 8 EDK II [BuildOptions] Variable Descriptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="29_pcd_sections.html">
+            
+                <a href="29_pcd_sections.html#table-9-hii-attributes">
+            
+                    
+                    Table 9 HII Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#table-10-standard-variables">
+            
+                    
+                    Table 10 Standard Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#table-11-edk-ii-module-types">
+            
+                    
+                    Table 11 EDK II Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Figures
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="21_processing_overview.html">
+            
+                <a href="21_processing_overview.html#figure-1-edk-ii-parsing-data-flow">
+            
+                    
+                    Figure 1 EDK II Parsing Data Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.2 Build Description File Format</a>
+    </h1>
+</div>
+<div>
+    <!-- 
+    <img style="float:left; align:middle; height:2em" src="media/TianocoreTitlePageLogo.jpg"/>
+     -->
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.27</div>
+      </h2>  
+    
+    <hr>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!--- @file
+  2.2 Build Description File Format
+
+  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+
+  Redistribution and use in source (original document form) and 'compiled'
+  forms (converted to PDF, epub, HTML and other formats) with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code (original document form) must retain the
+     above copyright notice, this list of conditions and the following
+     disclaimer as the first lines of this file unmodified.
+
+  2) Redistributions in compiled form (transformed to other DTDs, converted to
+     PDF, epub, HTML and other formats) must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS DOCUMENTATION IS PROVIDED BY TIANOCORE PROJECT "AS IS" AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL TIANOCORE PROJECT  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<h2 id="22-build-description-file-format">2.2 Build Description File Format</h2>
+<p>EDK II build description files--DSC, FDF, DEC and INF files, along with other
+files like build_rules.txt, target.txt and tools_def.txt, contain information
+used by the parsing utility to create makefiles that process source files to
+generate binary (PE32/PE32+/Coff) files. The binary files can be distributed as
+EDK II binary packages or used to create a platform are defined in an FDF file,
+rather than the EDK II DSC file unless the binary modules included in a platform
+use PCDs.</p>
+<h3 id="221-section-entries">2.2.1 Section Entries</h3>
+<p>To simplify parsing, the EDK II meta-data files continue using the INI format.
+This style was introduced for EDK meta-data files, when only the Windows tool
+chains were supported. It was decided that for compatibility purposes, that INI
+format would continue to be used. EDK II formats differ from the de facto INI
+format in that the semicolon &quot;;&quot; character cannot be used to indicate a
+comment.</p>
+<p>Leading and trailing space/tab characters must be ignored.</p>
+<p>Duplicate section names must be merged by tools.</p>
+<p>This description file consists of sections delineated by section tags enclosed
+within square <code>[]</code> brackets. Section tag entries are case-insensitive. The
+different sections and their usage are described below. The text of a given
+section can be used for multiple section names by separating the section names
+with a comma. For example:</p>
+<p><code>[LibraryClasses.X64, LibraryClasses.ipf]</code></p>
+<p>The content below each section heading is processed by the parsing utilities in
+the order that they occur in the file. The precedence for processing these
+architecture section tags is from right to left, with sections defining an
+architecture having a higher precedence than a section which uses common (or no
+architecture extension) as the architecture.</p>
+<hr>
+<p><strong>Note:</strong> Content, such as filenames, directory names, macros and C variable
+names, within a section IS case sensitive. IA32, Ia32 and ia32 within a section
+are processed as separate items. (Refer to Naming Conventions below for more
+information on directory and/or file naming.)</p>
+<hr>
+<p>Sections are terminated by the start of another section or the end of the file.</p>
+<p>Comments are not permitted between square brackets of a section specifier.</p>
+<p>Duplicate sections (two sections with identical section tags) will be merged by
+tools, with the second section appended to the first.</p>
+<p>If architectural modifiers are used in the section tag, the section is merged
+by tools with content from common sections (if specified) with the
+architectural section appended to the first, into an architectural section. For
+example, given the following:</p>
+<pre><code class="lang-ini">[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /nologo
+
+[BuildOptions.IA32]
+  MSFT:*_*_IA32_CC_FLAGS = /D MDEPKG_NDEBUG
+
+[BuildOptions.X64]
+  MSFT:*_*_X64_CC_FLAGS = /Gy
+</code></pre>
+<p>After the first pass of the tools, when building the module for IA32, the
+source files will logically be:</p>
+<pre><code class="lang-ini">[BuildOptions.IA32]
+  MSFT:*_*_*_CC_FLAGS    = /nologo
+  MSFT:*_*_IA32_CC_FLAGS = /D MDEPKG_NDEBUG
+</code></pre>
+<p>When building the module for X64, the source files will logically be:</p>
+<pre><code class="lang-ini">[BuildOptions.X64]
+  MSFT:*_*_*_CC_FLAGS   = /nologo
+  MSFT:*_*_X64_CC_FLAGS = /Gy
+</code></pre>
+<p>The <code>[Defines]</code> section tag prohibits use of architectural modifiers. All other
+sections can specify architectural modifiers.</p>
+<h3 id="222-comments">2.2.2 Comments</h3>
+<p>The hash &quot;#&quot; character indicates comments in the Platform Description (DSC)
+file. In line comments terminate the processing of a line. In line comments
+must be placed at the end of the line, and may not be placed within the section
+<code>[]</code> tags.</p>
+<p>Only <code>FIX_LOAD_TOP_MEMORY_ADDRESS = 0xF0000000</code> in the following example is
+processed by tools; the remainder of the line is ignored:</p>
+<p><code>FIX_LOAD_TOP_MEMORY_ADDRESS = 0xF0000000 # set top memory address</code></p>
+<hr>
+<p><strong>Note:</strong> Blank lines and lines that start with the hash &quot;#&quot; character
+must be ignored by tools.</p>
+<hr>
+<p>Hash characters appearing within a quoted string are permitted, with the string
+being processed as a single entity. The following example must handle the
+quoted string as single element by tools.</p>
+<p><code>UI = &quot;# Copyright 2007, NoSuch, ltd. All rights reserved.&quot;</code></p>
+<h3 id="223-valid-entries">2.2.3 Valid Entries</h3>
+<p>Processing of the line is terminated if a comment is encountered.</p>
+<p>Processing of a line is terminated by the end of the line.</p>
+<p>Items in quotation marks are treated as a single token and have the highest
+precedence. Items encapsulated in parenthesis are also treated as tokens, with
+embedded tokens being processed first. All other processing occurs from left to
+right.</p>
+<p>In the following example, B - C is processed first, then result is added to A
+followed by adding 2; finally 3 is added to the result.</p>
+<p><code>(A + (B - C) + 2) + 3</code></p>
+<p>In the next example, A + B is processed first, then C + D is processed and
+finally the two results are added.</p>
+<p><code>(A + B) + (C + D)</code></p>
+<p>Space and tab characters are permitted around field separators.</p>
+<h3 id="224-naming-conventions">2.2.4 Naming Conventions</h3>
+<p>The EDK II build infrastructure is supported under Microsoft<em> Windows</em>, Linux*
+and MAC OS/X operating systems. All directory and file names must be treated as
+case sensitive because of multiple environment support.</p>
+<ul>
+<li><p>The use of special characters in directory names and file names is restricted
+to the dash, underscore, and period characters, respectively &quot;-&quot;, &quot;_&quot;, and
+&quot;.&quot;.</p>
+</li>
+<li><p>Period characters may not be followed by another period character. File and
+Directory names must not start with &quot;./&quot;, &quot;.&quot; or &quot;..&quot;.</p>
+</li>
+<li><p>Directory names and file names must not contain space characters.</p>
+</li>
+<li><p>Directory Names must only contain alphanumeric characters, the dash and
+underscore characters and start with an alpha character. A single period
+character is permitted in the name provided that alphanumeric characters
+appear before and after the period character (as in: <em>MdePkg.1</em>).</p>
+</li>
+<li><p>Additionally, all EDK II directories that are architecturally dependent must
+use a name with only the first character capitalized. <em>Ia32</em>, <em>Ipf</em>, <em>X64</em>
+and <em>Ebc</em> are valid architectural directory names. IA32, IPF and EBC are not
+acceptable directory names, and may cause build breaks. From a build tools
+perspective, IA32 is not equivalent to Ia32 or ia32.</p>
+</li>
+</ul>
+<p>The build tools must be able to process the tool definitions file:
+<code>tools_def.txt</code> (describing the location and flags for compiler and user
+defined tools), which may contain space characters in paths on Windows* systems.</p>
+<hr>
+<p><strong>Note:</strong> The toolsdef.txt file and <code>[BuildOptions]</code> sections are the
+places that permit the use of space characters in a directory path.</p>
+<hr>
+<p>The EDK II Coding Style specification covers naming conventions for use within
+C Code files, and as well as specifying the rules for directory and file names.
+This section is meant to highlight those rules as they apply to the content of
+the INF files.</p>
+<p>Architecture keywords (<code>IA32</code>, <code>IPF</code>, <code>X64</code> and <code>EBC</code>) are used by build tools
+and in metadata files for describing alternate threads for processing of files.
+These keywords must not be used for describing directory paths. Additionally,
+directory names with architectural names (<em>Ia32</em>, <em>Ipf</em>, <em>X64</em> and <em>Ebc</em>) do
+not automatically cause the build tools or meta-data files to follow these
+alternate paths. Directories and Architectural Keywords are similar in name
+only.</p>
+<p>All directory paths within EDK II INF files must use the &quot;/&quot; forward slash
+character to separate directories as well as directories from filenames.
+Example:</p>
+<p><code>C:/Work/Edk2/edksetup.bat</code></p>
+<p>File names must also follow the same naming convention required for
+directories. No space characters are permitted. The special characters
+permitted in directory names are the only special characters permitted in file
+names.</p>
+<h3 id="225-include-statement-processing">2.2.5 !include Statement Processing</h3>
+<p>The <code>!include</code> statement may appear within any section of EDK II DSC file. The
+included file content must match the content type of the current section
+definition, contain complete sections, or combination of both.</p>
+<p>The argument of this statement is a filename. The file is relative to the
+directory that contains this DSC file, and if not found the tool must attempt
+to find the file relative to the paths listed in the system environment
+variables <code>$(WORKSPACE)</code>, <code>$(EFI_SOURCE)</code>, <code>$(EDK_SOURCE)</code>, and
+<code>$(ECP_SOURCE)</code>. If the file is still not found, the parsing tools must
+terminate with an error.</p>
+<p>Macros, defined in this file, are permitted in the path or file name of the
+!include statement, as these files are included prior to processing the file
+for macros. The system environment variables <code>$(WORKSPACE)</code>, <code>$(EDK_SOURCE)</code>,
+<code>$(EFI_SOURCE)</code>, and <code>$(ECP_SOURCE)</code> may also be used; only these system
+environment variables are permitted to start the path of the included file.</p>
+<p>Statements in <code>!include</code> files must not break the integrity of the DSC file,
+the included file is read in by tools in the exact position of the file, and is
+functionally equivalent of copying the contents of the included file and
+inserting (paste) the content into the DSC file.</p>
+<p>The following examples show the valid usage of the <code>!include</code> statement.</p>
+<pre><code class="lang-ini">[LibraryClasses]
+  BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
+  !include MyPlatformCommonLibs.txt
+
+[LibraryClasses]
+  DEFINE MDELIBUAEP = MdePkg/Library/UefiApplicationEntryPoint
+  UefiApplicationEntryPoint|$(MDELIBUAEP)/UefiApplicationEntryPoint.inf
+  !include Sample.txt
+
+  ### Contents of Sample.txt
+  DEFINE EMULATE = 1
+
+  !if $(EMULATE) == 0
+  [LibraryClasses.IA32]
+    TimerLib|Some/Existing/TimerLib/Instance.inf
+
+  [LibraryClasses.X64]
+    TimerLib|Another/Existing/TimerLib/Instance.inf
+  !else
+    TimerLib|The/NULL/TimerLib/Instance.inf
+  !endif
+</code></pre>
+<h3 id="226-macro-statements">2.2.6 Macro Statements</h3>
+<p>The use of MACRO statements, which assign a value to a variable. Macros defined
+in the <code>[Defines]</code> section are considered global during the processing of the
+DSC file and the FDF file. This means that a Macro can be used in the FDF file
+without defining it in the FDF as long as it is defined in the DSC file.</p>
+<p>Token names (words defined in the EDK II meta-data file specifications) cannot
+be used as macro names. As an example, using PLATFORM_NAME as a macro name is
+not permitted, as it is a token defined in the DSC file&apos;s <code>[Defines]</code> section.</p>
+<p>Macros in the DSC file can be used to specify paths (and paths and filenames),
+and build options. They can define other items, such as values for PCDs,
+expressions or names that can be used in conditional directive statements,
+which allows customization of the build, allowing the platform integrator to
+select features from the command-line.</p>
+<p>The format for the macro statements is:</p>
+<p><code>DEFINE MACRO = Path</code></p>
+<p>Any portion on a path or path and filename can be defined by a macro.</p>
+<p>When assigning a string value to a macro, the string must follow the C format
+for specifying a string, as shown below:</p>
+<pre><code>DEFINE MACRO1 = &quot;SETUP&quot;
+DEFINE MACRO2 = L&quot;SETUP&quot;
+</code></pre><p>When assigning a numeric value to a macro, the number may be a decimal, integer
+or hex value, as shown below:</p>
+<pre><code>DEFINE MACRO1 = 0xFFFFFFFF
+DEFINE MACRO2 = 2.3
+DEFINE MACRO3 = 10
+</code></pre><p>The format for usage of a Macro varies. When used as a value, the Macro name
+must be encapsulated by &quot;$(&quot; and &quot;)&quot; as shown below:</p>
+<p><code>$(MACRO)/filename.foo</code></p>
+<p>When a macro is tested in a conditional directive statement, determining
+whether it has been define or undefined uses the following format:</p>
+<p><code>!ifdef MACRO</code></p>
+<hr>
+<p><strong>Note:</strong> For backward compatibility, tools may allow <code>$(MACRO)</code> in the
+<code>!ifdef</code> and <code>!ifndef</code> statements. This functionality may disappear in
+future releases, therefore, it is recommended that platform integrators update
+their DSC files if they also alter other content.</p>
+<hr>
+<p>When using string comparisons of Macro elements to string literals, the format
+of the conditional directive must be:</p>
+<p><code>!if $(MACRO) == &quot;Literal String&quot;</code></p>
+<hr>
+<p><strong>Note:</strong> For backward compatibility, tools may allow testing literal strings
+that are not encapsulated by double quotation marks. This functionality may
+disappear in future releases, therefore, it is recommended that platform
+integrators update their DSC files if they also alter other content.</p>
+<hr>
+<p>When testing Macro against another Macro:</p>
+<p><code>!if $(MACROALPHA) == $(MACROBETA)</code></p>
+<p>When testing a Macro against a value:</p>
+<p><code>!if $(MACRONUM) == 2</code></p>
+<p>or</p>
+<p><code>!if $(MACROBOOL) == TRUE</code></p>
+<p>When used with the <code>!if</code> or <code>!elseif</code> statements or in an expression used in a
+value field, a macro that has not been defined has a value of <code>0</code>.</p>
+<p>Any defined MACRO definitions will be expanded by tools when they encounter the
+entry in the section except when the macro is within double quotation marks in
+build options sections. The expectation is that macros in the quoted values
+will be expanded by external build scripting tools, such as nmake or gmake;
+they will not be expanded by the build tools. If a macro that is not defined is
+used in locations that are not expressions (where the tools would just do macro
+expansion as in C flags in a <code>[BuildOptions]</code> section), nothing will be
+emitted. If the macro, MACRO1, has not been defined, then:</p>
+<p><code>MSFT:*_*_*_CC_FLAGS = /c /nologo $(MACRO1) /Od</code></p>
+<p>After macro expansion, the logical result would be equal to:</p>
+<p><code>MSFT:*_*_*_CC_FLAGS = /c /nologo /Od</code></p>
+<p>It is recommended that tools remove any excess space characters when processing
+these types of lines.</p>
+<p>Macro evaluation is done at the time the macro is used in an expression,
+conditional directive or value field, not when a macro is defined. Macros in
+quoted strings will not be expanded by parsing tools; all other macro values
+will be expanded, without evaluation, as other elements of the build system
+will perform any needed tests. Macro Definition statements that appear within a
+section of the file (other than the <code>[Defines]</code> section) are scoped to the
+section they are defined in. If the Macro statement is within the <code>[Defines]</code>
+section, then the Macro is considered global to the entire DSC file, files
+included using the !include statement and global to the FDF file, with local
+definitions taking precedence (if the same MACRO name is redefined in
+subsequent sections, then that MACRO value is local to only that section.)</p>
+<p>Macros may be used in conditional statements located within the DSC (and FDF)
+file. Conditional MACROs may be defined on a command line of a parsing tool. It
+is highly recommended that a macro defined in this manner have a <code>DEFINE</code>
+statement to set a default value in the <code>[Defines]</code> section. (Macro values
+specified on the command-line override all definitions of that Macro.) In the
+reference build (Nt32Pkg/Nt32Pkg.dsc), macros set on a command line override
+any macro value defined in the DSC (or FDF) file.</p>
+<p>MACROs may also be used as values in PCD statements. See <em>Section 3.10</em> for
+more information on PCD statements.</p>
+<p>In order to support EDK components and libraries, the word <code>DEFINE</code> is replaced
+with <code>EDK_GLOBAL</code>. The <code>EDK_GLOBAL</code> macros are considered global during the
+processing of the DSC, FDF and EDK INF files.</p>
+<p>Macros that appear within double quotation marks in build options sections are
+not expanded. It is assumed that they will be expanded by the OS or external
+scripting tools.</p>
+<p>Global variables that may be used in EDK II DSC and FDF meta-data files are
+listed in the <em>Well-known Macro Statements</em> table, while the format of the
+System Environment variables that may be used in EDK II DSC and FDF files are
+in the next table.</p>
+<h6 id="table-2-well-known-macro-statements">Table 2 Well-known Macro Statements</h6>
+<table>
+<thead>
+<tr>
+<th>Exact Notation</th>
+<th>Derivation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$(OUTPUT_DIRECTORY)</code></td>
+<td>Used in FDF <code>[FV]</code> and <code>[Capsule]</code> sections; the value comes from parsing either the DSC file or via a command line option. This is commonly the Build/Platform name directory created by the build system in the EDK II WORKSPACE, however, it is possible to specify the output directory outside of the EDK II WORKSPACE.</td>
+</tr>
+<tr>
+<td><code>$(TARGET)</code></td>
+<td>Used in various locations; valid values are derived from INF, DSC, target.txt, tool options and tools_def.txt. FDF parsing tools may obtain these values from command-line options.</td>
+</tr>
+<tr>
+<td><code>$(TOOL_CHAIN_TAG)</code></td>
+<td>Used in various locations; valid values are derived from INF, DSC, target.txt, tool options and tools_def.txt. FDF parsing tools may obtain these values from command-line options.</td>
+</tr>
+<tr>
+<td><code>$(TOOLCHAIN)</code></td>
+<td>A synonym for $(TOOL_CHAIN_TAG), with the value derived from INF, DSC, target.txt and tools_def.txt.</td>
+</tr>
+<tr>
+<td></td>
+<td>This item has been deprecated, and must not be used.</td>
+</tr>
+<tr>
+<td><code>$(ARCH)</code></td>
+<td>Used in various locations, valid values are derived from INF, DSC, target.txt, tool options and tools_def.txt. FDF parsing tools may obtain these values from command-line options.</td>
+</tr>
+</tbody>
+</table>
+<p>System environment variables may be referenced, however their values must not
+be altered.</p>
+<h6 id="table-3-using-system-environment-variable">Table 3 Using System Environment Variable</h6>
+<table>
+<thead>
+<tr>
+<th>Macro Style Used in Meta-Data Files</th>
+<th>Matches Windows Environment Variable</th>
+<th>Matches Linux &amp; OS/X Environment Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(WORKSPACE)</td>
+<td>%WORKSPACE%</td>
+<td>$WORKSPACE</td>
+</tr>
+<tr>
+<td>$(EFI_SOURCE)</td>
+<td>%EFI_SOURCE%</td>
+<td>$EFI_SOURCE</td>
+</tr>
+<tr>
+<td>$(EDK_SOURCE)</td>
+<td>%EDK_SOURCE%</td>
+<td>$EDK_SOURCE</td>
+</tr>
+<tr>
+<td>$(ECP_SOURCE)</td>
+<td>%ECP_SOURCE%</td>
+<td>$ECP_SOURCE</td>
+</tr>
+<tr>
+<td>$(EDK_TOOLS_PATH)</td>
+<td>%EDK_TOOLS_PATH%</td>
+<td>$EDK_TOOLS_PATH</td>
+</tr>
+</tbody>
+</table>
+<p>The system environment variables, PACKAGES_PATH and EDK_TOOLS_BIN, are not
+permitted in EDK II meta-data files.</p>
+<p>Macros defined in the DSC file&apos;s <code>[Defines]</code> section may be used within an FDF
+file. They are also positional in nature, with later definitions overriding
+previous definitions for the remainder of the file.</p>
+<p>Additionally, the macros defined in the DSC file may be used in conditional
+directive statements located within the DSC and FDF files. Macros in the DSC
+file can be used for file names, paths, PCD values, in the <code>[BuildOptions]</code>
+section, on the right (value) side of the statements and in conditional
+directives. Macros can also be defined or used in the <code>[Defines]</code>,
+<code>[LibraryClasses]</code>, <code>[Libraries]</code>, <code>[Components]</code> and all PCD sections.</p>
+<p>Macros defined by the user cannot be used in the <code>!include</code> statements in
+either the DSC or FDF file.</p>
+<p>Macros defined in common sections may be used in the architecturally modified
+sections of the same section type. Macros defined in architectural sections
+cannot be used in other architectural sections, nor can they be used in the
+common section. Section modifiers in addition to the architectural modifier
+follow the same rules as architectural modifiers.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-ini">[LibraryClasses.common]
+  DEFINE MDE = MdePkg/Library
+  BaseLib|$(MDE)/BaseLib.inf
+
+[LibraryClasses.X64, LibraryClasses.IA32]
+  # Can use $(MDE), cannot use $(MDEMEM)
+  DEFINE PERF = PerformancePkg/Library
+  TimerLib|$(PERF)/DxeTscTimerLib/DxeTscTimerLib.inf
+
+[LibraryClasses.X64.PEIM]
+  # Can use $(MDE) and $(PERF)
+  DEFINE MDEMEM = $(MDE)/PeiMemoryAllocationLib
+  MemoryAllocationLib|$(MDEMEM)/PeiMemoryAllocationLib.inf
+
+[LibraryClasses.IPF]
+  # Cannot use $(PERF) or $(MDEMEM)
+  # Can use $(MDE) from the common section
+  PalLib|$(MDE)/UefiPalLib/UefiPalLib.inf
+  TimerLib|$(MDE)/BaseTimerLibNullTemplate/BaseTimerLibNullTemplate.inf
+</code></pre>
+<h3 id="227-edkglobal">2.2.7 EDK_GLOBAL</h3>
+<p>The <code>EDK_GLOBAL</code> statements defined in the DSC file can be used during the
+processing of the DSC, FDF and EDK INF files. The definition of the
+<code>EDK_GLOBAL</code> name must only be done in the DSC <code>[Defines]</code> section. These
+special macros can be used in path statements, DSC file <code>[BuildOptions]</code> and
+FDF file <code>[Rule]</code> sections. These statements are used to replace the
+environment variables that were defined for the EDK build tools. They must
+never be used in a conditional directive statement in the DSC and FDF files,
+nor can they be used by EDK II INF files.</p>
+<h3 id="228-conditional-directive-statements-if">2.2.8 Conditional Directive Statements (!if...)</h3>
+<p>Conditional directive statements are used by the build tools preprocessor
+function to include or exclude statements in the DSC file. A limited number of
+statements are supported, and nesting of conditionals is also supported.
+Statements are prefixed by the exclamation &quot;!&quot; character. Conditional
+statements may appear anywhere within the DSC file.</p>
+<hr>
+<p><strong>Note:</strong> A limited number of statements are supported. This specification does
+not support every conditional statement that C programmers are familiar with.</p>
+<hr>
+<p>Supported statements are:</p>
+<p><code>!ifdef, !ifndef, !if, !elseif, !else and !endif</code></p>
+<p>Refer to the Macro Statement section for information on using Macros in
+conditional directives.</p>
+<p>When using the <code>!ifdef</code> or <code>!ifndef</code>, the macro name can be used; the macro
+name must not be encapsulated between <code>$(</code> and <code>)</code>. It is the name of the macro
+that is used for testing, not the value of the macro.</p>
+<p>PCDs must not be used in the <code>!ifdef</code> or <code>!ifndef</code> statements.</p>
+<hr>
+<p><strong>Note:</strong> For backward compatibility, the EDK II build system will also process
+the <code>!ifdef</code> or <code>!ifndef</code> statements with the macro encapsulated between
+&quot;$(&quot; and &quot;)&quot;.</p>
+<hr>
+<p>When using a marco in the <code>!if</code> or <code>!elseif</code> conditionals, the macro name must
+be encapsulated between <code>$(</code> and <code>)</code>.</p>
+<p>A macro that is not defined has a default value of <code>0</code> (<code>FALSE</code>) when used in a
+conditional comparison statement.</p>
+<p>When using a PCD in the <code>!if</code> or <code>!elseif</code> conditionals, the PCD name
+(<code>TokenSpaceGuidCName.PcdCname</code>) can be used; the PCD name must not be
+encapsulated between &quot;$(&quot; and &quot;)&quot; nor between &quot;PCD(&quot; and &quot;)&quot;. Do not
+encapsulate the PCD name in the &quot;$(&quot; and &quot;)&quot; required for macro values as shown
+in the example below.</p>
+<pre><code>!if ( gTokenSpaceGuid.PcdCname == 1 ) AND ( $(MY_MACRO) == TRUE )
+DEFINE FOO=TRUE
+!endif
+</code></pre><p>If the PCD is a string, only the string needs to be encapsulated by double
+quotation marks, while a Unicode string can have the double quoted string
+prefixed by &quot;L&quot;, as in the following example:</p>
+<pre><code>!if gTokenSpaceGuid.PcdCname == L&quot;Setup&quot;
+DEFINE FOO=TRUE
+!endif
+</code></pre><p>If a PCD is used in a conditional statement, the value must first come from the
+FDF file, then from the DSC file. If the value cannot be determined from these
+two locations, the build system should break with an error message.</p>
+<hr>
+<p><strong>Note:</strong> PCDs, used in conditional directives, must be defined and the value
+set in either the FDF or DSC file in order to be used in a conditional
+statement; values from INF or DEC files are not permitted.</p>
+<hr>
+<p>When used in <code>!if</code> and <code>!elseif</code> conditional comparison statements, it is the
+value of the Macro or the PCD that is used for testing, not the name of the
+macro or PCD.</p>
+<p>Strings can only be compared to strings of a like type (testing an ASCII string
+against a Unicode format string must fail), numbers can only be compared
+against numbers and boolean objects can only evaluate to <code>TRUE</code> or <code>FALSE</code>. See
+the Operator Precedence table, in the Expressions section below for a list of
+restrictions on comparisons.</p>
+<p>Using macros in conditional directives that contain flags for use in the
+<code>[BuildOptions]</code> sections is not recommended.</p>
+<p>The following external macro names can be used in conditional directives
+without defining them in DSC or FDF files.</p>
+<h6 id="table-4-well-known-macro-statements">Table 4 Well-known Macro Statements</h6>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$(FAMILY)</code></td>
+<td>Tool Chain Family</td>
+<td>The value must be a string comparison against a FAMILY value that is defined in the Conf/ tools_def.txt file</td>
+</tr>
+<tr>
+<td><code>$(TARGET)</code></td>
+<td>Build Target</td>
+<td>The value must be a string comparison against a TARGET value that is defined in the Conf/ tools_def.txt file</td>
+</tr>
+<tr>
+<td><code>$(TOOL_CHAIN_TAG)</code></td>
+<td>Tool Chain Name</td>
+<td>The value must be a string comparison against a tool chain tag name value that is defined in the Conf/tools_def.txt file.</td>
+</tr>
+<tr>
+<td><code>$(ARCH)</code></td>
+<td>Architecture</td>
+<td>The value must be a string comparison against an architecture that is defined in the Conf/ tools_def.txt file.</td>
+</tr>
+</tbody>
+</table>
+<p>The macro values listed above are derived from the build command-line options
+(highest priority) or the <code>Conf/target.txt</code> file. They may be combined in
+directive statements using logical expressions.</p>
+<p>Most section definitions in the EDK II meta-data files have architecture
+modifiers. Use of architectural modifiers in the section tag is the recommended
+method for specifying architectural differences. Some sections do not have
+architectural modifiers and there are some unique cases where having a method
+for specifying architectural specific items would be valuable, hence the
+ability to use these values.</p>
+<p>The following are examples of conditional directives.</p>
+<pre><code class="lang-ini">!if (&quot;MSFT&quot; IN $(FAMILY)) or (&quot;INTEL&quot; IN $(FAMILY))
+... statements
+!elseif $(FAMILY) == &quot;GCC&quot;
+... statements
+!endif
+
+!ifdef FOO
+  !ifndef BAR
+    # FOO defined, BAR not defined
+  !else
+    # FOO defined, BAR is defined
+  !endif
+!elseif $(BARFOO)
+  # FOO is not defined, BARFOO evaluates to TRUE
+!elseif $(BARFOO) == $(FOOBAR)
+  # FOO is not defined, BARFOO equals the value of FOOBAR
+  # (in this case, FALSE)
+!else
+  # FOO is not defined while BARFOO evaluates to FALSE and FOOBAR
+  # evaluates to TRUE
+!endif
+
+!if $(FOO) == 2
+  # The numeric value of FOO was defined as 2, as in DEFINE FOO = 2
+!endif
+
+!if MyTspGUID.MyPcd == 2
+  # The value of PCD, MyTspGUID.MyPcd, is 2
+!endif
+
+!if $(FOO) == &quot;MyPlatformName&quot;
+  # This is a string comparison, where the MACRO FOO was set using:
+  # DEFINE FOO = &quot;MyPlatformName&quot;
+!endif
+
+!if MyTspGUID.MyTspGUID == &quot;MyPlatform&quot;
+  # This is a string comparison where PCD VOID* value is &quot;MyPlatform&quot;,
+  # and must be a null terminated string.
+!else
+  # The strings do not match exactly
+!endif
+</code></pre>
+<h3 id="229-expressions">2.2.9 Expressions</h3>
+<p>Expressions can be used in conditional directive comparison statements and in
+value fields for Macros and PCDs in the DSC and FDF files.</p>
+<p>Refer to the EDK II Expression Syntax Specification for additional information.</p>
+<hr>
+<p><strong>Note:</strong> Note that the data types are not required to be literal numbers, but
+rather they can be a Macro or a PCD whose value is a number or a boolean. The
+same rule applies for strings, where the value of the Macro or a VOID* PCD can
+be tested as a string.</p>
+<hr>
+<h6 id="table-5-operator-precedence-and-supported-operands">Table 5 Operator Precedence and Supported Operands</h6>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Use with Data Types</th>
+<th>Notes</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>or</code>, <code>OR</code>, <code>||</code></td>
+<td>Number, Boolean</td>
+<td></td>
+<td>Lowest</td>
+</tr>
+<tr>
+<td><code>and</code>, <code>AND</code>, <code>&amp;&amp;</code></td>
+<td>Number, Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>Number, Boolean</td>
+<td>Bitwise OR</td>
+<td></td>
+</tr>
+<tr>
+<td><code>^</code>, <code>xor</code>, <code>XOR</code></td>
+<td>Number, Boolean</td>
+<td>Exclusive OR</td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>Number, Boolean</td>
+<td>Bitwise AND</td>
+<td></td>
+</tr>
+<tr>
+<td><code>==</code>, <code>!=</code>, <code>EQ</code>, <code>NE</code>, <code>IN</code></td>
+<td>All types</td>
+<td>The IN operator can only be used to test a quoted unary literal string for membership in a list.</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Space characters must be used before and after the letter operators Strings compared to boolean or numeric values using &quot;==&quot; or &quot;EQ&quot; will always return FALSE, while using the &quot;!=&quot; or &quot;NE&quot; operators will always return TRUE</td>
+<td></td>
+</tr>
+<tr>
+<td><code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>LE</code>, <code>GE</code>, <code>LT</code>, <code>GT</code></td>
+<td>All</td>
+<td>Space characters must be used before and after the letter operators.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>+</code>, <code>-</code></td>
+<td>Number, Boolean</td>
+<td>Cannot be used with strings - the system does not automatically do concatenation. Tools should report a warning message if these operators are used with both a boolean and number value</td>
+<td></td>
+</tr>
+<tr>
+<td><code>!</code>, <code>not</code>, <code>NOT</code></td>
+<td>Number, Boolean</td>
+<td></td>
+<td>Highest</td>
+</tr>
+</tbody>
+</table>
+<p>The &quot;IN&quot; operator can only be used to test a literal string against elements
+in the following global variables:</p>
+<p><strong><em>$(FAMILY)</em></strong></p>
+<p><code>$(FAMILY)</code> is considered a list of families that different <code>TOOL_CHAIN_TAG</code>
+values belong to. The <code>TOOL_CHAIN_TAG</code> is defined in the <code>Conf/target.txt</code> or
+on the command-line. The <code>FAMILY</code> is associated with the <code>TOOL_CHAIN_TAG</code> in
+the <code>Conf/tools_def.txt</code> file (or the <code>TOOLS_DEF_CONF</code> file specified in the
+<code>Conf/target.txt</code> file) file. While different family names can be defined,
+ARMGCC, GCC, INTEL, MSFT, RVCT, RVCTCYGWIN and XCODE have been predefined in
+the <code>tools_def.txt</code> file.</p>
+<p><strong><em>$(ARCH)</em></strong></p>
+<p><code>$(ARCH)</code> is considered the list of architectures that are to be built, that
+were specified on the command line or come from the <code>Conf/target.txt</code> file.</p>
+<p><strong><em>$(TOOL_CHAIN_TAG)</em></strong></p>
+<p><code>$(TOOL_CHAIN_TAG)</code> is considered the list of tool chain tag names specified on
+the command line</p>
+<p><strong><em>$(TARGET)</em></strong></p>
+<p><code>$(TARGET)</code> is considered the list of target (such as DEBUG, RELEASE and NOOPT)
+names specified on the command line or come from the <code>Conf/target.txt</code> file.</p>
+<p>For logical expressions, any non-zero value must be considered <code>TRUE</code>.</p>
+<p>Invalid expressions must cause a build break with an appropriate error message.</p>
+<h3 id="2210-section-handling">2.2.10 Section Handling</h3>
+<p>The DSC file parsing routines must process the sections so that common
+architecture sections are logically merged with the architecturally specific
+sections. The architectural sections need to be processed so that they are
+logically after the common section. It is recommended that EDK II developers
+use a logical ordering of the sections.</p>
+<p>Other section modifiers must also be logically appended to the merged sections
+(for DSC files that have architectural and common architecture sections) after
+the merge.</p>
+<p>For <code>[BuildOptions]</code> sections in the DSC file, the entries with a common left
+side (of the &quot;=&quot;) will be either appended or replace previous entries based
+on the &quot;==&quot; replace or &quot;=&quot; append assignment character sequence.</p>
+<pre><code>  Common Section + Architectural Section + Common Section w/extra Modifier
+  + Architectural Section w/extra Modifier
+</code></pre><h4 id="example">Example:</h4>
+<pre><code class="lang-ini">[BuildOptions.Common]
+  MSFT:*_*_*_CC_FLAGS = /nologo
+
+[BuildOptions.Common.EDK]
+  MSFT:*_*_*_CC_FLAGS = /Od
+
+[BuildOptions.IA32]
+  MSFT:*_*_IA32_CC_FLAGS = /D EFI32
+</code></pre>
+<p>For IA32 architecture builds of an EDK II INF file would logically be:</p>
+<p><code>MSFT:*_*_IA32_CC_FLAGS = /nologo /D EFI32</code></p>
+<p>For non-IA32 architecture EDK INF files, tool parsing would logically be:</p>
+<p><code>MSFT:*_*_*_CC_FLAGS = /nologo /Od</code></p>
+<p>For IA32 architecture builds of an EDK INF file, tool parsing would logically
+be:</p>
+<p><code>MSFT:*_*_IA32_CC_FLAGS = /nologo /D EFI32 /Od</code></p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                    
+                    
+
+<div>
+    <hr>
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.27</div>
+      </h2>  
+    
+</div>
+
+
+
+                
+            </div>
+
+            
+                
+                <a href="21_processing_overview.html#21-processing-overview" class="navigation navigation-prev " aria-label="Previous page: 2.1 Processing Overview">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="23_[defines]_section_processing.html#23-defines-section-processing" class="navigation navigation-next " aria-label="Next page: 2.3 [Defines] Section Processing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2 Build Description File Format","level":"1.3.2","depth":2,"next":{"title":"2.3 [Defines] Section Processing","level":"1.3.3","depth":2,"anchor":"#23-defines-section-processing","path":"2_dsc_overview/23_[defines]_section_processing.md","ref":"2_dsc_overview/23_[defines]_section_processing.md#23-defines-section-processing","articles":[]},"previous":{"title":"2.1 Processing Overview","level":"1.3.1","depth":2,"anchor":"#21-processing-overview","path":"2_dsc_overview/21_processing_overview.md","ref":"2_dsc_overview/21_processing_overview.md#21-processing-overview","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"title":"EDK II Platform Description (DSC) File Specification","version":"Revision 1.27"},"plugins":["puml-aleung"],"pluginsConfig":{"puml-aleung":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_dsc_overview/22_build_description_file_format.md","mtime":"2020-12-01T04:59:18.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-01T04:59:51.992Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

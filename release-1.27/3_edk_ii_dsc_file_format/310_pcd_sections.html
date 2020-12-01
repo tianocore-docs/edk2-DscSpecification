@@ -1,0 +1,1536 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.10 PCD Sections · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="311_[components]_sections.html" />
+    
+    
+    <link rel="prev" href="39_[libraryclasses]_sections.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../#edk-ii-platform-description-dsc-file-specification">
+            
+                    
+                    EDK II Platform Description (DSC) File Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_introduction/">
+            
+                <a href="../1_introduction/#1-introduction">
+            
+                    
+                    1 Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#11-overview">
+            
+                    
+                    1.1 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_introduction/12_terms.html">
+            
+                <a href="../1_introduction/12_terms.html#12-terms">
+            
+                    
+                    1.2 Terms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_introduction/13_related_information.html">
+            
+                <a href="../1_introduction/13_related_information.html#13-related-information">
+            
+                    
+                    1.3 Related Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_introduction/14_conventions_used_in_this_document.html">
+            
+                <a href="../1_introduction/14_conventions_used_in_this_document.html#14-conventions-used-in-this-document">
+            
+                    
+                    1.4 Conventions Used in this Document
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2_dsc_overview/">
+            
+                <a href="../2_dsc_overview/#2-dsc-overview">
+            
+                    
+                    2 DSC Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2_dsc_overview/21_processing_overview.html">
+            
+                <a href="../2_dsc_overview/21_processing_overview.html#21-processing-overview">
+            
+                    
+                    2.1 Processing Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#22-build-description-file-format">
+            
+                    
+                    2.2 Build Description File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2_dsc_overview/23_[defines]_section_processing.html">
+            
+                <a href="../2_dsc_overview/23_[defines]_section_processing.html#23-defines-section-processing">
+            
+                    
+                    2.3 [Defines] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../2_dsc_overview/24_[buildoptions]_section.html">
+            
+                <a href="../2_dsc_overview/24_[buildoptions]_section.html#24-buildoptions-section">
+            
+                    
+                    2.4 [BuildOptions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../2_dsc_overview/25_[skuids]_section_processing.html">
+            
+                <a href="../2_dsc_overview/25_[skuids]_section_processing.html#25-skuids-section-processing">
+            
+                    
+                    2.5 [SkuIds] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../2_dsc_overview/26_[libraries]_section_processing.html">
+            
+                <a href="../2_dsc_overview/26_[libraries]_section_processing.html#26-libraries-section-processing">
+            
+                    
+                    2.6 [Libraries] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../2_dsc_overview/27_[libraryclasses]_section_processing.html">
+            
+                <a href="../2_dsc_overview/27_[libraryclasses]_section_processing.html#27-libraryclasses-section-processing">
+            
+                    
+                    2.7 [LibraryClasses] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../2_dsc_overview/28_pcd_section_processing.html">
+            
+                <a href="../2_dsc_overview/28_pcd_section_processing.html#28-pcd-section-processing">
+            
+                    
+                    2.8 PCD Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../2_dsc_overview/29_pcd_sections.html">
+            
+                <a href="../2_dsc_overview/29_pcd_sections.html#29-pcd-sections">
+            
+                    
+                    2.9 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../2_dsc_overview/210_pcd_database.html">
+            
+                <a href="../2_dsc_overview/210_pcd_database.html#210-pcd-database">
+            
+                    
+                    2.10 PCD Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../2_dsc_overview/211_[components]_section_processing.html">
+            
+                <a href="../2_dsc_overview/211_[components]_section_processing.html#211-components-section-processing">
+            
+                    
+                    2.11 [Components] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../2_dsc_overview/212_[userextensions]_section.html">
+            
+                <a href="../2_dsc_overview/212_[userextensions]_section.html#212-userextensions-section">
+            
+                    
+                    2.12 [UserExtensions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./#3-edk-ii-dsc-file-format">
+            
+                    
+                    3 EDK II DSC File Format
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="31_building_multiple_architectures.html">
+            
+                <a href="31_building_multiple_architectures.html#31-building-multiple-architectures">
+            
+                    
+                    3.1 Building multiple architectures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="32_general_rules.html">
+            
+                <a href="32_general_rules.html#32-general-rules">
+            
+                    
+                    3.2 General Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="33_platform_dsc_definition.html">
+            
+                <a href="33_platform_dsc_definition.html#33-platform-dsc-definition">
+            
+                    
+                    3.3 Platform DSC Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="34_header_section.html">
+            
+                <a href="34_header_section.html#34-header-section">
+            
+                    
+                    3.4 Header Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="35_[defines]_section.html">
+            
+                <a href="35_[defines]_section.html#35-defines-section">
+            
+                    
+                    3.5 [Defines] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="36_[buildoptions]_sections.html">
+            
+                <a href="36_[buildoptions]_sections.html#36-buildoptions-sections">
+            
+                    
+                    3.6 [BuildOptions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="37_[skuids]_section.html">
+            
+                <a href="37_[skuids]_section.html#37-skuids-section">
+            
+                    
+                    3.7 [SkuIds] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="38_[libraries]_sections.html">
+            
+                <a href="38_[libraries]_sections.html#38-libraries-sections">
+            
+                    
+                    3.8 [Libraries] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="39_[libraryclasses]_sections.html">
+            
+                <a href="39_[libraryclasses]_sections.html#39-libraryclasses-sections">
+            
+                    
+                    3.9 [LibraryClasses] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="310_pcd_sections.html">
+            
+                <a href="310_pcd_sections.html#310-pcd-sections">
+            
+                    
+                    3.10 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="311_[components]_sections.html">
+            
+                <a href="311_[components]_sections.html#311-components-sections">
+            
+                    
+                    3.11 [Components] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="312_[userextensions]_sections.html">
+            
+                <a href="312_[userextensions]_sections.html#312-userextensions-sections">
+            
+                    
+                    3.12 [UserExtensions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#appendix-a-variables">
+            
+                    
+                    Appendix A Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../appendix_b_sample_edk_ii_dsc_file.html">
+            
+                <a href="../appendix_b_sample_edk_ii_dsc_file.html#appendix-b-sample-edk-ii-dsc-file">
+            
+                    
+                    Appendix B Sample EDK II DSC File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#appendix-c-module-types">
+            
+                    
+                    Appendix C Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../appendix_d_vpd_data_files/">
+            
+                <a href="../appendix_d_vpd_data_files/#appendix-d-vpd-data-files">
+            
+                    
+                    Appendix D Vpd Data Files
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html#d1-edk-ii-build-system-output-file-format">
+            
+                    
+                    D.1 EDK II Build System Output File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html#d2-vpd-info-file-format">
+            
+                    
+                    D.2 Vpd Info File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Tables
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#table-1-edk-build-infrastructure-support-matrix">
+            
+                    
+                    Table 1 EDK Build Infrastructure Support Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-2-well-known-macro-statements">
+            
+                    
+                    Table 2 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-3-using-system-environment-variable">
+            
+                    
+                    Table 3 Using System Environment Variable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-4-well-known-macro-statements">
+            
+                    
+                    Table 4 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-5-operator-precedence-and-supported-operands">
+            
+                    
+                    Table 5 Operator Precedence and Supported Operands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../2_dsc_overview/23_[defines]_section_processing.html">
+            
+                <a href="../2_dsc_overview/23_[defines]_section_processing.html#table-6-edk-ii-defines-section-elements">
+            
+                    
+                    Table 6 EDK II [Defines] Section Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../2_dsc_overview/24_[buildoptions]_section.html">
+            
+                <a href="../2_dsc_overview/24_[buildoptions]_section.html#table-7-edk-ii-buildoptions-section-elements-optional-tags">
+            
+                    
+                    Table 7 EDK II [BuildOptions] Section Elements: Optional Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../2_dsc_overview/24_[buildoptions]_section.html">
+            
+                <a href="../2_dsc_overview/24_[buildoptions]_section.html#table-8-edk-ii-buildoptions-variable-descriptions">
+            
+                    
+                    Table 8 EDK II [BuildOptions] Variable Descriptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../2_dsc_overview/29_pcd_sections.html">
+            
+                <a href="../2_dsc_overview/29_pcd_sections.html#table-9-hii-attributes">
+            
+                    
+                    Table 9 HII Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#table-10-standard-variables">
+            
+                    
+                    Table 10 Standard Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#table-11-edk-ii-module-types">
+            
+                    
+                    Table 11 EDK II Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Figures
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../2_dsc_overview/21_processing_overview.html">
+            
+                <a href="../2_dsc_overview/21_processing_overview.html#figure-1-edk-ii-parsing-data-flow">
+            
+                    
+                    Figure 1 EDK II Parsing Data Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.10 PCD Sections</a>
+    </h1>
+</div>
+<div>
+    <!-- 
+    <img style="float:left; align:middle; height:2em" src="media/TianocoreTitlePageLogo.jpg"/>
+     -->
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.27</div>
+      </h2>  
+    
+    <hr>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!--- @file
+  3.10 PCD Sections
+
+  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+
+  Redistribution and use in source (original document form) and 'compiled'
+  forms (converted to PDF, epub, HTML and other formats) with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code (original document form) must retain the
+     above copyright notice, this list of conditions and the following
+     disclaimer as the first lines of this file unmodified.
+
+  2) Redistributions in compiled form (transformed to other DTDs, converted to
+     PDF, epub, HTML and other formats) must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS DOCUMENTATION IS PROVIDED BY TIANOCORE PROJECT "AS IS" AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL TIANOCORE PROJECT  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<h2 id="310-pcd-sections">3.10 PCD Sections</h2>
+<p>The PCD sections are optional.</p>
+<p>PCD Values listed in the DSC file must be absolute values, macro names or
+expressions which may include other PCD names and/or macro names that have been
+previously defined.While each PCD type has its own section definition, it is
+possible for PCDs accessed using either the <code>FixedAtBuild</code> or
+<code>PatchableInModule</code> methods to have different values for different modules.</p>
+<p>It is not permitted to list a PCD in different access method sections. A PCD
+can only be listed under one access method. All PCDs listed in these sections
+must be declared in a DEC file if the PCD is used in any modules listed in the
+DSC or FDF file.</p>
+<p>If a PCD is listed in multiple PCD access method sections in the DEC file, the
+platform integrator can decide which access method to use. If not listed in the
+DSC file, the tools are allowed to select a type, with the <code>FixedAtBuild</code>
+access method being preferred.</p>
+<p>It is not permissible to mix Dynamic<em>Default with Dynamic</em>Vpd or Dynamic<em>Hii,
+nor is it permissible to mix Dynamic</em>Vpd with Dynamic*Hii - only one storage
+method for a PCD is permitted.</p>
+<hr>
+<p><strong>Note:</strong> The format for listing PCDs under Default, Vpd and HII sections
+differ significantly.</p>
+<hr>
+<p>Only FeatureFlag PCDs can be listed in <code>[PcdsFeatureFlag]</code> sections.</p>
+<p>PCD Values specified in the DSC file override any values specified in INF files
+or DEC files.</p>
+<p>If no value is provided in the DSC file, then the value will come from INF
+files, provided all INF files define the same preferred value.</p>
+<p>If the INF values differ (or are not listed), and the method for the PCD in all
+of the INF files is <code>FixedAtBuild</code>, then each module will use the value
+specified in the INF file or the default value listed in the DEC file (for
+modules that do not list a preferred value in the INF). Likewise, if the method
+is <code>PatchableInModule</code> in all INF files, then each module will also use the
+value specified in the INF file or the default value listed in the DEC file
+(for modules that do not list a preferred value). This same rule applies to
+<code>FeatureFlag</code> PCDs.</p>
+<p>If the Source INF values differ (or are not listed) and the access methods are
+different, then the build must break. All source modules in a platform must use
+the same PCD same access method.</p>
+<p>Binary modules included in a platform build are permitted to use the
+PatchableInModule or DynamicEx access methods (the Binary module must specify
+which of these two methods were used to create the binary module) regardless of
+the method used for a given PCD in modules built from source. The build supports
+binary modules that use the same or different PCD access method than the source
+modules or other binary modules. The build parser must break with an error if a
+PCD is listed as FixedAtBuild or Dynamic (not DynamicEx) in the Binary INF.</p>
+<p>If no value is entered in the DSC file, and no INF files provide a preferred
+value, then the DEC file&apos;s default value must be used.</p>
+<p>It is possible to have different default values based on architecture, and it
+is permissible to list multiple architectures in a single method section as in:</p>
+<p><code>[PcdsFixedAtBuild.IA32, PcdsFixedAtBuild.X64]</code></p>
+<p>It is permissible to list a PCD in a common architecture section and also list
+it in an architecturally modified section. In this case, the value in the
+architectural section overrides the value specified in the common section.</p>
+<p>The PCD values must match the datum type declared for a given PCD in the DEC
+file. While a PCD of datum type <code>BOOLEAN</code> is permitted to have a <code>1</code> or a <code>0</code>
+(instead of TRUE or FALSE) in the value field, a PCD of type UINT* cannot use
+<code>TRUE</code> or <code>FALSE</code> for values.</p>
+<p>PCDs with a data type of <code>VOID</code>* can optionally provide the maximum size of the
+value. If not provided, the maximum length will be calculated as the largest of
+the size of the data in the DSC file, the size of the data in the INF file or
+the size of the data in the DEC file that declares the PCD.</p>
+<p>Refer to the <em>EDK II Build Specification</em> for the description of the PCD
+processing rules.</p>
+<h3 id="3101-pcdsfeatureflag-sections">3.10.1 [PcdsFeatureFlag] Sections</h3>
+<p>These are optional sections for EDK II DSC Files.</p>
+<h4 id="summary">Summary</h4>
+<p>Defines the <code>[PcdsFeatureFlag]</code> section tag that may be required for platform
+DSC files that will use EDK II module INF files.</p>
+<p>The <code>!include</code> statement is permitted in the <code>[PcdsFeatureFlag]</code> sections,
+although not recommended.</p>
+<p>The <code>PcdsFeatureFlag</code> entry is a formatted string with two fields, separated by
+the pipe character, &quot;|&quot;. PCDs listed in this section must not be listed in
+<code>PcdsPatchableInModule</code>, <code>PcdsDynamic</code><em> or <code>PcdsDynamicEx</code></em> sections of the DSC
+file.</p>
+<h4 id="prototype">Prototype</h4>
+<pre><code class="lang-c">&lt;Pcds&gt;         ::= <span class="hljs-string">&quot;[PcdsFeatureFlag&quot;</span> [&lt;attribs&gt;] <span class="hljs-string">&quot;]&quot;</span> &lt;EOL&gt; &lt;FFStatments&gt;*
+&lt;FFStatements&gt; ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;PcdEntry&gt;}
+&lt;attribs&gt;      ::= &lt;attrs&gt; [<span class="hljs-string">&quot;,&quot;</span> &lt;TS&gt; <span class="hljs-string">&quot;PcdsFeatureFlag&quot;</span> &lt;attrs&gt;]*
+&lt;attrs&gt;        ::= <span class="hljs-string">&quot;.&quot;</span> &lt;arch&gt; [<span class="hljs-string">&quot;.&quot;</span> &lt;SkuIds&gt;]
+&lt;SkuIdS&gt;       ::= &lt;Keyword&gt; [&lt;FS&gt; &lt;Keyword&gt;]*
+&lt;Keyword&gt;      ::= &lt;UiName&gt;
+&lt;UiName&gt;       ::= &lt;Word&gt;
+&lt;PcdEntry&gt;     ::= &lt;TS&gt; &lt;PcdName&gt; &lt;FS&gt; &lt;PcdValue&gt; &lt;EOL&gt;
+&lt;PcdValue&gt;     ::= {&lt;BoolType&gt;} {&lt;MACROVAL&gt;} {&lt;Expression&gt;}
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<p><strong><em>Expression</em></strong></p>
+<p>Refer to the EDK II Expression Syntax Specification for additional information.</p>
+<p><strong><em>SkuIds</em></strong></p>
+<p>SkuIds in the DSC file can be used in two different ways. They can be used to
+as conditional modifiers to exclude some content from a build, or they can be
+used to identify and group content during a build. If no <code>SkuId</code> option (<code>-x</code>)
+is present on the command-line, or defined in the <code>[Defines]</code> section, then the
+build system must group content by <code>SkuId</code>. If a <code>SkuId</code> option is present on
+the command-line, or one or more <code>SkuId</code>s are listed in the <code>[Defines]</code>
+section, then the <code>SkuId</code> values are used to include specific content, while
+excluding content for sections where the <code>SkuId</code> is not present in the list of
+SkuIds from either the command-line or from the <code>SKUID_IDENTIFIER</code> element in
+the <code>[Defines]</code> section. Use of the <code>SkuId</code> modifier for the <code>[PcdsFeatureFlag]</code>
+section tag can only be used as a conditional modifier.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-ini">[PcdsFeatureFlag]
+  gEfiMdePkgTokenSpaceGuid.PcdComponentNameDisable|FALSE
+  gEfiMdeModulePkgTokenSpaceGuid.PcdDxePcdDatabaseTraverseEnabled|TRUE
+
+[PcdsFeatureFlag.IA32]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdDxeIplSwitchToLongMode|FALSE
+
+[PcdsFeatureFlag.X64]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdDxeIplSwitchToLongMode|TRUE
+
+# SkuId 1 platform supports serial output
+[PcdsFeatureFlag.common.P440FX_WithSerialConnectors]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseSerial|TRUE
+
+# SkuId 2 platform has no serial output capability
+[PcdsFeatureFlag.common.440FX_NoSerialConnectors]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseSerial|FALSE
+</code></pre>
+<hr>
+<p><strong>Note:</strong> If the DSC file contains <code>[PcdsFeatureFlag]</code> sections with
+<code>SkuId</code> _modifiers in the section tags and neither command-line or
+<code>SKUID_IDENTIFER</code> element exists in the <code>[Defines]</code> section, the build
+must break, stating that this platform requires separate builds for individual
+<code>SkuId</code>s.</p>
+<hr>
+<h3 id="3102-pcdsfixedatbuild-section">3.10.2 [PcdsFixedAtBuild] Section</h3>
+<p>These are optional sections for EDK II DSC Files.</p>
+<h4 id="summary">Summary</h4>
+<p>This section defines the <code>[PcdsFixedAtBuild]</code> section tag that may be required
+for EDK II DSC files that will use EDK II module INF files. The values listed
+below must match the datum type specified in the DEC file that declares this
+PCD. If a PCD&apos;s datum type is <code>VOID</code>* the <code>MaximumDatumSize</code> field is required.</p>
+<p>The <code>!include</code> statement is permitted in <code>[PcdsFixedAtBuild]</code> sections,
+although not recommended.</p>
+<p>The PcdsFixedAtBuild entry is a formatted string consisting of two to four
+fields that are separated by the pipe character, &quot;|&quot;.</p>
+<h4 id="prototype">Prototype</h4>
+<pre><code class="lang-c">&lt;Pcds&gt;          ::= <span class="hljs-string">&quot;[PcdsFixedAtBuild&quot;</span> [&lt;attribs&gt;] <span class="hljs-string">&quot;]&quot;</span> &lt;EOL&gt;
+                    &lt;FabStatements&gt;*
+&lt;attribs&gt;       ::= &lt;attrs&gt; [<span class="hljs-string">&quot;,&quot;</span> &lt;TS&gt; <span class="hljs-string">&quot;PcdsFixedAtBuild&quot;</span> &lt;attrs&gt;]*
+&lt;attrs&gt;         ::= <span class="hljs-string">&quot;.&quot;</span> &lt;arch&gt; [<span class="hljs-string">&quot;.&quot;</span> &lt;SkuIds&gt;]
+&lt;SkuIdS&gt;        ::= &lt;Keyword&gt; [&lt;FS&gt; &lt;Keyword&gt;]*
+&lt;Keyword&gt;       ::= &lt;UiName&gt;
+&lt;UiName&gt;        ::= &lt;Word&gt;
+&lt;FabStatements&gt; ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;PcdEntry&gt;}
+&lt;PcdEntry&gt;      ::= &lt;TS&gt; &lt;PcdName&gt; [&lt;FS&gt; &lt;PcdValue&gt;] &lt;EOL&gt;
+&lt;PcdValue&gt;      ::= <span class="hljs-keyword">if</span> (pcddatumtype == <span class="hljs-string">&quot;BOOLEAN&quot;</span>): {&lt;Boolean&gt;} {&lt;Expression&gt;}
+                    elif (pcddatumtype == <span class="hljs-string">&quot;UINT8&quot;</span>): {&lt;NumValUint8&gt;}
+                    {&lt;Expression&gt;} elif (pcddatumtype == <span class="hljs-string">&quot;UINT16&quot;</span>):
+                    {&lt;NumValUint16&gt;} {&lt;Expression&gt;} elif (pcddatumtype ==
+                    <span class="hljs-string">&quot;UINT32&quot;</span>): {&lt;NumValUint32&gt;} {&lt;Expression&gt;} elif
+                    (pcddatumtype == <span class="hljs-string">&quot;UINT64&quot;</span>): {&lt;NumValUint64&gt;} {&lt;Expression&gt;}
+                    <span class="hljs-keyword">else</span>:
+                    &lt;StringValue&gt; [&lt;MaxSize&gt;]
+&lt;MaxSize&gt;       ::= &lt;FS&gt; <span class="hljs-string">&quot;VOID*&quot;</span> &lt;FS&gt; {&lt;Number&gt;} {&lt;Expression&gt;}
+&lt;StringValue&gt;   ::= {&lt;UnicodeString&gt;} {&lt;CString&gt;} {&lt;CArray&gt;}
+                    {&lt;MACROVAL&gt;} {&lt;Expression&gt;}
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<p><strong><em>Expression</em></strong></p>
+<p>Refer to the EDK II Expression Syntax Specification for additional information.</p>
+<p><strong><em>SkuIds</em></strong></p>
+<p><code>SkuId</code>s in the DSC file can be used in two different ways. They can be used to
+as conditional modifiers to exclude some content from a build, or they can be
+used to identify and group content during a build. If no <code>SkuId</code> option (<code>-x</code>)
+is present on the command-line, or defined in the <code>[Defines]</code> section, then the
+build system must group content by <code>SkuId</code>. If a <code>SkuId</code> option is present on
+the command-line, or one or more <code>SkuId</code>s are listed in the <code>[Defines]</code>
+section, then the <code>SkuId</code> values are used to include specific content, while
+excluding content for sections where the <code>SkuId</code> is not present in the list of
+<code>SkuId</code>s from either the command-line or from the <code>SKUID_IDENTIFIER</code> element in
+the <code>[Defines]</code> section. Use of the <code>SkuId</code> modifier for the
+<code>[PcdsFixedAtBuild]</code> section tag can only be used as a conditional modifier.</p>
+<p><strong><em>PcdValues</em></strong></p>
+<p>PCD values are optional for <code>[PcdsFixedAtBuild]</code> sections. If the value is not
+listed, the tools must obtain the values from either the INF file or, if a
+value is not listed in the INF file, then the default value from the DEC file
+must be used.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-ini">[PcdsFixedAtBuild.IA32] gEfiMdePkgTokenSpaceGuid.PcdMaximumUnicodeStringLength
+  gEfiEdkNt32PkgTokenSpaceGuid.PcdWinNtMemorySizeForSecMain|L&quot;64!64&quot;|VOID*|0x10
+
+[PcdsFixedAtBuild.ARM]
+  gEmbeddedTokenSpaceGuid.PcdPrePiCpuMemorySize|32
+  gEmbeddedTokenSpaceGuid.PcdPrePiCpuIoSize|0
+
+[PcdsFixedAtBuild.IA32]
+  gEmbeddedTokenSpaceGuid.PcdPrePiCpuMemorySize|36
+  gEmbeddedTokenSpaceGuid.PcdPrePiCpuIoSize|16
+
+[PcdsFixedAtBuild.common.P440FXS1]
+  gEfiMdePkgTokenSpaceGuid.PcdFSBClock|100000000
+
+[PcdsFixedAtBuild.common.P440FXS2]
+  gEfiMdePkgTokenSpaceGuid.PcdFSBClock|200000000
+
+[PcdsFixedAtBuild.X64]
+  gEmbeddedTokenSpaceGuid.PcdPrePiCpuMemorySize|52
+  gEmbeddedTokenSpaceGuid.PcdPrePiCpuIoSize|16
+</code></pre>
+<hr>
+<p><strong>Note:</strong> If the DSC file contains <code>[PcdsFixedAtBuild]</code> sections with
+<code>SkuId</code> modifiers in the section tags and neither command-line or
+<code>SKUID_IDENTIFER</code> element exists in the <code>[Defines]</code> section, the build
+must break, stating that this platform requires separate builds for individual
+<code>SkuId</code>s.</p>
+<hr>
+<h3 id="3103-pcdspatchableinmodule-sections">3.10.3 [PcdsPatchableInModule] Sections</h3>
+<p>These are optional sections.</p>
+<h4 id="summary">Summary</h4>
+<p>Defines the <code>[PcdsPatchableInModule]</code> section tag that may be required for EDK
+II DSC files that will use EDK II module INF files. The values listed below
+must match the datum type specified in the DEC file that declares this PCD. If
+a PCD&apos;s datum type is <code>VOID</code>* the <code>MaximumDatumSize</code> field is required.</p>
+<p>The <code>!include</code> statement is permitted in <code>[PcdsPatchableInModule]</code> sections,
+although not recommended.</p>
+<p>The <code>PcdsPatchableInModule</code> entry is a formatted string with two to four
+fields, separated by the pipe &quot;|&quot;character. PCDs listed in this section must
+not be listed in <code>PcdsFixedAtBuild</code>, <code>PcdsDynamic</code> or <code>PcdsDynamicEx</code> sections
+of the DSC file.</p>
+<h4 id="prototype">Prototype</h4>
+<pre><code class="lang-c">&lt;Pcds&gt;          ::= <span class="hljs-string">&quot;[PcdsPatchableInModule&quot;</span> [&lt;attribs&gt;] <span class="hljs-string">&quot;]&quot;</span> &lt;EOL&gt;
+                    &lt;PimStatements&gt;*
+&lt;attribs&gt;       ::= &lt;attrs&gt; [<span class="hljs-string">&quot;,&quot;</span> &lt;TS&gt; <span class="hljs-string">&quot;PcdsPatchableInModule&quot;</span>
+                    &lt;attrs&gt;]*
+&lt;attrs&gt;         ::= <span class="hljs-string">&quot;.&quot;</span> &lt;arch&gt; [<span class="hljs-string">&quot;.&quot;</span> &lt;SkuIds&gt;]
+&lt;SkuIdS&gt;        ::= &lt;Keyword&gt; [&lt;FS&gt; &lt;Keyword&gt;]*
+&lt;Keyword&gt;       ::= &lt;UiName&gt;
+&lt;UiName&gt;        ::= &lt;Word&gt;
+&lt;PimStatements&gt; ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;PcdEntry&gt;}
+&lt;PcdEntry&gt;      ::= &lt;TS&gt; &lt;PcdName&gt; [&lt;FS&gt; &lt;PcdValue&gt;] &lt;EOL&gt;
+&lt;PcdValue&gt;      ::= <span class="hljs-keyword">if</span> (pcddatumtype == <span class="hljs-string">&quot;BOOLEAN&quot;</span>): {&lt;Boolean&gt;} {&lt;Expression&gt;}
+                    elif (pcddatumtype == <span class="hljs-string">&quot;UINT8&quot;</span>): {&lt;NumValUint8&gt;}
+                    {&lt;Expression&gt;} elif (pcddatumtype == <span class="hljs-string">&quot;UINT16&quot;</span>):
+                    {&lt;NumValUint16&gt;} {&lt;Expression&gt;} elif (pcddatumtype ==
+                    <span class="hljs-string">&quot;UINT32&quot;</span>): {&lt;NumValUint32&gt;} {&lt;Expression&gt;} elif
+                    (pcddatumtype == <span class="hljs-string">&quot;UINT64&quot;</span>): {&lt;NumValUint64&gt;} {&lt;Expression&gt;}
+                    <span class="hljs-keyword">else</span>:
+                    &lt;StringValue&gt; [&lt;MaxSize&gt;]
+&lt;MaxSize&gt;       ::= &lt;FS&gt; {&lt;Number&gt;} {&lt;Expression&gt;}
+&lt;StringValue&gt;   ::= {&lt;UnicodeString&gt;} {&lt;CString&gt;} {&lt;CArray&gt;}
+                    {&lt;MACROVAL&gt;} {&lt;Expression&gt;}
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<p><strong><em>Expression</em></strong></p>
+<p>Refer to the EDK II Expression Syntax Specification for additional information.</p>
+<p><strong><em>SkuIds</em></strong></p>
+<p><code>SkuId</code>s in the DSC file can be used in two different ways. They can be used to
+as conditional modifiers to exclude some content from a build, or they can be
+used to identify and group content during a build. If no <code>SkuId</code> option (<code>-x</code>)
+is present on the command-line, or defined in the <code>[Defines]</code> section, then the
+build system must group content by <code>SkuId</code>. If a <code>SkuId</code> option is present on
+the command-line, or one or more <code>SkuId</code>s are listed in the <code>[Defines]</code>
+section, then the <code>SkuId</code> values are used to include specific content, while
+excluding content for sections where the <code>SkuId</code> is not present in the list of
+<code>SkuId</code>s from either the command-line or from the <code>SKUID_IDENTIFIER</code> element in
+the <code>[Defines]</code> section. Use of the <code>SkuId</code> modifier for the
+<code>[PcdsPatchableInModule]</code> section tag can only be used as a conditional
+modifier.</p>
+<p><strong><em>PcdValues</em></strong></p>
+<p>PCD values are optional for <code>[PcdsPatchableInModule]</code> sections. If the value is
+not listed, the tools must obtain the values from either the INF file or, if a
+value is not listed in the INF file, then the default value from the DEC file
+must be used.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-ini">[PcdsPatchableInModule]
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80000000
+
+[PcdsPatchableInModule.IA32]
+  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x0f
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x1f
+
+[PcdsPatchableInModule.common.P440FXS1]
+  gEfiUnixPkgTokenSpaceGuid.PcdUnixFirmwareFdSize|0x002a0000
+
+[PcdsPatchableInModule.common.P440FXS2]
+  gEfiUnixPkgTokenSpaceGuid.PcdUnixFirmwareFdSize|0x00400000
+
+[PcdsPatchableInModule.X64]
+  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x0f
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x1f
+</code></pre>
+<hr>
+<p><strong>Note:</strong> If the DSC file contains <code>[PcdsPatchableInModule]</code> sections with
+<code>SkuId</code> modifiers in the section tags and neither command-line or
+<code>SKUID_IDENTIFER</code> element exists in the <code>[Defines]</code> section, the build
+must break, stating that this platform requires separate builds for individual
+<code>SkuId</code>s.</p>
+<hr>
+<h3 id="3104-pcdsdynamic-sections">3.10.4 [PcdsDynamic] Sections</h3>
+<p>These are optional sections.</p>
+<h4 id="summary">Summary</h4>
+<p>Defines the <code>[PcdsDynamic]</code> section tag that may be required for platform DSC
+files that will use EDK II module INF files. The values listed below must match
+the datum type specified in the DEC file that declares this PCD. If a PCD&apos;s
+datum type is <code>VOID</code>* the <code>MaximumDatumSize</code> field is required. Specifying
+different <code>&lt;DataStore&gt;</code> values(<code>Default</code>, <code>HII</code>, or <code>VPD</code>) in one section
+header is not permitted. It is permissible to specify different Architectures
+using an identical <code>&lt;DataStore&gt;</code> value. The following line is permissible:</p>
+<p><code>[PcdsDynamicDefault.X64.Default, PcdsDynamicDefault.IPF.Default]</code></p>
+<p>The following line is incorrect, and must cause a build break during parsing of
+the file:</p>
+<p><code>[PcdsDynamicDefault.X64.Default, PcdsDynamicVpd.IPF.Default]</code></p>
+<p>The <code>!include</code> statement is permitted in <code>[PcdsDynamic]</code> sections, although not
+recommended.</p>
+<p>The <code>Offset</code>, <code>MaximumDatumSize</code> and Value fields are optional for the VPD PCD
+entries, and a wildcard character may be used for the <code>Offset</code>. The wildcard
+character can only be used if a <code>VPD_TOOL_GUID</code> is specified in the <code>[Defines]</code>
+section and the tool supports automatic calculation of the <code>Offset</code>. For VPD
+PCDs of type <code>VOID</code><em>, if the VPD&apos;s value is present, the <code>MaximumDatumSize</code>
+must be given. For <code>VOID</code></em> PCDs, the size is the larger of the length of the
+specified value, the length of default values in INF files that use PCD and the
+length of the default value in the DEC file. If there are no values specified
+in any of the files, the build tools must break. If no value is specified in
+the DSC file, and multiple INF files exist that define default values, then the
+build must break, since only one value can be used.</p>
+<p>The <code>PcdsDynamic</code> entry is a formatted string consisting of three to six fields
+that are separated by the pipe character, &quot;|&quot;. PCDs listed in this section must
+not be listed in <code>PcdsFixedAtBuild</code>, <code>PcdsPatchableInModule</code> or <code>PcdsDynamicEx</code>
+sections of the DSC file.</p>
+<h4 id="prototype">Prototype</h4>
+<pre><code class="lang-c">&lt;Pcds&gt;           ::= {&lt;PcdsDefault&gt;} {&lt;PcdsVpd&gt;} {&lt;PcdsHii&gt;}
+&lt;PcdsDefault&gt;    ::= &quot;[PcdsDynamicDefault&quot; [&lt;PddAttribs&gt;] &quot;]&quot; &lt;EOL&gt;
+                     &lt;PddEntries&gt;*
+&lt;PddEntries&gt;     ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;}
+                     {&lt;TS&gt; &lt;MinEntry&gt;}
+&lt;PddAttribs&gt;     ::= &lt;attrs&gt; [&quot;,&quot; &lt;TS&gt; &quot;PcdsDynamicDefault&quot; &lt;attrs&gt;]*
+&lt;PcdsVpd&gt;        ::= &quot;[PcdsDynamicVpd&quot; [&lt;PdvAttribs&gt;] &quot;]&quot; &lt;EOL&gt;
+                     &lt;PdvEntries&gt;*
+&lt;PdvAttribs&gt;     ::= &lt;attrs&gt; [ &quot;,&quot; &lt;TS&gt; &quot;PcdsDynamicVpd&quot; &lt;attrs&gt;]*
+&lt;PdvEntries&gt;     ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;TS&gt; &lt;VpdEntry&gt;}
+&lt;PcdsHii&gt;        ::= &quot;[PcdsDynamicHii&quot; [&lt;PdhAttribs&gt;] &quot;]&quot; &lt;EOL&gt;
+                     &lt;PcdHiiEntries&gt;*
+&lt;PdhAttribs&gt;     ::= &lt;attrs&gt; [&quot;,&quot; &lt;TS&gt; &quot;PcdsDynamicHii &lt;attrs&gt;]* &lt;PdvEntries&gt;*
+&lt;PcdHiiEntries&gt;  ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;TS&gt; &lt;HiiEntry&gt;}
+&lt;attrs&gt;          ::= &quot;.&quot; &lt;arch&gt; [&quot;.&quot; &lt;SkuIds&gt;]
+&lt;SkuIdS&gt;         ::= &lt;Keyword&gt; [&lt;FS&gt; &lt;Keyword&gt;]*
+&lt;Keyword&gt;        ::= &lt;UiName&gt;
+&lt;UiName&gt;         ::= &lt;Word&gt;
+&lt;MinEntry&gt;       ::= &lt;PcdName&gt; [&lt;FS&gt; &lt;PcdValue&gt;] &lt;EOL&gt;
+&lt;PcdValue&gt;       ::= if (pcddatumtype == &quot;BOOLEAN&quot;): {&lt;Boolean&gt;} {&lt;Expression&gt;}
+                     elif (pcddatumtype == &quot;UINT8&quot;): {&lt;NumValUint8&gt;}
+                     {&lt;Expression&gt;} elif (pcddatumtype == &quot;UINT16&quot;):
+                     {&lt;NumValUint16&gt;} {&lt;Expression&gt;} elif (pcddatumtype ==
+                     &quot;UINT32&quot;): {&lt;NumValUint32&gt;} {&lt;Expression&gt;} elif
+                     (pcddatumtype == &quot;UINT64&quot;): {&lt;NumValUint64&gt;}
+                     {&lt;Expression&gt;} else:
+                     &lt;StringValue&gt; [&lt;MaxSize&gt;]
+&lt;MaxSize&gt;        ::= &lt;FS&gt; &quot;VOID*&quot; [&lt;FS&gt; &lt;SizeValue&gt;]
+&lt;SizeValue&gt;      ::= {&lt;Number&gt;} {&lt;Expression&gt;}
+&lt;StringValue&gt;    ::= {&lt;UnicodeString&gt;} {&lt;CString&gt;} {&lt;CArray&gt;} {&lt;MACROVAL&gt;}
+                     {&lt;Expression&gt;}
+&lt;VpdEntry&gt;       ::= &lt;PcdName&gt; &lt;FS&gt; &lt;VpdOffset&gt; [&lt;FS&gt; &lt;VpdData&gt;] &lt;EOL&gt;
+&lt;VpdOffset&gt;      ::= {&lt;Number&gt;} {&quot;*&quot;}
+&lt;VpdData&gt;        ::= if (pcddatumtype == &quot;BOOLEAN&quot;): {&lt;Boolean&gt;} {&lt;Expression&gt;}
+                     elif (pcddatumtype == &quot;UINT8&quot;): {&lt;NumValUint8&gt;}
+                     {&lt;Expression&gt;} elif (pcddatumtype == &quot;UINT16&quot;):
+                     {&lt;NumValUint16&gt;} {&lt;Expression&gt;} elif (pcddatumtype ==
+                     &quot;UINT32&quot;): {&lt;NumValUint32&gt;} {&lt;Expression&gt;} elif
+                     (pcddatumtype == &quot;UINT64&quot;): {&lt;NumValUint64&gt;}
+                     {&lt;Expression&gt;} else:
+                     &lt;VpdMaxSize&gt;
+&lt;VpdMaxSize&gt;     ::= &lt;NumValUint32&gt; [&lt;FS&gt; &lt;StringValue&gt;]
+&lt;HiiEntry&gt;       ::= &lt;PcdName&gt; &lt;FS&gt; &lt;HiiString&gt; &lt;Field2&gt; &lt;EOL&gt;
+&lt;HiiString&gt;      ::= {&lt;CArray&gt;} {&lt;UnicodeString&gt;}
+&lt;Field2&gt;         ::= &lt;FS&gt; &lt;VariableGuid&gt; &lt;FS&gt; &lt;VariableOffset&gt; [&lt;ValueField&gt;]
+&lt;VariableGuid&gt;   ::= &lt;CName&gt;
+&lt;ValueField&gt;     ::= &lt;FS&gt; &lt;DefaultValue&gt; [&lt;FS&gt; &lt;HiiAttrs&gt;]
+&lt;VariableOffset&gt; ::= &lt;Number&gt;
+&lt;DefaultValue&gt;   ::= {&lt;Boolean&gt;} {&lt;Number&gt;} {&lt;String&gt;} {&lt;CArray&gt;}
+                     {&lt;MACROVAL&gt;} {&lt;Expression&gt;}
+&lt;HiiAttrs&gt;       ::= &lt;HiiAttr&gt; [&lt;CS&gt; &lt;HiiAttr&gt;]*
+&lt;HiiAttr&gt;        ::= {&quot;NV&quot;} {&quot;BS&quot;} {&quot;RT&quot;} {&quot;RO&quot;}
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<p><strong><em>Expression</em></strong></p>
+<p>Refer to the EDK II Expression Syntax Specification for additional information.</p>
+<p><strong><em>VpdOffset</em></strong></p>
+<p>A non-negative numeric value that is the number of bytes from the start of the
+Vpd Region specified in the FDF file. The star &quot;*&quot; character may be used in
+this field in order to permit an external tool to automatically calculate the
+offset values for optimizing data size. This character can only be used if a
+<code>VPD_TOOL_GUID</code> has been specified, and the tool supports automatic calculation
+of the offset.</p>
+<p><strong><em>VariableOffset</em></strong></p>
+<p>A non-negative numeric value that is the number of bytes from the start to the
+start of this variable. The offset value must not exceed the maximum value of
+0xFFFF (<code>UINT16</code>).</p>
+<p><strong><em>SkuIds</em></strong></p>
+<p><code>SkuId</code>s in the DSC file can be used in two different ways. They can be used to
+as conditional modifiers to exclude some content from a build, or they can be
+used to identify and group content during a build. If no <code>SkuId</code> option (<code>-x</code>)
+is present on the command-line, or defined in the <code>[Defines]</code> section, then the
+build system must group content by <code>SkuId</code>. If a <code>SkuId</code> option is present on
+the command-line, or one or more <code>SkuId</code>s are listed in the <code>[Defines]</code>
+section, then the <code>SkuId</code> values are used to include specific content, while
+excluding content for sections where the <code>SkuId</code> is not present in the list of
+<code>SkuId</code>s from either the command-line or from the <code>SKUID_IDENTIFIER</code> element in
+the <code>[Defines]</code> section. Use of the <code>SkuId</code> modifier for the <code>[PcdsDynamic*]</code>
+section tag can be used as a conditional modifier or to groups sets of PCDs
+according to the <code>SkuId</code> identifier.</p>
+<p><strong><em>PcdValues</em></strong></p>
+<p>PCD values are optional for <code>[PcdsDynamicDefault]</code> sections. The PCD values for
+PCDs listed in <code>[PcdsDynamicVpd]</code> and <code>[PcdsDynamicHii]</code> sections are also
+optional. For a PCD with a Datum Type of <code>VOID</code>* and an access method
+implementation of <code>PcdsDynamicHii</code>, a default value should not be listed, as
+the value is a pointer.</p>
+<p><strong><em>HiiAttr</em></strong></p>
+<p>Each HII attribute may only be present once in the list. Refer to <em>Table 9</em> and
+the <em>UEFI Specification</em> for a description of these attributes.</p>
+<h4 id="examples">Examples</h4>
+<pre><code class="lang-ini">[PcdsDynamicDefault.IA32.Default]
+  gEfiEdkNt32PkgTokenSpaceGuid.PcdWinNtMemorySizeForSecMain|&quot;L64!64&quot;|10
+  gPcAtChipsetPkgTokenSpaceGuid.Pcd8259LegacyModeEdgeLevel |0x0         # UINT16
+  gPcAtChipsetPkgTokenSpaceGuid.PcdIsaAcpiPs2MouseEnable   |0           # BOOLEAN
+
+[PcdsDynamicVpd.common.Sku_Two|SkuSeven]
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuLocalApicBaseAddress |0x0001ffff|0x1  # UINT32
+  gNoSuchTokenSpaceGuid.PcdPciDevice0Name   |0x2282|64 |&quot;None&quot;          # VOID*
+  gNoSuchTokenSpaceGuid.PcdPciDevice50Info  |0x22C2|18 |{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}  # VOID*
+  gNoSuchTokenSpaceGuid.PcdOemBootOptionName|0x22D4|100|&quot; &quot;             # VOID*
+  gNoSuchTokenSpaceGuid.PcdOemBootOptionPath|0x2338|100|&quot; &quot;             # VOID*
+  gNoSuchTokenSpaceGuid.PcdEnableFastBoot   |0x239C|1  |FALSE           # BOOLEAN
+
+[PcdsDynamicHii.IA32, PcdsDynamicHii.X64.Sku1]
+  gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|0x0053 0x0065 0x0074 0x0075 0x0070|gSysConfigGuid|0x83|0x0
+  gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L&quot;Timeout&quot;|gEfiGlobalVariableGuid|0x0|10  # Variable: L&quot;Timeout&quot;
+</code></pre>
+<h3 id="3105-pcdsdynamicex-sections">3.10.5 [PcdsDynamicEx] Sections</h3>
+<p>These are optional sections.</p>
+<h4 id="summary">Summary</h4>
+<p>Defines the <code>[PcdsDynamicEx]</code> section tag that may be required for platform DSC
+files that will use EDK II module INF files. The values listed below must match
+the datum type specified in the DEC file that declares this PCD. If a PCD&apos;s
+datum type is <code>VOID</code>* the <code>MaximumDatumSize</code> field is required. Specifying
+different <code>&lt;DataStore&gt;</code> values(<code>Default</code>, <code>HII</code>, or <code>VPD</code>) in one section header
+is not permitted. It is permissible to specify different Architectures using an
+identical <code>&lt;DataStore&gt;</code> value. The following line is permissible:</p>
+<p><code>[PcdsDynamicExDefault.X64.Default, PcdsDynamicExDefault.IPF.Default]</code></p>
+<p>The following line is incorrect, and must cause a build break during parsing of
+the file:</p>
+<p><code>[PcdsDynamicExDefault.X64.DEFAULT, PcdsDynamicExVpd.IPF.DEFAULT]</code></p>
+<p>The <code>!include</code> statement is permitted in <code>[PcdsDynamicEx]</code> sections, although
+not recommended.</p>
+<p>The <code>PcdsDynamicEx</code> entry is a formatted string with three to six fields,
+separated by the pipe &quot;|&quot; character. PCDs listed in this section must not be
+listed in the <code>PcdsFixedAtbuild</code>, <code>PcdsPatchableInModule</code> or <code>PcdsDynamic</code>
+sections of the DSC file.</p>
+<h4 id="prototype">Prototype</h4>
+<pre><code class="lang-c">&lt;Pcds&gt;           ::= {&lt;PcdsExDefault&gt;} {&lt;PcdsExVpd&gt;} {&lt;PcdsExHii&gt;}
+&lt;PcdsExDefault&gt;  ::= &quot;[PcdsDynamicExDefault&quot; [&lt;PddAttribs&gt;] &quot;]&quot; &lt;EOL&gt;
+                     &lt;PddEntries&gt;*
+&lt;PddEntries&gt;     ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;TS&gt; &lt;MinEntry&gt;}
+&lt;PddAttribs&gt;     ::= &lt;attrs&gt; [&quot;,&quot; &lt;TS&gt; &quot;PcdsDynamicExDefault&quot; &lt;attrs&gt;]*
+&lt;PcdsExVpd&gt;      ::= &quot;[PcdsDynamicExVpd&quot; [&lt;PdvAttribs&gt;] &quot;]&quot; &lt;EOL&gt;
+                     &lt;PdvEntries&gt;*
+&lt;PdvAttribs&gt;     ::= &lt;attrs&gt; [ &quot;,&quot; &lt;TS&gt; &quot;PcdsDynamicExVpd&quot; &lt;attrs&gt;]*
+&lt;PdvEntries&gt;     ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;}
+                     {&lt;TS&gt; &lt;VpdEntry&gt;}
+&lt;PcdsExHii&gt;      ::= &quot;[PcdsDynamicExHii&quot; [&lt;PdhAttribs&gt;] &quot;]&quot; &lt;EOL&gt;
+                     &lt;PcdHiiEntries&gt;*
+&lt;PdhAttribs&gt;     ::= &lt;attrs&gt; [&quot;,&quot; &lt;TS&gt; &quot;PcdsDynamicExHii &lt;attrs&gt;]*
+                     &lt;PdvEntries&gt;*
+&lt;PcdHiiEntries&gt;  ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;TS&gt; &lt;HiiEntry&gt;}
+&lt;attrs&gt;          ::= &quot;.&quot; &lt;arch&gt; [&quot;.&quot; &lt;SkuIds&gt;]
+&lt;SkuIdS&gt;         ::= &lt;Keyword&gt; [&lt;FS&gt; &lt;Keyword&gt;]*
+&lt;Keyword&gt;        ::= &lt;UiName&gt;
+&lt;UiName&gt;         ::= &lt;Word&gt;
+&lt;MinEntry&gt;       ::= &lt;PcdName&gt; [&lt;FS&gt; &lt;PcdValue&gt;] &lt;EOL&gt;
+&lt;PcdValue&gt;       ::= if (pcddatumtype == &quot;BOOLEAN&quot;): {&lt;Boolean&gt;} {&lt;Expression&gt;}
+                     elif (pcddatumtype == &quot;UINT8&quot;): {&lt;NumValUint8&gt;}
+                     {&lt;Expression&gt;} elif (pcddatumtype == &quot;UINT16&quot;):
+                     {&lt;NumValUint16&gt;} {&lt;Expression&gt;} elif (pcddatumtype ==
+                     &quot;UINT32&quot;): {&lt;NumValUint32&gt;} {&lt;Expression&gt;} elif
+                     (pcddatumtype == &quot;UINT64&quot;): {&lt;NumValUint64&gt;}
+                     {&lt;Expression&gt;} else:
+                     &lt;StringValue&gt; [&lt;MaxSize&gt;]
+&lt;MaxSize&gt;        ::= &lt;FS&gt; &quot;VOID*&quot; [&lt;FS&gt; &lt;SizeValue&gt;]
+&lt;SizeValue&gt;      ::= {&lt;Number&gt;} {&lt;Expression&gt;}
+&lt;StringValue&gt;    ::= {&lt;UnicodeString&gt;} {&lt;CString&gt;} {&lt;CArray&gt;} {&lt;MACROVAL&gt;}
+                     {&lt;Expression&gt;}
+&lt;VpdEntry&gt;       ::= &lt;PcdName&gt; &lt;FS&gt; &lt;VpdOffset&gt; [&lt;FS&gt; &lt;VpdData&gt;] &lt;EOL&gt;
+&lt;VpdOffset&gt;      ::= {&lt;Number&gt;} {&quot;*&quot;}
+&lt;VpdData&gt;        ::= if (pcddatumtype == &quot;BOOLEAN&quot;): {&lt;Boolean&gt;} {&lt;Expression&gt;}
+                     elif (pcddatumtype == &quot;UINT8&quot;): {&lt;NumValUint8&gt;}
+                     {&lt;Expression&gt;} elif (pcddatumtype == &quot;UINT16&quot;):
+                     {&lt;NumValUint16&gt;} {&lt;Expression&gt;} elif (pcddatumtype ==
+                     &quot;UINT32&quot;): {&lt;NumValUint32&gt;} {&lt;Expression&gt;} elif
+                     (pcddatumtype == &quot;UINT64&quot;): {&lt;NumValUint64&gt;}
+                     {&lt;Expression&gt;} else:
+                     &lt;VpdMaxSize&gt;
+&lt;VpdMaxSize&gt;     ::= &lt;NumValUint32&gt; [&lt;FS&gt; &lt;StringValue&gt;]
+&lt;HiiEntry&gt;       ::= &lt;PcdName&gt; &lt;FS&gt; &lt;HiiString&gt; &lt;Field2&gt; &lt;EOL&gt;
+&lt;HiiString&gt;      ::= {&lt;CArray&gt;} {&lt;UnicodeString&gt;}
+&lt;Field2&gt;         ::= &lt;FS&gt; &lt;VariableGuid&gt; &lt;FS&gt; &lt;VariableOffset&gt; [&lt;ValueField&gt;]
+&lt;VariableGuid&gt;   ::= &lt;CName&gt;
+&lt;ValueField&gt;     ::= &lt;FS&gt; &lt;DefaultValue&gt; [&lt;FS&gt; &lt;HiiAttrs&gt;]
+&lt;VariableOffset&gt; ::= &lt;Number&gt;
+&lt;DefaultValue&gt;   ::= {&lt;Boolean&gt;} {&lt;Number&gt;} {&lt;String&gt;} {&lt;CArray&gt;}
+                     {&lt;MACROVAL&gt;} {&lt;Expression&gt;}
+&lt;HiiAttrs&gt;       ::= &lt;HiiAttr&gt; [&lt;CS&gt; &lt;HiiAttr&gt;]*
+&lt;HiiAttr&gt;        ::= {&quot;NV&quot;} {&quot;BS&quot;} {&quot;RT&quot;} {&quot;RO&quot;}
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<p><strong><em>Expression</em></strong></p>
+<p>Refer to the EDK II Expression Syntax Specification for additional information.</p>
+<p><strong><em>VpdOffset</em></strong></p>
+<p>A non-negative numeric value that is the number of bytes from the start of the
+Vpd Region specified in the FDF file. The star &quot;*&quot; character may be used in
+this field in order to permit an external tool to automatically calculate the
+offset values for optimizing data size. This character can only be used if a
+<code>VPD_TOOL_GUID</code> has been specified, and the tool supports automatic calculation
+of the offset.</p>
+<p><strong><em>VariableOffset</em></strong></p>
+<p>A non-negative numeric value that is the number of bytes from the start to the
+start of this variable. The offset value must not exceed the maximum value of
+0xFFFF (<code>UINT16</code>).</p>
+<p><strong><em>SkuIds</em></strong></p>
+<p><code>SkuId</code>s in the DSC file can be used in two different ways. They can be used to
+as conditional modifiers to exclude some content from a build, or they can be
+used to identify and group content during a build. If no <code>SkuId</code> option (<code>-x</code>)
+is present on the command-line, or defined in the <code>[Defines]</code> section, then the
+build system must group content by <code>SkuId</code>. If a <code>SkuId</code> option is present on
+the command-line, or one or more <code>SkuId</code>s are listed in the <code>[Defines]</code>
+section, then the <code>SkuId</code> values are used to include specific content, while
+excluding content for sections where the <code>SkuId</code> is not present in the list of
+<code>SkuId</code>s from either the command-line or from the <code>SKUID_IDENTIFIER</code> element in
+the <code>[Defines]</code> section. Use of the <code>SkuId</code> modifier for the <code>[PcdsDynamic*]</code>
+section tag can be used as a conditional modifier or to groups sets of PCDs
+according to the <code>SkuId</code> identifier.</p>
+<p><strong><em>PcdValues</em></strong></p>
+<p>PCD values are optional for <code>[PcdsDynamicExDefault]</code> sections. The PCD values
+for PCDs listed in <code>[PcdsDynamicExVpd]</code> and <code>[PcdsDynamicExHii]</code> sections are
+also optional. For a PCD with a Datum Type of <code>VOID</code>* and an access method
+implementation of <code>PcdsDynamicExHii</code>, a default value should not be listed, as
+the value is a pointer.</p>
+<p><strong><em>HiiAttr</em></strong></p>
+<p>Each HII attribute may only be present once in the list.Refer to <em>Table 9</em> and
+the <em>UEFI Specification</em> for a description of these attributes.</p>
+<h4 id="examples">Examples</h4>
+<pre><code class="lang-ini">[PcdsDynamicExDefault.IA32.Default]
+  gEfiEdkNt32PkgTokenSpaceGuid.PcdWinNtMemorySizeForSecMain|L&quot;64!64&quot;|VOID*|10
+  gPcAtChipsetPkgTokenSpaceGuid.Pcd8259LegacyModeEdgeLevel|0x0
+  gPcAtChipsetPkgTokenSpaceGuid.PcdIsaAcpiPs2MouseEnable|0               # BOOLEAN
+
+[PcdsDynamicExVpd.common.Sku_Two|SkuSeven]
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuLocalApicBaseAddress|0x0001ffff | 0x1  # UINT32
+  gNoSuchTokenSpaceGuid.PcdPciDevice0Name   |0x2282|64 |&quot;None&quot;           # VOID*
+  gNoSuchTokenSpaceGuid.PcdPciDevice0Info   |0x22C2|18 |{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}  # VOID*
+  gNoSuchTokenSpaceGuid.PcdOemBootOptionName|0x22D4|100|&quot; &quot;              # VOID*
+  gNoSuchTokenSpaceGuid.PcdOemBootOptionPath|0x2338|100|&quot; &quot;              # VOID*
+  gNoSuchTokenSpaceGuid.PcdEnableFastBoot   |0x239C|FALSE                # BOOLEAN
+
+[PcdsDynamicExHii.IA32, PcdsDynamicExHii.X64.Sku1]
+  gEfiMyModulePkgTokenSpaceGuid.PcdChassisIntrution|0x0053 0x0065 0x0074 0x0075 0x0070|gSysConfigGuid|0x83|0x0
+  gEfiIntelFrameworkModulePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L&quot;Timeout&quot;|gEfiGlobalVariableGuid|0x0  # Variable: L&quot;Timeout&quot;
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                    
+                    
+
+<div>
+    <hr>
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.27</div>
+      </h2>  
+    
+</div>
+
+
+
+                
+            </div>
+
+            
+                
+                <a href="39_[libraryclasses]_sections.html#39-libraryclasses-sections" class="navigation navigation-prev " aria-label="Previous page: 3.9 [LibraryClasses] Sections">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="311_[components]_sections.html#311-components-sections" class="navigation navigation-next " aria-label="Next page: 3.11 [Components] Sections">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.10 PCD Sections","level":"1.4.10","depth":2,"next":{"title":"3.11 [Components] Sections","level":"1.4.11","depth":2,"anchor":"#311-components-sections","path":"3_edk_ii_dsc_file_format/311_[components]_sections.md","ref":"3_edk_ii_dsc_file_format/311_[components]_sections.md#311-components-sections","articles":[]},"previous":{"title":"3.9 [LibraryClasses] Sections","level":"1.4.9","depth":2,"anchor":"#39-libraryclasses-sections","path":"3_edk_ii_dsc_file_format/39_[libraryclasses]_sections.md","ref":"3_edk_ii_dsc_file_format/39_[libraryclasses]_sections.md#39-libraryclasses-sections","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"title":"EDK II Platform Description (DSC) File Specification","version":"Revision 1.27"},"plugins":["puml-aleung"],"pluginsConfig":{"puml-aleung":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3_edk_ii_dsc_file_format/310_pcd_sections.md","mtime":"2020-12-01T04:59:18.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-01T04:59:51.992Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
