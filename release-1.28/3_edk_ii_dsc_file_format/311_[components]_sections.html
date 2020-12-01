@@ -1,0 +1,1242 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.11 [Components] Sections · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="312_[userextensions]_sections.html" />
+    
+    
+    <link rel="prev" href="310_pcd_sections.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../#edk-ii-platform-description-dsc-file-specification">
+            
+                    
+                    EDK II Platform Description (DSC) File Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1_introduction/">
+            
+                <a href="../1_introduction/#1-introduction">
+            
+                    
+                    1 Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#11-overview">
+            
+                    
+                    1.1 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1_introduction/12_terms.html">
+            
+                <a href="../1_introduction/12_terms.html#12-terms">
+            
+                    
+                    1.2 Terms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1_introduction/13_related_information.html">
+            
+                <a href="../1_introduction/13_related_information.html#13-related-information">
+            
+                    
+                    1.3 Related Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1_introduction/14_conventions_used_in_this_document.html">
+            
+                <a href="../1_introduction/14_conventions_used_in_this_document.html#14-conventions-used-in-this-document">
+            
+                    
+                    1.4 Conventions Used in this Document
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2_dsc_overview/">
+            
+                <a href="../2_dsc_overview/#2-dsc-overview">
+            
+                    
+                    2 DSC Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2_dsc_overview/21_processing_overview.html">
+            
+                <a href="../2_dsc_overview/21_processing_overview.html#21-processing-overview">
+            
+                    
+                    2.1 Processing Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#22-build-description-file-format">
+            
+                    
+                    2.2 Build Description File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2_dsc_overview/23_[defines]_section_processing.html">
+            
+                <a href="../2_dsc_overview/23_[defines]_section_processing.html#23-defines-section-processing">
+            
+                    
+                    2.3 [Defines] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../2_dsc_overview/24_[buildoptions]_section.html">
+            
+                <a href="../2_dsc_overview/24_[buildoptions]_section.html#24-buildoptions-section">
+            
+                    
+                    2.4 [BuildOptions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../2_dsc_overview/25_[skuids]_section_processing.html">
+            
+                <a href="../2_dsc_overview/25_[skuids]_section_processing.html#25-skuids-section-processing">
+            
+                    
+                    2.5 [SkuIds] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../2_dsc_overview/26_[libraries]_section_processing.html">
+            
+                <a href="../2_dsc_overview/26_[libraries]_section_processing.html#26-libraries-section-processing">
+            
+                    
+                    2.6 [Libraries] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../2_dsc_overview/27_[libraryclasses]_section_processing.html">
+            
+                <a href="../2_dsc_overview/27_[libraryclasses]_section_processing.html#27-libraryclasses-section-processing">
+            
+                    
+                    2.7 [LibraryClasses] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../2_dsc_overview/28_pcd_section_processing.html">
+            
+                <a href="../2_dsc_overview/28_pcd_section_processing.html#28-pcd-section-processing">
+            
+                    
+                    2.8 PCD Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../2_dsc_overview/29_pcd_sections.html">
+            
+                <a href="../2_dsc_overview/29_pcd_sections.html#29-pcd-sections">
+            
+                    
+                    2.9 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../2_dsc_overview/210_pcd_database.html">
+            
+                <a href="../2_dsc_overview/210_pcd_database.html#210-pcd-database">
+            
+                    
+                    2.10 PCD Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../2_dsc_overview/211_[components]_section_processing.html">
+            
+                <a href="../2_dsc_overview/211_[components]_section_processing.html#211-components-section-processing">
+            
+                    
+                    2.11 [Components] Section Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../2_dsc_overview/212_[userextensions]_section.html">
+            
+                <a href="../2_dsc_overview/212_[userextensions]_section.html#212-userextensions-section">
+            
+                    
+                    2.12 [UserExtensions] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../2_dsc_overview/213_[defaultstores]_section_processing.html">
+            
+                <a href="../2_dsc_overview/213_[defaultstores]_section_processing.html#213-defaultstores-section-processing">
+            
+                    
+                    2.13 [DefaultStores] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./#3-edk-ii-dsc-file-format">
+            
+                    
+                    3 EDK II DSC File Format
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="31_building_multiple_architectures.html">
+            
+                <a href="31_building_multiple_architectures.html#31-building-multiple-architectures">
+            
+                    
+                    3.1 Building multiple architectures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="32_general_rules.html">
+            
+                <a href="32_general_rules.html#32-general-rules">
+            
+                    
+                    3.2 General Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="33_platform_dsc_definition.html">
+            
+                <a href="33_platform_dsc_definition.html#33-platform-dsc-definition">
+            
+                    
+                    3.3 Platform DSC Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="34_header_section.html">
+            
+                <a href="34_header_section.html#34-header-section">
+            
+                    
+                    3.4 Header Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="35_[defines]_section.html">
+            
+                <a href="35_[defines]_section.html#35-defines-section">
+            
+                    
+                    3.5 [Defines] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="36_[buildoptions]_sections.html">
+            
+                <a href="36_[buildoptions]_sections.html#36-buildoptions-sections">
+            
+                    
+                    3.6 [BuildOptions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="37_[skuids]_section.html">
+            
+                <a href="37_[skuids]_section.html#37-skuids-section">
+            
+                    
+                    3.7 [SkuIds] Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="38_[libraries]_sections.html">
+            
+                <a href="38_[libraries]_sections.html#38-libraries-sections">
+            
+                    
+                    3.8 [Libraries] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="39_[libraryclasses]_sections.html">
+            
+                <a href="39_[libraryclasses]_sections.html#39-libraryclasses-sections">
+            
+                    
+                    3.9 [LibraryClasses] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="310_pcd_sections.html">
+            
+                <a href="310_pcd_sections.html#310-pcd-sections">
+            
+                    
+                    3.10 PCD Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="311_[components]_sections.html">
+            
+                <a href="311_[components]_sections.html#311-components-sections">
+            
+                    
+                    3.11 [Components] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="312_[userextensions]_sections.html">
+            
+                <a href="312_[userextensions]_sections.html#312-userextensions-sections">
+            
+                    
+                    3.12 [UserExtensions] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="313_[defaultstores]_section.html">
+            
+                <a href="313_[defaultstores]_section.html#313-defaultstores-section">
+            
+                    
+                    3.13 [DefaultStores] Sections
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#appendix-a-variables">
+            
+                    
+                    Appendix A Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../appendix_b_sample_edk_ii_dsc_file.html">
+            
+                <a href="../appendix_b_sample_edk_ii_dsc_file.html#appendix-b-sample-edk-ii-dsc-file">
+            
+                    
+                    Appendix B Sample EDK II DSC File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#appendix-c-module-types">
+            
+                    
+                    Appendix C Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../appendix_d_vpd_data_files/">
+            
+                <a href="../appendix_d_vpd_data_files/#appendix-d-vpd-data-files">
+            
+                    
+                    Appendix D Vpd Data Files
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d1_edk_ii_build_system_output_file_format.html#d1-edk-ii-build-system-output-file-format">
+            
+                    
+                    D.1 EDK II Build System Output File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html">
+            
+                <a href="../appendix_d_vpd_data_files/d2_vpd_info_file_format.html#d2-vpd-info-file-format">
+            
+                    
+                    D.2 Vpd Info File Format
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Tables
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../1_introduction/11_overview.html">
+            
+                <a href="../1_introduction/11_overview.html#table-1-edk-build-infrastructure-support-matrix">
+            
+                    
+                    Table 1 EDK Build Infrastructure Support Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-2-well-known-macro-statements">
+            
+                    
+                    Table 2 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-3-using-system-environment-variable">
+            
+                    
+                    Table 3 Using System Environment Variable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-4-well-known-macro-statements">
+            
+                    
+                    Table 4 Well-known Macro Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../2_dsc_overview/22_build_description_file_format.html">
+            
+                <a href="../2_dsc_overview/22_build_description_file_format.html#table-5-operator-precedence-and-supported-operands">
+            
+                    
+                    Table 5 Operator Precedence and Supported Operands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../2_dsc_overview/23_[defines]_section_processing.html">
+            
+                <a href="../2_dsc_overview/23_[defines]_section_processing.html#table-6-edk-ii-defines-section-elements">
+            
+                    
+                    Table 6 EDK II [Defines] Section Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../2_dsc_overview/24_[buildoptions]_section.html">
+            
+                <a href="../2_dsc_overview/24_[buildoptions]_section.html#table-7-edk-ii-buildoptions-section-elements-optional-tags">
+            
+                    
+                    Table 7 EDK II [BuildOptions] Section Elements: Optional Tags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../2_dsc_overview/24_[buildoptions]_section.html">
+            
+                <a href="../2_dsc_overview/24_[buildoptions]_section.html#table-8-edk-ii-buildoptions-variable-descriptions">
+            
+                    
+                    Table 8 EDK II [BuildOptions] Variable Descriptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../2_dsc_overview/29_pcd_sections.html">
+            
+                <a href="../2_dsc_overview/29_pcd_sections.html#table-9-hii-attributes">
+            
+                    
+                    Table 9 HII Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../appendix_a_variables.html">
+            
+                <a href="../appendix_a_variables.html#table-10-standard-variables">
+            
+                    
+                    Table 10 Standard Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../appendix_c_module_types.html">
+            
+                <a href="../appendix_c_module_types.html#table-11-edk-ii-module-types">
+            
+                    
+                    Table 11 EDK II Module Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Figures
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../2_dsc_overview/21_processing_overview.html">
+            
+                <a href="../2_dsc_overview/21_processing_overview.html#figure-1-edk-ii-parsing-data-flow">
+            
+                    
+                    Figure 1 EDK II Parsing Data Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.11 [Components] Sections</a>
+    </h1>
+</div>
+<div>
+    <!-- 
+    <img style="float:left; align:middle; height:2em" src="media/TianocoreTitlePageLogo.jpg"/>
+     -->
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.28</div>
+      </h2>  
+    
+    <hr>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!--- @file
+  3.11 [Components] Sections
+
+  Copyright (c) 2006-2017, Intel Corporation. All rights reserved.<BR>
+
+  Redistribution and use in source (original document form) and 'compiled'
+  forms (converted to PDF, epub, HTML and other formats) with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1) Redistributions of source code (original document form) must retain the
+     above copyright notice, this list of conditions and the following
+     disclaimer as the first lines of this file unmodified.
+
+  2) Redistributions in compiled form (transformed to other DTDs, converted to
+     PDF, epub, HTML and other formats) must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  THIS DOCUMENTATION IS PROVIDED BY TIANOCORE PROJECT "AS IS" AND ANY EXPRESS OR
+  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL TIANOCORE PROJECT  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<h2 id="311-components-sections">3.11 [Components] Sections</h2>
+<p>The <code>[Components]</code> sections are required.</p>
+<h4 id="summary">Summary</h4>
+<p>This section defines the modules and components that will be processed by
+compilation tools and the EDK II tools used to generate PE32/PE32+/Coff image
+files.</p>
+<p>The <code>!include</code> statement is permitted in <code>[Components]</code> sections. however this
+method is NOT recommended.</p>
+<p>All EDK II file paths must be specified relative to a directory containing EDK
+II Packages (as specified by the WORKSPACE or a directory listed in
+PACKAGES_PATH system environment variable). EDK INF component and library files
+may use <code>$(EDK_SOURCE)</code> or <code>$(EFI_SOURCE)</code> global environment variables. If the
+environment variable is not specified, the INF file path is assumed to be
+relative to the <code>WORKSPACE</code>.</p>
+<p>The following is an example of specifying a <code>WORKSPACE</code> (MdeModulePkg is in the
+directory pointed to by the WORKSPACE environment variable) relative Path:</p>
+<p><code>MdeModulePkg/Universal/Disk/DiskIo/Dxe</code></p>
+<p>The following is an example of specifying an Indirect Path:</p>
+<pre><code class="lang-ini">DEFINE FOUNDATION_LIB = $(EDK_SOURCE)/Foundation/Library
+$(FOUNDATION_LIB)/EdkIIGlueLib/EntryPoints
+</code></pre>
+<p>The permitted <code>DEFINE</code> statement must be a variable name assigned to a path.</p>
+<p>EDK II DSC files allow specifying only one optional argument on an INF file
+entry line. The argument, <code>EXEC = filename</code>, is used for User Defined
+processing of an INF file. The EDK II parsing tools will call the program
+listed by filename (which must either be in the OS <code>PATH</code> environment, or fully
+qualified path and filename) with the INF filename (expanded) as the one and
+only argument to filename.</p>
+<p>EDK II modules can have scoped (scoping encapsulation between &quot;{&quot; and &quot;}&quot;
+braces) sub-elements, <code>&lt;LibraryClasses&gt;</code>, <code>&lt;Pcd*&gt;</code> and/or <code>&lt;BuildOptions&gt;</code> that
+allow individual modules to supersede previous definitions. The values
+specified on the command-line have the highest precedence followed by values
+specified in the sub-elements. Refer to <em>Section 2.4</em> regarding how build
+options are used by the EDK II build tools, as well as the <em>EDK II Build
+Specification</em>.</p>
+<p>The PCD access methods (and storage methods) are selected on a platform basis -
+it is not permitted to have a PCD listed in one of the Pcd sections and use it
+differently in an individual module. For example, if a PCD is listed in a
+<code>[PcdsFixedAtBuild]</code> section, it is not permitted to list it in a
+<code>&lt;PcdsPatchableInModule&gt;</code> sub-section of an INF file.</p>
+<p>It is permitted to have a PatchableInModule PCD or FixedAtBuild PCD with
+different values. If a PCD is listed in <code>[PcdsFixedAtBuild]</code> section with one
+value, while the <code>&lt;PcdsFixedAtBuild&gt;</code> section of an INF use a different value.</p>
+<p>The FeatureFlag PCD and the two dynamic forms of PCDs are common to a platform,
+with the dynamic form PCD values stored in a &quot;runtime database&quot;, read-only
+memory location or an HII data store. Therefore, having different values is
+prohibited for these access methods.</p>
+<p>EDK components may have the scoped sub-element, <code>&lt;SOURCE_OVERRIDE_PATH&gt;</code> that
+is used to virtually replace files in the component&apos;s directory.</p>
+<p>The format for items listed in the sub-elements is the identical format for
+content under the section.</p>
+<p>Within the context of an EDK II module sub-element, the <code>&lt;LibraryClasses&gt;</code>
+entries must appear before <code>&lt;Pcds*&gt;</code> entries; the <code>&lt;LibraryClasses&gt;</code> entries
+terminate with the start of either the <code>&lt;Pcds*&gt;</code> or <code>&lt;BuildOptions&gt;</code>
+sub-section header or the end of the scope defined by the right curly &quot;}&quot;
+brace. The <code>&lt;BuildOptions&gt;</code> sub-element must be the last sub-entry of an EDK II
+module&apos;s scoped section. Entries for <code>&lt;LibraryClasses&gt;</code>, <code>&lt;Pcds*&gt;</code> and
+<code>&lt;BuildOptions&gt;</code> are used to replace the platform or global definition entries
+listed elsewhere. <code>LibraryClass</code> and PCDs are globally defined in the DSC
+file&apos;s <code>[LibraryClasses]</code> and <code>[Pcds*]</code> sections, while global BuildOptions
+may be specified in either the DSC file&apos;s <code>[BuildOptions]</code> section or in the
+<code>$(WORKSPACE)/Conf/tools_def.txt</code> file.</p>
+<p>Components and modules listed here will be processed during the MAKE phase of
+the build. Binary EDK II only modules do not need to be listed in this section,
+but can be put into the FDF file. If a Binary INF listed in the FDF file has
+dynamic or PatchableInModule PCDs, the INF should be listed in the DSC
+file.Build tools will use the order of files specified in this section for
+performing a build (Library Class Instances will be built prior to the module&apos;s
+sources,) however the ordering in this file has no effect on the ordering of
+modules in a binary image (the FDF file describes that ordering).</p>
+<h4 id="prototype">Prototype</h4>
+<pre><code class="lang-c">&lt;Components&gt;       ::= <span class="hljs-string">&quot;[Components&quot;</span> [&lt;attribs&gt;] <span class="hljs-string">&quot;]&quot;</span> &lt;EOL&gt;
+                       &lt;ModuleStatements&gt;*
+&lt;attribs&gt;          ::= &lt;attrs&gt; [<span class="hljs-string">&quot;,&quot;</span> &lt;TS&gt; <span class="hljs-string">&quot;Components&quot;</span> &lt;attrs&gt;]*
+&lt;attrs&gt;            ::= <span class="hljs-string">&quot;.&quot;</span> &lt;arch&gt;
+&lt;ModuleStatements&gt; ::= {&lt;MacroDefinition&gt;}
+                       {&lt;IncludeStatement&gt;} {&lt;TS&gt; &lt;InfFiles&gt;}
+&lt;InfFiles&gt;         ::= &lt;InfFilename&gt; [&lt;MTS&gt; &lt;Options&gt;] &lt;EOL&gt;
+&lt;Options&gt;          ::= {&lt;Exec&gt;} {&lt;Edk2Struct&gt;} {&lt;EdkStruct&gt;}
+&lt;InfFilename&gt;      ::= &lt;PATH&gt; &lt;Word&gt; <span class="hljs-string">&quot;.inf&quot;</span>
+&lt;Exec&gt;             ::= <span class="hljs-string">&quot;EXEC&quot;</span> &lt;Eq&gt; &lt;ExecFilename&gt;
+&lt;ExecFilename&gt;     ::= &lt;PATH&gt; &lt;Word&gt; [<span class="hljs-string">&quot;.&quot;</span> &lt;ExecExtension&gt;]
+&lt;ExecExtension&gt;    ::= &lt;Word&gt; <span class="hljs-meta"># An OS recognisable extension that will #</span>
+                       automatically be run.
+&lt;EdkStruct&gt;        ::= <span class="hljs-string">&quot;{&quot;</span> &lt;EOL&gt;
+                       &lt;TS&gt; <span class="hljs-string">&quot;&lt;SOURCE_OVERRIDE_PATH&gt;&quot;</span> &lt;EOL&gt;
+                       &lt;TS&gt; &lt;PATH&gt;
+                       &lt;TS&gt; <span class="hljs-string">&quot;}&quot;</span> &lt;EOL&gt;
+&lt;Edk2Struct&gt;       ::= <span class="hljs-string">&quot;{&quot;</span> &lt;EOL&gt;
+                       [&lt;TS&gt; &lt;DefSec&gt;]
+                       [&lt;TS&gt; &lt;LibraryClasses&gt;]
+                       [&lt;TS&gt; &lt;PcdsFeatureFlag&gt;]
+                       [&lt;TS&gt; &lt;PcdsFixed&gt;]
+                       [&lt;TS&gt; &lt;PcdsPatchable&gt;]
+                       [&lt;TS&gt; &lt;BuildOptions&gt;] <span class="hljs-string">&quot;}&quot;</span>
+&lt;DefSec&gt;           ::= <span class="hljs-string">&quot;&lt;Defines&gt;&quot;</span> &lt;EOL&gt;
+                       &lt;TS&gt; <span class="hljs-string">&quot;FILE_GUID&quot;</span> &lt;EQ&gt; &lt;RegistryFormatGuid&gt; &lt;EOL&gt;
+&lt;LibraryClasses&gt;   ::= <span class="hljs-string">&quot;&lt;LibraryClasses&gt;&quot;</span> &lt;EOL&gt; &lt;LcEntries&gt;*
+&lt;LcEntries&gt;        ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;TS&gt;
+                       &lt;LibraryInstances&gt;}
+&lt;LibraryInstances&gt; ::= {&lt;ClassInstanceMap&gt;} {&lt;NullLibInstances&gt;}
+&lt;ClassInstanceMap&gt; ::= &lt;ClassName&gt; &lt;FS&gt; &lt;InfFilename&gt; &lt;EOL&gt;
+&lt;ClassName&gt;        ::= (A-Z)(a-zA-Z0<span class="hljs-number">-9</span>)*
+&lt;NullLibInstances&gt; ::= <span class="hljs-string">&quot;NULL&quot;</span> &lt;FS&gt; &lt;InfFilename&gt; &lt;EOL&gt;
+&lt;PcdsFeatureFlag&gt;  ::= <span class="hljs-string">&quot;&lt;PcdsFeatureFlag&gt;&quot;</span> &lt;EOL&gt; &lt;PcdsFFEntries&gt;*
+&lt;PcdsFFEntries&gt;    ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;} {&lt;TS&gt;
+                       &lt;PcdsFeatureEntry&gt;}
+&lt;PcdFeatureEntry&gt;  ::= &lt;PcdName&gt; &lt;FS&gt; &lt;PcdFeatureValue&gt; &lt;EOL&gt;
+&lt;PcdFeatureValue&gt;  ::= {&lt;BoolType&gt;} {&lt;MACROVAL&gt;} {&lt;Expression&gt;}
+&lt;PcdsFixed&gt;        ::= <span class="hljs-string">&quot;&lt;PcdsFixedAtBuild&gt;&quot;</span> &lt;EOL&gt; &lt;PcdEntries&gt;*
+&lt;PcdEntries&gt;       ::= {&lt;MacroDefinition&gt;} {&lt;IncludeStatement&gt;}
+                       {&lt;TS&gt; &lt;PcdsEntry&gt;}
+&lt;PcdsPatchable&gt;    ::= <span class="hljs-string">&quot;&lt;PcdsPatchableInModule&gt;&quot;</span> &lt;EOL&gt;
+                       &lt;PcdEntries&gt;*
+&lt;PcdEntry&gt;         ::= &lt;PcdName&gt; [&lt;FS&gt; &lt;PcdValue&gt;] &lt;EOL&gt;
+&lt;PcdValue&gt;         ::= <span class="hljs-keyword">if</span> (pcddatumtype == <span class="hljs-string">&quot;BOOLEAN&quot;</span>):
+                         {&lt;BoolType&gt;} {&lt;Expression&gt;}
+                       elif (pcddatumtype == <span class="hljs-string">&quot;UINT8&quot;</span>):
+                         {&lt;NumValUint8&gt;} {&lt;Expression&gt;}
+                       elif (pcddatumtype == <span class="hljs-string">&quot;UINT16&quot;</span>): 
+                         {&lt;NumValUint16&gt;} {&lt;Expression&gt;}
+                       elif (pcddatumtype == <span class="hljs-string">&quot;UINT32&quot;</span>):
+                         {&lt;NumValUint32&gt;} {&lt;Expression&gt;}
+                       elif (pcddatumtype == <span class="hljs-string">&quot;UINT64&quot;</span>):
+                         {&lt;NumValUint64&gt;} {&lt;Expression&gt;}
+                       <span class="hljs-keyword">else</span>:
+                         &lt;StringValue&gt; [&lt;MaxSize&gt;]
+&lt;MaxSize&gt;          ::= &lt;FS&gt; <span class="hljs-string">&quot;VOID*&quot;</span> [&lt;FS&gt; &lt;SizeValue&gt;]
+&lt;SizeValue&gt;        ::= {&lt;Number&gt;} {&lt;Expression&gt;}
+&lt;StringValue&gt;      ::= {&lt;StringVal&gt;} {&lt;MACROVAL&gt;} {&lt;Expression&gt;}
+&lt;BuildOptions&gt;     ::= <span class="hljs-string">&quot;&lt;BuildOptions&gt;&quot;</span> &lt;EOL&gt;
+                       [&lt;DefineStatements&gt;]*
+                       [&lt;TS&gt; &lt;ToolFlags&gt;]+
+                       [&lt;TS&gt; &lt;ToolPath&gt;]*
+                       [&lt;TS&gt; &lt;ToolCmd&gt;]*
+                       [&lt;TS&gt; &lt;Other&gt;]*
+&lt;ToolFlags&gt;        ::= [&lt;Family&gt; <span class="hljs-string">&quot;:&quot;</span>] &lt;FlagSpec&gt; &lt;Equal&gt; &lt;Flags&gt; &lt;EOL&gt;
+&lt;ToolSpec&gt;         ::= &lt;Target&gt; <span class="hljs-string">&quot;_&quot;</span> &lt;TagName&gt; <span class="hljs-string">&quot;_&quot;</span> &lt;Tarch&gt; <span class="hljs-string">&quot;_&quot;</span> &lt;ToolCode&gt;
+&lt;FlagSpec&gt;         ::= &lt;ToolSpec&gt; <span class="hljs-string">&quot;_FLAGS&quot;</span>
+&lt;ToolPath&gt;         ::= [&lt;Family&gt; <span class="hljs-string">&quot;:&quot;</span>] &lt;PathSpec&gt; &lt;Equal&gt; &lt;PATH&gt; &lt;EOL&gt;
+&lt;PathSpec&gt;         ::= &lt;ToolSpec&gt; <span class="hljs-string">&quot;_DPATH&quot;</span>
+&lt;ToolCmd&gt;          ::= [&lt;Family&gt; <span class="hljs-string">&quot;:&quot;</span>] &lt;CmdSpec&gt; &lt;ReplaceEq&gt; &lt;PathCmd&gt; &lt;EOL&gt;
+&lt;CmdSpec&gt;          ::= &lt;ToolSpec&gt; <span class="hljs-string">&quot;_PATH&quot;</span>
+&lt;PathCmd&gt;          ::= &lt;PATH&gt; &lt;Word&gt; [<span class="hljs-string">&quot;.&quot;</span> &lt;Extension&gt;]
+&lt;Extension&gt;        ::= (a-zA-Z)(a-zA-Z0<span class="hljs-number">-9</span>_-)*
+&lt;Other&gt;            ::= [&lt;Family&gt; <span class="hljs-string">&quot;:&quot;</span>] &lt;OtherSpec&gt;
+&lt;OtherSpec&gt;        ::= &lt;ToolSpec&gt; <span class="hljs-string">&quot;_&quot;</span> &lt;Attribute&gt; &lt;Equal&gt; &lt;String&gt;
+&lt;Equal&gt;            ::= {&lt;AppendEq&gt;} {&lt;ReplaceEq&gt;}
+&lt;AppendEq&gt;         ::= &lt;Eq&gt;
+&lt;ReplaceEq&gt;        ::= &lt;TS&gt; <span class="hljs-string">&quot;==&quot;</span> &lt;TS&gt;
+&lt;Tarch&gt;            ::= {<span class="hljs-string">&quot;IA32&quot;</span>} {<span class="hljs-string">&quot;X64&quot;</span>} {<span class="hljs-string">&quot;IPF&quot;</span>} {<span class="hljs-string">&quot;EBC&quot;</span>} {*} {&lt;OA&gt;}
+&lt;OA&gt;               ::= (A-Z) (A-Z0<span class="hljs-number">-9</span>)*
+&lt;Family&gt;           ::= _Family_
+&lt;Attribute&gt;        ::= _Attribute_
+&lt;Target&gt;           ::= _Target_
+&lt;TagName&gt;          ::= _TagName_
+&lt;ToolCode&gt;         ::= _ToolCode_
+&lt;Flags&gt;            ::= _FlagString_
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<p><strong><em>Target</em></strong></p>
+<p>Must match a target identifier in the EDK II <code>tools_def.txt</code> file - the first
+field, where fields are separated by the underscore character. The &quot;*&quot;
+character is a valid wildcard.</p>
+<p><strong><em>TagName</em></strong></p>
+<p>Must match a tag name field in the EDK II <code>tools_def.txt</code> file - second field.
+The &quot;*&quot; character is a valid wild-card.</p>
+<p><strong><em>TargetArch</em></strong></p>
+<p>Must match the architecture field in the EDK II <code>tools_def.txt</code> file - third
+field. The &quot;*&quot; character is a valid wild-card.</p>
+<p><strong><em>ToolCode</em></strong></p>
+<p>Must match a tool code field in the EDK II <code>tools_def.txt</code> file - fourth field.
+Use of a wild-card character is not permitted.</p>
+<p><strong><em>AttributeName</em></strong></p>
+<p>Must match a tool attribute field in the EDK II <code>tools_def.txt</code> file - fifth
+field. Use of a wild-card character is not permitted. The attributes, <code>_Flag</code>,
+<code>_PATH</code> and <code>_DPATH</code> are defined elsewhere and cannot be used with the
+<code>&lt;OtherSpec&gt;</code> definition.</p>
+<p><strong><em>FlagString</em></strong></p>
+<p>Must be a valid string for the tool specified. The string will be appended to
+the end of the tool&apos;s flags (from the <code>tools_def.txt</code>). Both Microsoft and GCC
+evaluate options from left to right on the command line. This allows disabling
+some flags that may have been specified in the <code>tools_def.txt</code> by providing an
+alternate flag, i.e., if the <code>tools_def.txt</code> <code>CC_FLAGS</code> defines /O2 and an /O1
+options is specified for this module, the module will compile with /O1 (size)
+not with <code>/O2</code> (speed). Use of the quote characters around options is required
+when specifying string values with spaces, path names with spaces or values
+containing the hash &quot;#&quot; character not within a string. Note that a macro
+named <code>MDEPKG_NDEBUG</code> is reserved for size reduction purposes. The user must
+not use this keyword to define new macro.</p>
+<p><strong><em>Pcd Values</em></strong></p>
+<p>PCD elements follow the exact format defined for <code>&lt;PcdEntry&gt;</code> elements in the
+PCD Sections. Since the Dynamic and DynamicEx access method PCDs are common
+values to all modules in the platform, the values cannot be overridden for
+individual modules.</p>
+<p><strong><em>ClassName</em></strong></p>
+<p>A Library Class Keyword defined in DEC files. The Keyword must also be present
+in the defines section <code>LIBRARY_CLASS</code> entry of the INF file</p>
+<h4 id="example-using-edk-components-in-an-edk-ii-dsc-build">Example Using EDK components in an EDK II DSC build</h4>
+<pre><code>[Components]
+DEFINE EDK=$(EDK_SOURCE)/Edk
+DEFINE MDE=MdePkg/Library
+DEFINE STATUS_CODE=$(MDE)/PeiDxeDebugLibReportStatusCode
+
+$(EDK)/Foundation/Core/Pei/PeiMain.inf
+DEFINE NT32 = $(EDK)/Sample/Platform
+$(NT32)/Generic/MonoStatusCode/Pei/Nt32/MonoStatusCode.inf
+$(NT32)/Nt32/Pei/BootMode/BootMode.inf
+$(NT32)/Nt32/Pei/FlashMap/FlashMap.inf
+MdeModulePkg/Core/Dxe/DxeMain.inf
+...
+MdeModulePkg/Universal/Debugger/Debugport/Dxe/DebugPort.inf
+MdeModulePkg/Cpu/DebugSupport/Dxe/DebugSupport.inf
+...
+
+DEFINE MDEMODUNI = MdeModulePkg/Universal
+$(MDEMODUNI)/DataHub/DataHubStdErr/Dxe/DataHubStdErr.inf
+MdeModulePkg/Universal/Disk/DiskIo/Dxe/DiskIo.inf {
+  &lt;LibraryClasses&gt;
+    DebugLib|$(STATUS_CODE)/PeiDxeDebugLibReportStatusCode.inf
+    BaseMemoryLib|$(MDE)/DxeMemoryLib/DxeMemoryLib.inf
+    MemoryAllocationLib|$(MDE)/DxeMemoryAllocationLib/DxeMemoryAllocationLib.inf
+  &lt;PcdsFeatureFlag&gt;
+    PcdDriverDiagnosticsDisable|gEfiMdePkgTokenSpaceGuid|FALSE
+}
+MdeModulePkg/Universal/Ebc/Dxe/Ebc.inf
+$(MDEMODUNI)/GenericMemoryTest/Dxe/NullMemoryTest.inf
+$(MDEMODUNI)/StatusCode/Pei/PeiStatusCode.inf {
+  &lt;BuildOptions&gt;
+    MSFT:RELEASE_MYTOOLS_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
+    DEBUG_MYTOOLS_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
+    DEBUG_WINDDK3790x1830_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
+    RELEASE_WINDDK3790x1830_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
+    DEBUG_VS2003_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
+    RELEASE_VS2003_IA32_DLINK_FLAGS = Kernel32.lib MSVCRTD.lib Gdi32.lib User32.lib Winmm.lib
+}
+MdeModulePkg/Logo/Logo.inf
+...
+</code></pre>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                    
+                    
+
+<div>
+    <hr>
+    
+      <h2>
+        <div style="position:absolute;text-align:left">EDK II Platform Description (DSC) File Specification</div>
+        <div style="text-align:right">Revision 1.28</div>
+      </h2>  
+    
+</div>
+
+
+
+                
+            </div>
+
+            
+                
+                <a href="310_pcd_sections.html#310-pcd-sections" class="navigation navigation-prev " aria-label="Previous page: 3.10 PCD Sections">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="312_[userextensions]_sections.html#312-userextensions-sections" class="navigation navigation-next " aria-label="Next page: 3.12 [UserExtensions] Sections">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.11 [Components] Sections","level":"1.4.11","depth":2,"next":{"title":"3.12 [UserExtensions] Sections","level":"1.4.12","depth":2,"anchor":"#312-userextensions-sections","path":"3_edk_ii_dsc_file_format/312_[userextensions]_sections.md","ref":"3_edk_ii_dsc_file_format/312_[userextensions]_sections.md#312-userextensions-sections","articles":[]},"previous":{"title":"3.10 PCD Sections","level":"1.4.10","depth":2,"anchor":"#310-pcd-sections","path":"3_edk_ii_dsc_file_format/310_pcd_sections.md","ref":"3_edk_ii_dsc_file_format/310_pcd_sections.md#310-pcd-sections","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"title":"EDK II Platform Description (DSC) File Specification","version":"Revision 1.28"},"plugins":["puml-aleung"],"pluginsConfig":{"puml-aleung":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3_edk_ii_dsc_file_format/311_[components]_sections.md","mtime":"2020-12-01T05:03:48.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-01T05:04:20.756Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
